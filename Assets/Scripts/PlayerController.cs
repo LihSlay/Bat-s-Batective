@@ -4,13 +4,11 @@ public class PlayerController : MonoBehaviour
 {
     public float speed = 5f;
 
-    void Update()
+   void Update()
+{
+    if (Input.GetKey(KeyCode.W))
     {
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
-
-        Vector3 move = transform.right * x + transform.forward * z;
-
-        transform.position += move * speed * Time.deltaTime;
+        Debug.Log("W carregado");
     }
+}
 }
