@@ -119,52 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &22795471
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 22795473}
-  - component: {fileID: 22795472}
-  m_Layer: 0
-  m_Name: CameraHolder
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &22795472
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 22795471}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35f1eb56c4b9bb441a917971011f3de4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MoveCamera
-  cameraPosition: {fileID: 0}
---- !u!4 &22795473
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 22795471}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -55.71093, y: -0, z: -56.46115}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 969203818}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &120509335
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,7 +173,7 @@ Transform:
   m_GameObject: {fileID: 120509335}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5, z: 0}
+  m_LocalPosition: {x: 0, y: 1.5, z: -18.52}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -241,7 +195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   speed: 5
---- !u!1001 &553590453
+--- !u!1001 &281597395
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -301,41 +255,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8454998077755021283, guid: aaefeefb700b254419b5b7979d0db9da, type: 3}
-      propertyPath: m_Name
-      value: CofreNum4
-      objectReference: {fileID: 0}
-    - target: {fileID: -2907758858633395796, guid: aaefeefb700b254419b5b7979d0db9da, type: 3}
-      propertyPath: m_Name
-      value: CofreNum2
-      objectReference: {fileID: 0}
-    - target: {fileID: -558990265082171903, guid: aaefeefb700b254419b5b7979d0db9da, type: 3}
-      propertyPath: m_Name
-      value: CofreNum5
-      objectReference: {fileID: 0}
-    - target: {fileID: -259189500601335876, guid: aaefeefb700b254419b5b7979d0db9da, type: 3}
-      propertyPath: m_Name
-      value: CofrePorta
-      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: aaefeefb700b254419b5b7979d0db9da, type: 3}
       propertyPath: m_Name
       value: CarruagemFinal
-      objectReference: {fileID: 0}
-    - target: {fileID: 1769167184020643756, guid: aaefeefb700b254419b5b7979d0db9da, type: 3}
-      propertyPath: m_Name
-      value: CofreRoda
-      objectReference: {fileID: 0}
-    - target: {fileID: 1806274299955994657, guid: aaefeefb700b254419b5b7979d0db9da, type: 3}
-      propertyPath: m_Name
-      value: CofreCaixa
-      objectReference: {fileID: 0}
-    - target: {fileID: 2893380983885647557, guid: aaefeefb700b254419b5b7979d0db9da, type: 3}
-      propertyPath: m_Name
-      value: CofreNum
-      objectReference: {fileID: 0}
-    - target: {fileID: 5347465566575833896, guid: aaefeefb700b254419b5b7979d0db9da, type: 3}
-      propertyPath: m_Name
-      value: CofreNum3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -373,52 +295,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 120509337}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &969203817
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 969203818}
-  - component: {fileID: 969203819}
-  m_Layer: 0
-  m_Name: PlayerCam
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &969203818
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 969203817}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 22795473}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &969203819
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 969203817}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32bc6ffeec0abfd4497bbf6f374cee8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerCam
-  mouseSensitivity: 100
-  playerBody: {fileID: 0}
 --- !u!1 &1016795903
 GameObject:
   m_ObjectHideFlags: 0
@@ -654,7 +530,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 7, y: 7, z: 7}
+  m_LocalScale: {x: 8, y: 8, z: 8}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -930,7 +806,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1016795906}
-  - {fileID: 553590453}
-  - {fileID: 22795473}
   - {fileID: 120509337}
   - {fileID: 1526163356}
+  - {fileID: 281597395}
