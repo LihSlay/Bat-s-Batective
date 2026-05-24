@@ -3,10 +3,9 @@ using UnityEngine;
 public class NumberButton : MonoBehaviour
 {
     public string digit;
-
     public SafePuzzle safePuzzle;
 
-    private void OnMouseDown()
+    public void PressButton()
     {
         safePuzzle.AddDigit(digit);
     }

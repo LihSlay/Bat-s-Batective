@@ -4,7 +4,7 @@ public class SafeHandle : MonoBehaviour
 {
     public SafePuzzle safePuzzle;
 
-    private void OnMouseDown()
+    public void PullHandle()
     {
         safePuzzle.CheckCode();
     }
