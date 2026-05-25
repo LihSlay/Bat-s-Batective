@@ -26,6 +26,14 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        // Bloqueia movimento quando o player está upside down
+        if (upsideDown)
+        {
+            // Mantém apenas a velocidade Y (gravidade) e zera movimento horizontal
+            rb.linearVelocity = new Vector3(0, rb.linearVelocity.y, 0);
+            return;
+        }
+
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
