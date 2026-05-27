@@ -5,11 +5,21 @@ public class PlayerCam : MonoBehaviour
     public float mouseSensitivity = 100f;
     public Transform playerBody;
 
+    [Header("Head Bob")]
+    public float bobFrequency = 2f;
+    public float bobAmplitude = 0.05f;
+    public float bobSmoothing = 10f;
+
     float xRotation = 0f;
+    float bobTimer = 0f;
+    Vector3 defaultLocalPos;
+    Rigidbody playerRb;
 
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        defaultLocalPos = transform.localPosition;
+        playerRb = playerBody.GetComponent<Rigidbody>();
     }
 
     void Update()
@@ -23,5 +33,21 @@ public class PlayerCam : MonoBehaviour
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
 
         playerBody.Rotate(Vector3.up * mouseX);
+
+        HandleBob();
+    }
+
+    void HandleBob()
+    {
+        Vector3 flatVelocity = new(playerRb.linearVelocity.x, 0f, playerRb.linearVelocity.z);
+        bool isMoving = flatVelocity.magnitude > 0.1f;
+
+        if (isMoving)
+            bobTimer += Time.deltaTime * bobFrequency;
+        else
+            bobTimer = 0f;
+
+        Vector3 targetPos = defaultLocalPos + new Vector3(0f, Mathf.Sin(bobTimer * Mathf.PI * 2f) * bobAmplitude, 0f);
+        transform.localPosition = Vector3.Lerp(transform.localPosition, targetPos, Time.deltaTime * bobSmoothing);
     }
 }
