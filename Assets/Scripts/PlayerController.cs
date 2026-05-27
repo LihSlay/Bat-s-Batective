@@ -5,6 +5,10 @@ public class PlayerController : MonoBehaviour
 {
     public float speed = 5f;
 
+    // Objetos dos puzzles
+    public GameObject normalNumbers;
+    public GameObject flipNumbers;
+
     private Rigidbody rb;
 
     private bool upsideDown = false;
@@ -53,7 +57,30 @@ public class PlayerController : MonoBehaviour
             ? new Vector3(0, 9.81f, 0)
             : new Vector3(0, -9.81f, 0);
 
-        transform.Rotate(0, 0, 180);
+        // Limpa velocidades bugadas
+        rb.linearVelocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+
+        // Guarda rotação horizontal atual
+        float currentY = transform.eulerAngles.y;
+
+        // Define rotação fixa correta
+        if (upsideDown)
+        {
+            transform.rotation = Quaternion.Euler(0f, currentY, 180f);
+
+            // Ativa números upside down
+            normalNumbers.SetActive(false);
+            flipNumbers.SetActive(true);
+        }
+        else
+        {
+            transform.rotation = Quaternion.Euler(0f, currentY, 0f);
+
+            // Volta aos números normais
+            normalNumbers.SetActive(true);
+            flipNumbers.SetActive(false);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -70,10 +97,10 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        Debug.Log("SAIU");
+
         if (other.CompareTag("Rail"))
         {
-            Debug.Log("SAIU");
-
             canFlip = false;
         }
     }
