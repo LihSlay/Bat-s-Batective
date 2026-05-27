@@ -8,6 +8,7 @@ public class SafeInteraction : MonoBehaviour
     public MonoBehaviour playerController;
     public MonoBehaviour playerCam;
     public RectTransform crosshair;
+    public GameObject exitZoomButton;
 
     private Transform originalParent;
     private Vector3 originalLocalPosition;
@@ -40,6 +41,8 @@ public class SafeInteraction : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = false;
 
+        if (exitZoomButton != null) exitZoomButton.SetActive(true);
+
         isZoomed = true;
     }
 
@@ -61,15 +64,9 @@ public class SafeInteraction : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
-        isZoomed = false;
-    }
+        if (exitZoomButton != null) exitZoomButton.SetActive(false);
 
-    void Update()
-    {
-        if (isZoomed && Input.GetKeyDown(KeyCode.Escape))
-        {
-            ExitZoom();
-        }
+        isZoomed = false;
     }
 
     void LateUpdate()
