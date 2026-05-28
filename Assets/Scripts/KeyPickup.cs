@@ -11,6 +11,7 @@ public class KeyPickup : MonoBehaviour
     public float heldScale = 1f;
 
     private Vector3 originalScale;
+    public AudioClip pickupSound;
 
     private void Start()
     {
@@ -26,6 +27,8 @@ public class KeyPickup : MonoBehaviour
     public void Pickup()
     {
         HasKey = true;
+        Debug.Log("Tentou tocar som");
+        SFXManager.Instance.PlaySFX(pickupSound);
         Debug.Log("Chave apanhada!");
 
         if (TryGetComponent<Rigidbody>(out var rb))

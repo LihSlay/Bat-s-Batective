@@ -59,6 +59,13 @@ public class PlayerInteraction : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0) && safeInteraction != null && safeInteraction.IsZoomed)
             {
+                ClearButton clear =
+                 hit.collider.GetComponent<ClearButton>();
+
+                if (clear != null)
+                {
+                    clear.PressButton();
+                }
                 NumberButton button = hit.collider.GetComponent<NumberButton>();
                 if (button != null)
                     button.PressButton();

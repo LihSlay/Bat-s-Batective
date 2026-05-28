@@ -44,12 +44,14 @@ public class PauseMenu : MonoBehaviour
 
     public void GoToSettings()
     {
+        Time.timeScale = 0f;
         pauseMenuUI.SetActive(false);
         SceneManager.LoadScene("Definições", LoadSceneMode.Additive);
     }
 
         public void GoToControls()
     {
+        Time.timeScale = 0f;
         pauseMenuUI.SetActive(false);
         SceneManager.LoadScene("Controlos", LoadSceneMode.Additive);
     }

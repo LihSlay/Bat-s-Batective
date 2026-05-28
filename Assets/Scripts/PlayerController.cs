@@ -13,15 +13,25 @@ public class PlayerController : MonoBehaviour
 
     private bool upsideDown = false;
     private bool canFlip = false;
+    private AudioSource footstepsAudio;
+
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        footstepsAudio = GetComponent<AudioSource>();
         rb.freezeRotation = true;
     }
 
     void Update()
     {
+        if (Time.timeScale == 0)
+        {
+            if (footstepsAudio.isPlaying)
+            {
+                footstepsAudio.Stop();
+            }
+        }
         if (canFlip && Input.GetKeyDown(KeyCode.C))
         {
             FlipPlayer();
@@ -30,6 +40,15 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (Time.timeScale == 0)
+        {
+            if (footstepsAudio.isPlaying)
+            {
+                footstepsAudio.Stop();
+            }
+
+            return;
+        }
         // Bloqueia movimento quando o player está upside down
         if (upsideDown)
         {
@@ -40,6 +59,26 @@ public class PlayerController : MonoBehaviour
 
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
+        bool playerMoving = Mathf.Abs(x) > 0.1f || Mathf.Abs(z) > 0.1f;
+
+        bool canPlayFootsteps =
+        playerMoving &&
+        SFXManager.Instance.IsSFXOn();
+
+        if (canPlayFootsteps)
+        {
+            if (!footstepsAudio.isPlaying)
+            {
+                footstepsAudio.Play();
+            }
+        }
+        else
+        {
+            if (footstepsAudio.isPlaying)
+            {
+                footstepsAudio.Stop();
+            }
+        }
 
         Vector3 move = transform.right * x + transform.forward * z;
         Vector3 targetVelocity = move * speed;
@@ -102,6 +141,14 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("Rail"))
         {
             canFlip = false;
+        }
+    }
+
+    private void OnDisable() // Para garantir que o som dos passo pare se o player for desativado
+    {
+        if (footstepsAudio != null)
+        {
+            footstepsAudio.Stop();
         }
     }
 }

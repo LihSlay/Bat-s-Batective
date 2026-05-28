@@ -5,7 +5,9 @@ public class SafePuzzle : MonoBehaviour
 {
     public Animator safeAnimator;
     public string correctCode = "1234";
-    public TMP_Text codeDisplay;   // arrastar o CodeDisplay aqui no Inspector
+    public TMP_Text codeDisplay;   
+    public AudioClip safeOpenSound;
+    public AudioClip correctCodeSound;
 
     private string currentCode = "";
     private bool opened = false;
@@ -35,7 +37,10 @@ public class SafePuzzle : MonoBehaviour
 
         if (currentCode == correctCode)
         {
+            
             opened = true;
+            SFXManager.Instance.PlaySFX(correctCodeSound);
+            SFXManager.Instance.PlaySFX(safeOpenSound);
             safeAnimator.Play("SafeOpen");
             Debug.Log("Cofre aberto!");
         }
@@ -60,4 +65,15 @@ public class SafePuzzle : MonoBehaviour
         }
         codeDisplay.text = display;
     }
+
+    public void ClearCode()
+{
+    if (currentCode.Length > 0)
+    {
+        currentCode =
+            currentCode.Substring(0, currentCode.Length - 1);
+
+        UpdateDisplay();
+    }
+}
 }
