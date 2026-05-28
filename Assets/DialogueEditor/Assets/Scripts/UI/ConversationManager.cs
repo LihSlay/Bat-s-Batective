@@ -156,10 +156,24 @@ namespace DialogueEditor
 
         public void EndConversation()
         {
+            if (AudioPlayer != null && AudioPlayer.isPlaying)
+            {
+                AudioPlayer.Stop();
+            }
+
             SetState(eState.TransitioningDialogueOff);
 
             if (OnConversationEnded != null)
                 OnConversationEnded.Invoke();
+        }
+
+        public void SkipTyping()
+        {
+            if (m_state == eState.ScrollingText)
+            {
+                DialogueText.maxVisibleCharacters = m_targetScrollTextCount;
+                SetState(eState.TransitioningOptionsOn);
+            }
         }
 
         public void SelectNextOption()
@@ -535,6 +549,11 @@ namespace DialogueEditor
             // Play the audio
             if (speech.Audio != null)
             {
+                if (AudioPlayer.isPlaying)
+                {
+                    AudioPlayer.Stop();
+                }
+
                 AudioPlayer.clip = speech.Audio;
                 AudioPlayer.volume = speech.Volume;
                 AudioPlayer.Play();
