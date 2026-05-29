@@ -24,7 +24,7 @@ public class PlayerInteraction : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, interactDistance))
         {
-            if (hit.collider.name != lastObject)
+
             {
                 Debug.Log("Estou a olhar para: " + hit.collider.name);
                 lastObject = hit.collider.name;
@@ -52,6 +52,7 @@ public class PlayerInteraction : MonoBehaviour
                 lookingAtKey = false;
             }
 
+            
             hit.collider.transform.TryGetComponent(out SafeInteraction safeHit);
             if (safeHit == null && hit.collider.transform.parent != null)
                 hit.collider.transform.parent.TryGetComponent(out safeHit);
