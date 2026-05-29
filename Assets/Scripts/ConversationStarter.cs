@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using DialogueEditor;
 
@@ -7,84 +5,75 @@ public class ConversationStarter : MonoBehaviour
 {
     [SerializeField] private NPCConversation myConversation;
     [SerializeField] private InteractionUI npcDescriptionText;
+    [SerializeField] private MonoBehaviour playerController;
+    [SerializeField] private MonoBehaviour playerCam;
 
     private bool playerInside = false;
 
     private void OnEnable()
     {
-        ConversationManager.OnConversationEnded += ShowDescription;
+        ConversationManager.OnConversationEnded += OnConversationEnded;
     }
 
     private void OnDisable()
     {
-        ConversationManager.OnConversationEnded -= ShowDescription;
+        ConversationManager.OnConversationEnded -= OnConversationEnded;
     }
-
 
     private void Update()
     {
-        // Interação / avançar diálogo
         if (playerInside && Input.GetKeyDown(KeyCode.E))
         {
-            // Se não estiver em conversa, inicia
             if (!ConversationManager.Instance.IsConversationActive)
             {
                 ConversationManager.Instance.StartConversation(myConversation);
-
-                Debug.Log("FadeOut chamado");
-
                 npcDescriptionText.FadeOut();
+                SetPlayerLocked(true);
             }
             else
             {
-                // Avança o diálogo
                 ConversationManager.Instance.SkipTyping();
-
-                // Se não estava a escrever, avança normalmente
                 ConversationManager.Instance.PressSelectedOption();
             }
         }
 
-        // Fecha conversa com ESC
-        if (ConversationManager.Instance.IsConversationActive &&
-    Input.GetKeyDown(KeyCode.Q))
+        if (ConversationManager.Instance.IsConversationActive && Input.GetKeyDown(KeyCode.Q))
         {
-            AudioSource audioSource =
-                ConversationManager.Instance.GetComponent<AudioSource>();
-
-            if (audioSource != null)
-            {
-                audioSource.Stop();
-            }
-
+            AudioSource audioSource = ConversationManager.Instance.GetComponent<AudioSource>();
+            if (audioSource != null) audioSource.Stop();
             ConversationManager.Instance.EndConversation();
+        }
+    }
+
+    private void OnConversationEnded()
+    {
+        SetPlayerLocked(false);
+
+        if (playerInside)
+            npcDescriptionText.FadeIn();
+    }
+
+    private void SetPlayerLocked(bool locked)
+    {
+        if (playerController != null) playerController.enabled = !locked;
+        if (playerCam != null) playerCam.enabled = !locked;
+
+        if (locked && playerController != null)
+        {
+            Rigidbody rb = playerController.GetComponent<Rigidbody>();
+            if (rb != null) rb.linearVelocity = Vector3.zero;
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
-        {
             playerInside = true;
-        }
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
-        {
             playerInside = false;
-        }
-    }
-
-    private void ShowDescription()
-    {
-        if (playerInside)
-        {
-            npcDescriptionText.FadeIn();
-        }
     }
 }
-
-
-

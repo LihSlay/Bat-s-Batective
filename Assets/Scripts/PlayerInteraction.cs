@@ -5,9 +5,12 @@ public class PlayerInteraction : MonoBehaviour
     public Camera playerCamera;
     public float interactDistance = 3f;
     public SafeInteraction safeInteraction;
+    public InteractionUI safeHint;
 
     private string lastObject = "";
     private bool lookingAtKey = false;
+    private bool lookingAtSafe = false;
+    private bool safeFirstInteraction = false;
 
     void Update()
     {
@@ -16,6 +19,8 @@ public class PlayerInteraction : MonoBehaviour
             ? playerCamera.ScreenPointToRay(Input.mousePosition)
             : playerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         RaycastHit hit;
+
+        bool hittingSafe = false;
 
         if (Physics.Raycast(ray, out hit, interactDistance))
         {
@@ -47,32 +52,32 @@ public class PlayerInteraction : MonoBehaviour
                 lookingAtKey = false;
             }
 
-            if (Input.GetKeyDown(KeyCode.E))
+            hit.collider.transform.TryGetComponent(out SafeInteraction safeHit);
+            if (safeHit == null && hit.collider.transform.parent != null)
+                hit.collider.transform.parent.TryGetComponent(out safeHit);
+
+            if (safeHit != null && !zoomed)
+                hittingSafe = true;
+
+            if (Input.GetKeyDown(KeyCode.E) && safeHit != null && !safeHit.IsZoomed)
             {
-                SafeInteraction safe = hit.collider.GetComponentInParent<SafeInteraction>();
-                if (safe != null && !safe.IsZoomed)
+                safeHit.EnterZoom();
+
+                if (!safeFirstInteraction)
                 {
-                    safe.EnterZoom();
-                    return;
+                    safeFirstInteraction = true;
+                    if (BlocoNotasToggle.Instance != null)
+                        BlocoNotasToggle.Instance.MostrarEntradaCofre();
                 }
+
+                return;
             }
 
             if (Input.GetMouseButtonDown(0) && safeInteraction != null && safeInteraction.IsZoomed)
             {
-                ClearButton clear =
-                 hit.collider.GetComponent<ClearButton>();
-
-                if (clear != null)
-                {
-                    clear.PressButton();
-                }
-                NumberButton button = hit.collider.GetComponent<NumberButton>();
-                if (button != null)
-                    button.PressButton();
-
-                SafeHandle handle = hit.collider.GetComponent<SafeHandle>();
-                if (handle != null)
-                    handle.PullHandle();
+                if (hit.collider.TryGetComponent(out ClearButton clear)) clear.PressButton();
+                if (hit.collider.TryGetComponent(out NumberButton button)) button.PressButton();
+                if (hit.collider.TryGetComponent(out SafeHandle handle)) handle.PullHandle();
             }
         }
         else
@@ -81,6 +86,20 @@ public class PlayerInteraction : MonoBehaviour
             {
                 lastObject = "";
                 lookingAtKey = false;
+            }
+        }
+
+        if (safeHint != null)
+        {
+            if (hittingSafe && !lookingAtSafe)
+            {
+                safeHint.FadeIn();
+                lookingAtSafe = true;
+            }
+            else if (!hittingSafe && lookingAtSafe)
+            {
+                safeHint.FadeOut();
+                lookingAtSafe = false;
             }
         }
     }

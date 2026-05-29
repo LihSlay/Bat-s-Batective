@@ -8,14 +8,11 @@ public class KeyPickup : MonoBehaviour
 
     public Vector3 heldLocalPosition = new Vector3(0.25f, -0.15f, 0.4f);
     public Vector3 heldLocalRotation = new Vector3(0f, 0f, 0f);
-    public float heldScale = 1f;
 
-    private Vector3 originalScale;
     public AudioClip pickupSound;
 
     private void Start()
     {
-        originalScale = transform.localScale;
     }
 
     void Update()
@@ -40,7 +37,6 @@ public class KeyPickup : MonoBehaviour
         Transform cam = playerCamera != null ? playerCamera.transform : Camera.main.transform;
         transform.SetParent(cam);
         transform.SetLocalPositionAndRotation(heldLocalPosition, Quaternion.Euler(heldLocalRotation));
-        transform.localScale = Vector3.one * heldScale;
     }
 
     public void Drop()
@@ -57,7 +53,6 @@ public class KeyPickup : MonoBehaviour
         else
             transform.position = cam.position + cam.forward * 1.5f;
 
-        transform.localScale = originalScale;
 
         if (TryGetComponent<Collider>(out var col))
             col.enabled = true;

@@ -8,6 +8,7 @@ public class SafePuzzle : MonoBehaviour
     public TMP_Text codeDisplay;   
     public AudioClip safeOpenSound;
     public AudioClip correctCodeSound;
+    public GameObject chaveObject;
 
     private string currentCode = "";
     private bool opened = false;
@@ -42,6 +43,8 @@ public class SafePuzzle : MonoBehaviour
             SFXManager.Instance.PlaySFX(correctCodeSound);
             SFXManager.Instance.PlaySFX(safeOpenSound);
             safeAnimator.Play("SafeOpen");
+            if (chaveObject != null) chaveObject.SetActive(true);
+            if (BlocoNotasToggle.Instance != null) BlocoNotasToggle.Instance.MostrarEntradaBunny();
             Debug.Log("Cofre aberto!");
         }
         else
