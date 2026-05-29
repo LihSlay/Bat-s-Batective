@@ -479,6 +479,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cdccd560dfb1804689ca323ff41b23a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CreditosVideo
+  videoFileName: Creds.webm
 --- !u!328 &795554459
 VideoPlayer:
   m_ObjectHideFlags: 0
