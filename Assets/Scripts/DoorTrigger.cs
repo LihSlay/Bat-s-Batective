@@ -20,6 +20,6 @@ public class DoorTrigger : MonoBehaviour
 
         Debug.Log("Tem a chave!");
 
-        SceneManager.LoadScene("Creditos");
+        SceneManager.LoadScene("Créditos");
     }
 }

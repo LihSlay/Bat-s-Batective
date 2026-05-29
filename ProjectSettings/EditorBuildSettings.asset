@@ -18,12 +18,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Jogo.unity
     guid: f99489ab36f6dba44baa46a19fffa7b4
   - enabled: 1
+    path: "Assets/Scenes/Cr\xE9ditos.unity"
+    guid: 72da666e618ffc44a9153083dce880bf
+  - enabled: 1
     path: Assets/Scenes/Controlos.unity
     guid: 06a2b72230378794ab7b37448c42854d
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 69b1e42aef9f51e4ab6dd83db62e2615
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Creditos.unity
     guid: c03b552bd6f206f4fa5cd8a316e83106
   - enabled: 0

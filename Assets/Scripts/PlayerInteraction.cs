@@ -6,11 +6,19 @@ public class PlayerInteraction : MonoBehaviour
     public float interactDistance = 3f;
     public SafeInteraction safeInteraction;
     public InteractionUI safeHint;
+    public InteractionUI safeHintInicial;
 
     private string lastObject = "";
     private bool lookingAtKey = false;
     private bool lookingAtSafe = false;
+    private bool lookingAtSafeInicial = false;
     private bool safeFirstInteraction = false;
+
+    void Start()
+    {
+        if (safeHintInicial != null)
+            safeHintInicial.FadeIn();
+    }
 
     void Update()
     {
@@ -101,6 +109,20 @@ public class PlayerInteraction : MonoBehaviour
             {
                 safeHint.FadeOut();
                 lookingAtSafe = false;
+            }
+        }
+
+        if (safeHintInicial != null && safeFirstInteraction)
+        {
+            if (hittingSafe && !lookingAtSafeInicial)
+            {
+                safeHintInicial.FadeIn();
+                lookingAtSafeInicial = true;
+            }
+            else if (!hittingSafe && lookingAtSafeInicial)
+            {
+                safeHintInicial.FadeOut();
+                lookingAtSafeInicial = false;
             }
         }
     }

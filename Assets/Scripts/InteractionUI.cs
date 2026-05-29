@@ -5,6 +5,7 @@ using TMPro;
 public class InteractionUI : MonoBehaviour
 {
     public float fadeSpeed = 3f;
+    public bool startVisible = false;
 
     private Camera mainCam;
     private TextMeshPro textMesh;
@@ -14,6 +15,9 @@ public class InteractionUI : MonoBehaviour
     {
         mainCam = Camera.main;
         textMesh = GetComponent<TextMeshPro>();
+        Color c = textMesh.color;
+        c.a = startVisible ? 1f : 0f;
+        textMesh.color = c;
     }
 
     private void Update()

@@ -10,6 +10,7 @@ public class KeyPickup : MonoBehaviour
     public Vector3 heldLocalRotation = new Vector3(0f, 0f, 0f);
 
     public AudioClip pickupSound;
+    public GameObject pousarUI;
 
     private void Start()
     {
@@ -24,9 +25,8 @@ public class KeyPickup : MonoBehaviour
     public void Pickup()
     {
         HasKey = true;
-        Debug.Log("Tentou tocar som");
         SFXManager.Instance.PlaySFX(pickupSound);
-        Debug.Log("Chave apanhada!");
+        if (pousarUI != null) pousarUI.SetActive(true);
 
         if (TryGetComponent<Rigidbody>(out var rb))
             rb.isKinematic = true;
@@ -42,7 +42,7 @@ public class KeyPickup : MonoBehaviour
     public void Drop()
     {
         HasKey = false;
-        Debug.Log("Chave pousada!");
+        if (pousarUI != null) pousarUI.SetActive(false);
 
         transform.SetParent(null);
 

@@ -7,6 +7,7 @@ public class BlocoNotasToggle : MonoBehaviour
     public GameObject blocoNotasUI;
     public GameObject descobrirEntry;
     public GameObject bunnyEntry;
+    public SafeInteraction safeInteraction;
 
     [Header("Notificação")]
     public GameObject notificacaoExclamacao;
@@ -24,8 +25,9 @@ public class BlocoNotasToggle : MonoBehaviour
             bool aberto = !blocoNotasUI.activeSelf;
             blocoNotasUI.SetActive(aberto);
 
-            Cursor.lockState = aberto ? CursorLockMode.None : CursorLockMode.Locked;
-            Cursor.visible = aberto;
+            bool emZoom = safeInteraction != null && safeInteraction.IsZoomed;
+            Cursor.lockState = (aberto || emZoom) ? CursorLockMode.None : CursorLockMode.Locked;
+            Cursor.visible = false;
 
             if (aberto && notificacaoExclamacao != null)
                 notificacaoExclamacao.SetActive(false);

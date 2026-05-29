@@ -11,18 +11,14 @@ public class PauseMenu : MonoBehaviour
     public CanvasGroup optionsCanvasGroup;
 
     public SceneChanger sceneChanger;
+    public SafeInteraction safeInteraction;
 
     private bool isPaused = false;
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (isPaused)
-                Resume();
-            else
-                Pause();
-        }
+        if (Input.GetKeyDown(KeyCode.Escape) && !isPaused)
+            Pause();
     }
 
     public void Resume()
@@ -48,8 +44,17 @@ public class PauseMenu : MonoBehaviour
         }
 
         Time.timeScale = 1f;
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+
+        if (safeInteraction != null && safeInteraction.IsZoomed)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = false;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
 
         isPaused = false;
     }
