@@ -9,6 +9,7 @@ public class MusicManager : MonoBehaviour
 
     public AudioClip menuMusic;
     public AudioClip gameMusic;
+    public AudioClip creditsMusic;
 
     private bool musicOn;
 
@@ -59,11 +60,15 @@ public class MusicManager : MonoBehaviour
 
         // Cenas do jogo
         if (
-            sceneName == "Jogo" ||
-            sceneName == "JogoTutorial"
+            sceneName == "Jogo" 
         )
         {
             targetMusic = gameMusic;
+        }
+
+        if (sceneName == "Créditos")
+        {
+            targetMusic = creditsMusic;
         }
 
         if (targetMusic != null && audioSource.clip != targetMusic)
