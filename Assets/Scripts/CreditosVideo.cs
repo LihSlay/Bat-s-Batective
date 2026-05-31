@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
+using UnityEngine.SceneManagement;
 
 public class CreditosVideo : MonoBehaviour
 {
@@ -16,6 +17,24 @@ public class CreditosVideo : MonoBehaviour
         RawImage rawImage = gameObject.AddComponent<RawImage>();
         rawImage.texture = rt;
 
+        videoPlayer.loopPointReached += OnVideoFinished;
+
         videoPlayer.Play();
+    }
+
+
+    void Update()
+    {
+        if (!videoPlayer.isPlaying)
+        {
+            Debug.Log("Video parou!");
+        }
+    }
+
+
+
+    private void OnVideoFinished(VideoPlayer vp)
+    {
+        SceneManager.LoadScene("MenuInicial");
     }
 }

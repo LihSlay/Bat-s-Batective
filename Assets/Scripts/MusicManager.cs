@@ -82,6 +82,13 @@ public class MusicManager : MonoBehaviour
                 audioSource.Play();
             }
         }
+
+
+        if (targetMusic == null)
+        {
+            audioSource.Stop();
+            return;
+        }
     }
 
     public void ToggleMusic()
