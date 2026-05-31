@@ -11,7 +11,7 @@ public class InteractionUI : MonoBehaviour
     private TextMeshPro textMesh;
     private Coroutine fadeRoutine;
 
-    private void Start()
+    private void Awake()
     {
         mainCam = Camera.main;
         textMesh = GetComponent<TextMeshPro>();
