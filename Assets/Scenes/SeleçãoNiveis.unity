@@ -228,7 +228,7 @@ MonoBehaviour:
   m_text: Voltar
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e8f34eadd14b51a4e9f0d820db1de586, type: 2}
-  m_sharedMaterial: {fileID: -8295181696572532552, guid: e8f34eadd14b51a4e9f0d820db1de586, type: 2}
+  m_sharedMaterial: {fileID: -6093576989724706181, guid: e8f34eadd14b51a4e9f0d820db1de586, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -508,7 +508,7 @@ MonoBehaviour:
   m_text: Jogar
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e8f34eadd14b51a4e9f0d820db1de586, type: 2}
-  m_sharedMaterial: {fileID: -8295181696572532552, guid: e8f34eadd14b51a4e9f0d820db1de586, type: 2}
+  m_sharedMaterial: {fileID: -6093576989724706181, guid: e8f34eadd14b51a4e9f0d820db1de586, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1457,7 +1457,7 @@ MonoBehaviour:
     que o tempo se esgote.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e8f34eadd14b51a4e9f0d820db1de586, type: 2}
-  m_sharedMaterial: {fileID: -8295181696572532552, guid: e8f34eadd14b51a4e9f0d820db1de586, type: 2}
+  m_sharedMaterial: {fileID: -6093576989724706181, guid: e8f34eadd14b51a4e9f0d820db1de586, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1568,7 +1568,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 3.5073853, y: -0.00012207031}
+  m_AnchoredPosition: {x: 3.5073242, y: -0.00012207031}
   m_SizeDelta: {x: 7.015, y: -0.00024414}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1893031726
@@ -1669,7 +1669,7 @@ MonoBehaviour:
   m_text: "CAP\xCDTULO 1 \n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e8f34eadd14b51a4e9f0d820db1de586, type: 2}
-  m_sharedMaterial: {fileID: -8295181696572532552, guid: e8f34eadd14b51a4e9f0d820db1de586, type: 2}
+  m_sharedMaterial: {fileID: -6093576989724706181, guid: e8f34eadd14b51a4e9f0d820db1de586, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
