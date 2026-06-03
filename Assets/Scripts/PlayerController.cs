@@ -5,13 +5,13 @@ public class PlayerController : MonoBehaviour
 {
     public float speed = 5f;
 
+
+    
     private Rigidbody rb;
 
     private bool upsideDown = false;
     private bool canFlip = false;
     private AudioSource footstepsAudio;
-private Transform currentRail;
-private Collider currentRailCollider;
 
 
     void Start()
@@ -30,7 +30,6 @@ private Collider currentRailCollider;
                 footstepsAudio.Stop();
             }
         }
-
         if (canFlip && Input.GetKeyDown(KeyCode.C))
         {
             FlipPlayer();
@@ -48,7 +47,6 @@ private Collider currentRailCollider;
 
             return;
         }
-
         // Bloqueia movimento quando o player está upside down
         if (upsideDown)
         {
@@ -59,12 +57,11 @@ private Collider currentRailCollider;
 
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
-
         bool playerMoving = Mathf.Abs(x) > 0.1f || Mathf.Abs(z) > 0.1f;
 
         bool canPlayFootsteps =
-            playerMoving &&
-            SFXManager.Instance.IsSFXOn();
+        playerMoving &&
+        SFXManager.Instance.IsSFXOn();
 
         if (canPlayFootsteps)
         {
@@ -89,83 +86,55 @@ private Collider currentRailCollider;
         rb.linearVelocity = targetVelocity;
     }
 
-   void FlipPlayer()
+  void FlipPlayer()
 {
     upsideDown = !upsideDown;
-
-    // Diz à câmara para virar também
-    PlayerCam cam = GetComponentInChildren<PlayerCam>();
-
-    if (cam != null)
-    {
-        cam.SetUpsideDown(upsideDown);
-    }
 
     Physics.gravity = upsideDown
         ? new Vector3(0, 9.81f, 0)
         : new Vector3(0, -9.81f, 0);
 
-    // Limpa velocidades
+    // Limpa velocidades bugadas
     rb.linearVelocity = Vector3.zero;
     rb.angularVelocity = Vector3.zero;
 
     // Guarda rotação horizontal atual
     float currentY = transform.eulerAngles.y;
 
-    // Vira o player
-    transform.rotation = Quaternion.Euler(
-        0f,
-        currentY,
-        upsideDown ? 180f : 0f
-    );
-
-    // Cola o player à barra
-    if (upsideDown && currentRailCollider != null)
+    // Define rotação fixa correta
+    if (upsideDown)
     {
-        Collider playerCollider = GetComponent<Collider>();
-
-        Bounds railBounds = currentRailCollider.bounds;
-        Bounds playerBounds = playerCollider.bounds;
-
-        Vector3 pos = transform.position;
-
-        float railBottom = railBounds.min.y;
-        float playerHalfHeight = playerBounds.extents.y;
-
-        pos.y = railBottom - playerHalfHeight;
-
-        transform.position = pos;
+        transform.rotation = Quaternion.Euler(0f, currentY, 180f);
     }
-
-    Physics.SyncTransforms();
+    else
+    {
+        transform.rotation = Quaternion.Euler(0f, currentY, 0f);
+    }
 }
+
     private void OnTriggerEnter(Collider other)
-{
-    Debug.Log("ENTROU NO TRIGGER");
-
-    if (other.CompareTag("Rail"))
     {
-        Debug.Log("PODE VIRAR");
+        Debug.Log("ENTROU NO TRIGGER");
 
-        canFlip = true;
-        currentRail = other.transform;
-        currentRailCollider = other;
+        if (other.CompareTag("Rail"))
+        {
+            Debug.Log("PODE VIRAR");
+
+            canFlip = true;
+        }
     }
-}
 
     private void OnTriggerExit(Collider other)
-{
-    Debug.Log("SAIU");
-
-    if (other.CompareTag("Rail"))
     {
-        canFlip = false;
-        currentRail = null;
-        currentRailCollider = null;
-    }
-}
+        Debug.Log("SAIU");
 
-    private void OnDisable()
+        if (other.CompareTag("Rail"))
+        {
+            canFlip = false;
+        }
+    }
+
+    private void OnDisable() // Para garantir que o som dos passo pare se o player for desativado
     {
         if (footstepsAudio != null)
         {
