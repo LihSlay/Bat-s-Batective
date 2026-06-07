@@ -5585,7 +5585,7 @@ PrefabInstance:
     - target: {fileID: 3900108754347413305, guid: d9fa78e8c3c4f2b4b8f7f77ca8426cca, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: -8295181696572532552, guid: e8f34eadd14b51a4e9f0d820db1de586, type: 2}
+      objectReference: {fileID: -6093576989724706181, guid: e8f34eadd14b51a4e9f0d820db1de586, type: 2}
     - target: {fileID: 3900108754347413305, guid: d9fa78e8c3c4f2b4b8f7f77ca8426cca, type: 3}
       propertyPath: m_TextStyleHashCode
       value: -1183493901
@@ -5761,7 +5761,7 @@ PrefabInstance:
     - target: {fileID: 6116449485086562217, guid: d9fa78e8c3c4f2b4b8f7f77ca8426cca, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: -8295181696572532552, guid: e8f34eadd14b51a4e9f0d820db1de586, type: 2}
+      objectReference: {fileID: -6093576989724706181, guid: e8f34eadd14b51a4e9f0d820db1de586, type: 2}
     - target: {fileID: 6116449485086562217, guid: d9fa78e8c3c4f2b4b8f7f77ca8426cca, type: 3}
       propertyPath: m_TextStyleHashCode
       value: -1183493901
@@ -16608,13 +16608,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132147871823889}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.35355335, y: 0.61237246, z: -0.61237246, w: 0.35355335}
-  m_LocalPosition: {x: -2.6585, y: -0.024, z: -11.1365}
-  m_LocalScale: {x: 0.07, y: 0.07, z: 0.07}
+  m_LocalRotation: {x: 0.16866872, y: 0.68669564, z: -0.68669564, w: 0.16866872}
+  m_LocalPosition: {x: -2.754, y: -0.048, z: -10.46}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 543450653155031390}
-  m_LocalEulerAnglesHint: {x: 90, y: 120, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 152.4, z: 0}
 --- !u!4 &543450653155031390
 Transform:
   m_ObjectHideFlags: 0
@@ -26533,7 +26533,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KeyPickup
   playerCamera: {fileID: 1896588124}
-  heldLocalPosition: {x: 0.3, y: -0.15, z: 0.5}
+  heldLocalPosition: {x: 0.27, y: -0.1, z: 0.5}
   heldLocalRotation: {x: 70, y: 20, z: -140}
   pickupSound: {fileID: 8300000, guid: 507367ded73f1824f905e89f82b0ac20, type: 3}
   pousarUI: {fileID: 1946565452}
