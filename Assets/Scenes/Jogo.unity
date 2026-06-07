@@ -703,7 +703,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 80
-  m_CollisionDetection: 1
+  m_CollisionDetection: 2
 --- !u!4 &120509337
 Transform:
   m_ObjectHideFlags: 0
@@ -7358,7 +7358,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 12
   m_Type: 1
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 0.9622642, g: 0.7040958, b: 0, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -13396,7 +13396,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32bc6ffeec0abfd4497bbf6f374cee8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCam
-  mouseSensitivity: 600
+  mouseSensitivity: 100
   playerBody: {fileID: 120509337}
   bobFrequency: 2
   bobAmplitude: 0.1
@@ -32312,7 +32312,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!33 &5334037119874765989
 MeshFilter:
