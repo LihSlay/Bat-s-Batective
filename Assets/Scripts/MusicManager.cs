@@ -60,7 +60,7 @@ public class MusicManager : MonoBehaviour
 
         // Cenas do jogo
         if (
-            sceneName == "Jogo" 
+            sceneName == "Jogo"
         )
         {
             targetMusic = gameMusic;
@@ -82,11 +82,15 @@ public class MusicManager : MonoBehaviour
                 audioSource.Play();
             }
         }
+        if (sceneName == "Cutscene")
+        {
+            audioSource.Stop();
+            return;
+        }
 
 
         if (targetMusic == null)
         {
-            audioSource.Stop();
             return;
         }
     }
@@ -95,9 +99,13 @@ public class MusicManager : MonoBehaviour
     {
         musicOn = !musicOn;
 
+        Debug.Log("MusicOn = " + musicOn);
+
         PlayerPrefs.SetInt("MusicOn", musicOn ? 1 : 0);
 
         audioSource.mute = !musicOn;
+
+        Debug.Log("Mute = " + audioSource.mute);
 
         if (musicOn && !audioSource.isPlaying)
         {
