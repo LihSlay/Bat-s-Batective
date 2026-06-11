@@ -20,7 +20,7 @@ public class BlocoNotasToggle : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.G))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             bool aberto = !blocoNotasUI.activeSelf;
             blocoNotasUI.SetActive(aberto);
@@ -31,6 +31,9 @@ public class BlocoNotasToggle : MonoBehaviour
 
             if (aberto && notificacaoExclamacao != null)
                 notificacaoExclamacao.SetActive(false);
+
+            if (aberto)
+                IconActive.Instance?.SetBlocoAtivo(false);
         }
     }
 
@@ -52,6 +55,8 @@ public class BlocoNotasToggle : MonoBehaviour
     {
         if (notificacaoExclamacao != null)
             notificacaoExclamacao.SetActive(true);
+
+        IconActive.Instance?.SetBlocoAtivo(true);
 
         if (notificacaoSom != null && SFXManager.Instance != null)
             SFXManager.Instance.PlaySFX(notificacaoSom);

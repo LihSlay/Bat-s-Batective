@@ -37,7 +37,7 @@ public class ConversationStarter : MonoBehaviour
             }
         }
 
-        if (ConversationManager.Instance.IsConversationActive && Input.GetKeyDown(KeyCode.Q))
+        if (ConversationManager.Instance.IsConversationActive && Input.GetKeyDown(KeyCode.F))
         {
             AudioSource audioSource = ConversationManager.Instance.GetComponent<AudioSource>();
             if (audioSource != null) audioSource.Stop();

@@ -89,6 +89,7 @@ public class PlayerController : MonoBehaviour
   void FlipPlayer()
 {
     upsideDown = !upsideDown;
+    IconActive.Instance?.SetFlipAtivo(upsideDown);
 
     Physics.gravity = upsideDown
         ? new Vector3(0, 9.81f, 0)
