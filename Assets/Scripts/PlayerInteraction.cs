@@ -41,6 +41,7 @@ public class PlayerInteraction : MonoBehaviour
             KeyPickup key = hit.collider.GetComponent<KeyPickup>();
             if (key != null && !KeyPickup.HasKey)
             {
+                Debug.Log("Estou a olhar para: " + hit.collider.name);
                 if (!lookingAtKey)
                 {
                     Debug.Log("Estás a ver a Chave. Prime E para a apanhar.");
@@ -60,7 +61,23 @@ public class PlayerInteraction : MonoBehaviour
                 lookingAtKey = false;
             }
 
-            
+            Lever lever = hit.collider.GetComponent<Lever>();
+
+            if (lever == null && hit.collider.transform.parent != null)
+            {
+                lever = hit.collider.transform.parent.GetComponent<Lever>();
+            }
+
+            if (lever != null)
+            {
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    lever.Interact();
+                    return;
+                }
+            }
+
+
             hit.collider.transform.TryGetComponent(out SafeInteraction safeHit);
             if (safeHit == null && hit.collider.transform.parent != null)
                 hit.collider.transform.parent.TryGetComponent(out safeHit);
