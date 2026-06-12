@@ -35,6 +35,13 @@ public class Lever : MonoBehaviour
         }
 
         UpdateVisual();
+
+        LeverPuzzle puzzle = FindFirstObjectByType<LeverPuzzle>();
+
+        if (puzzle != null)
+        {
+            puzzle.CheckPuzzle();
+        }
     }
 
     void UpdateVisual()
@@ -59,5 +66,5 @@ public class Lever : MonoBehaviour
         leverModel.localRotation = Quaternion.Euler(angle, 0, 0);
     }
 
-    
+
 }

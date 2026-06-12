@@ -7,7 +7,7 @@ public class LeverPuzzle : MonoBehaviour
     public Lever lever3;
     public Lever lever4;
 
-    public GameObject door;
+    public SlidingDoor door;
 
     private bool solved = false;
 
@@ -17,9 +17,9 @@ public class LeverPuzzle : MonoBehaviour
 
         bool correct =
             lever1.currentState == LeverState.Up &&
-            lever2.currentState == LeverState.Down &&
-            lever3.currentState == LeverState.Down &&
-            lever4.currentState == LeverState.Middle;
+            lever2.currentState == LeverState.Middle &&
+            lever3.currentState == LeverState.Up &&
+            lever4.currentState == LeverState.Down;
 
         if (correct)
         {
@@ -34,7 +34,7 @@ public class LeverPuzzle : MonoBehaviour
 
         if (door != null)
         {
-            door.SetActive(false);
+            door.OpenDoor();
         }
     }
 }
