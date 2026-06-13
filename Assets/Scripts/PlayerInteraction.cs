@@ -14,6 +14,7 @@ public class PlayerInteraction : MonoBehaviour
     private bool lookingAtSafeInicial = false;
     private bool safeFirstInteraction = false;
 
+    public static FlipZone CurrentLookedFlipZone;
     void Start()
     {
         if (safeHintInicial != null)
@@ -36,6 +37,16 @@ public class PlayerInteraction : MonoBehaviour
             {
                 Debug.Log("Estou a olhar para: " + hit.collider.name);
                 lastObject = hit.collider.name;
+                FlipZone lookedZone = hit.collider.GetComponent<FlipZone>();
+
+                if (lookedZone != null)
+                {
+                    CurrentLookedFlipZone = lookedZone;
+                }
+                else
+                {
+                    CurrentLookedFlipZone = null;
+                }
             }
 
             KeyPickup key = hit.collider.GetComponent<KeyPickup>();

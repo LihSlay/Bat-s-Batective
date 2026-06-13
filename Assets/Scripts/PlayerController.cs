@@ -1,82 +1,41 @@
 using UnityEngine;
+using System.Collections;
 
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
 {
     public float speed = 5f;
 
-
-    
     private Rigidbody rb;
-
     private bool upsideDown = false;
-    private bool canFlip = false;
-    private AudioSource footstepsAudio;
+    private bool isFlipping = false;
 
+    private FlipZone currentFlipZone;
+
+    private Vector3 savedPosition;
+    private Quaternion savedRotation;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        footstepsAudio = GetComponent<AudioSource>();
         rb.freezeRotation = true;
     }
 
     void Update()
     {
-        if (Time.timeScale == 0)
+        if (Input.GetKeyDown(KeyCode.C) && !isFlipping)
         {
-            if (footstepsAudio.isPlaying)
-            {
-                footstepsAudio.Stop();
-            }
-        }
-        if (canFlip && Input.GetKeyDown(KeyCode.C))
-        {
-            FlipPlayer();
+            StartCoroutine(FlipRoutine());
         }
     }
 
     void FixedUpdate()
     {
-        if (Time.timeScale == 0)
-        {
-            if (footstepsAudio.isPlaying)
-            {
-                footstepsAudio.Stop();
-            }
-
+        if (upsideDown || isFlipping)
             return;
-        }
-        // Bloqueia movimento quando o player está upside down
-        if (upsideDown)
-        {
-            // Mantém apenas a velocidade Y (gravidade) e zera movimento horizontal
-            rb.linearVelocity = new Vector3(0, rb.linearVelocity.y, 0);
-            return;
-        }
 
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
-        bool playerMoving = Mathf.Abs(x) > 0.1f || Mathf.Abs(z) > 0.1f;
-
-        bool canPlayFootsteps =
-        playerMoving &&
-        SFXManager.Instance.IsSFXOn();
-
-        if (canPlayFootsteps)
-        {
-            if (!footstepsAudio.isPlaying)
-            {
-                footstepsAudio.Play();
-            }
-        }
-        else
-        {
-            if (footstepsAudio.isPlaying)
-            {
-                footstepsAudio.Stop();
-            }
-        }
 
         Vector3 move = transform.right * x + transform.forward * z;
         Vector3 targetVelocity = move * speed;
@@ -86,60 +45,70 @@ public class PlayerController : MonoBehaviour
         rb.linearVelocity = targetVelocity;
     }
 
-  void FlipPlayer()
-{
-    upsideDown = !upsideDown;
-    IconActive.Instance?.SetFlipAtivo(upsideDown);
-
-    Physics.gravity = upsideDown
-        ? new Vector3(0, 9.81f, 0)
-        : new Vector3(0, -9.81f, 0);
-
-    // Limpa velocidades bugadas
-    rb.linearVelocity = Vector3.zero;
-    rb.angularVelocity = Vector3.zero;
-
-    // Guarda rotação horizontal atual
-    float currentY = transform.eulerAngles.y;
-
-    // Define rotação fixa correta
-    if (upsideDown)
+    IEnumerator FlipRoutine()
     {
-        transform.rotation = Quaternion.Euler(0f, currentY, 180f);
+        isFlipping = true;
+
+        yield return StartCoroutine(
+            ScreenFader.Instance.FadeOut(0.2f)
+        );
+
+        FlipPlayer();
+
+        yield return StartCoroutine(
+            ScreenFader.Instance.FadeIn(0.2f)
+        );
+
+        isFlipping = false;
     }
-    else
-    {
-        transform.rotation = Quaternion.Euler(0f, currentY, 0f);
-    }
-}
 
-    private void OnTriggerEnter(Collider other)
+    void FlipPlayer()
     {
-        Debug.Log("ENTROU NO TRIGGER");
+        currentFlipZone = PlayerInteraction.CurrentLookedFlipZone;
 
-        if (other.CompareTag("Rail"))
+        if (currentFlipZone == null)
         {
-            Debug.Log("PODE VIRAR");
-
-            canFlip = true;
+            Debug.Log("Não estás a olhar para nenhuma FlipZone.");
+            return;
         }
-    }
 
-    private void OnTriggerExit(Collider other)
-    {
-        Debug.Log("SAIU");
-
-        if (other.CompareTag("Rail"))
+        if (currentFlipZone.hangPoint == null)
         {
-            canFlip = false;
+            Debug.LogError("O HangPoint não está atribuído em " + currentFlipZone.name);
+            return;
         }
-    }
 
-    private void OnDisable() // Para garantir que o som dos passo pare se o player for desativado
-    {
-        if (footstepsAudio != null)
+        upsideDown = !upsideDown;
+
+        PlayerCam cam = Camera.main.GetComponent<PlayerCam>();
+
+        if (upsideDown)
         {
-            footstepsAudio.Stop();
+            savedPosition = transform.position;
+            savedRotation = transform.rotation;
+
+            transform.position =
+                currentFlipZone.hangPoint.position + Vector3.down * 0.80f;
+
+            if (cam != null)
+            {
+                cam.SetUpsideDown(true);
+            }
+
+            rb.linearVelocity = Vector3.zero;
+            rb.isKinematic = true;
+        }
+        else
+        {
+            transform.position = savedPosition;
+            transform.rotation = savedRotation;
+
+            if (cam != null)
+            {
+                cam.SetUpsideDown(false);
+            }
+
+            rb.isKinematic = false;
         }
     }
 }
