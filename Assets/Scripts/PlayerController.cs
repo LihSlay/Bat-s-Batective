@@ -63,52 +63,57 @@ public class PlayerController : MonoBehaviour
     }
 
     void FlipPlayer()
+{
+    PlayerCam cam = Camera.main.GetComponent<PlayerCam>();
+
+    // Se já está pendurado, volta ao normal
+    if (upsideDown)
     {
-        currentFlipZone = PlayerInteraction.CurrentLookedFlipZone;
+        upsideDown = false;
 
-        if (currentFlipZone == null)
+        transform.position = savedPosition;
+        transform.rotation = savedRotation;
+
+        if (cam != null)
         {
-            Debug.Log("Não estás a olhar para nenhuma FlipZone.");
-            return;
+            cam.SetUpsideDown(false);
         }
 
-        if (currentFlipZone.hangPoint == null)
-        {
-            Debug.LogError("O HangPoint não está atribuído em " + currentFlipZone.name);
-            return;
-        }
+        rb.isKinematic = false;
 
-        upsideDown = !upsideDown;
-
-        PlayerCam cam = Camera.main.GetComponent<PlayerCam>();
-
-        if (upsideDown)
-        {
-            savedPosition = transform.position;
-            savedRotation = transform.rotation;
-
-            transform.position =
-                currentFlipZone.hangPoint.position + Vector3.down * 0.80f;
-
-            if (cam != null)
-            {
-                cam.SetUpsideDown(true);
-            }
-
-            rb.linearVelocity = Vector3.zero;
-            rb.isKinematic = true;
-        }
-        else
-        {
-            transform.position = savedPosition;
-            transform.rotation = savedRotation;
-
-            if (cam != null)
-            {
-                cam.SetUpsideDown(false);
-            }
-
-            rb.isKinematic = false;
-        }
+        return;
     }
+
+    // Se está normal, precisa de estar a olhar para uma FlipZone
+    currentFlipZone = PlayerInteraction.CurrentLookedFlipZone;
+
+    if (currentFlipZone == null)
+    {
+        Debug.Log("Não estás a olhar para nenhuma FlipZone.");
+        return;
+    }
+
+    if (currentFlipZone.hangPoint == null)
+    {
+        Debug.LogError("O HangPoint não está atribuído em " + currentFlipZone.name);
+        return;
+    }
+
+    upsideDown = true;
+
+    savedPosition = transform.position;
+    savedRotation = transform.rotation;
+
+    transform.position =
+        currentFlipZone.hangPoint.position + Vector3.down * 0.80f;
+
+    if (cam != null)
+    {
+        cam.SetUpsideDown(true);
+    }
+
+    rb.linearVelocity = Vector3.zero;
+    rb.isKinematic = true;
 }
+
+    }
