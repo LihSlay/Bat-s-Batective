@@ -115,5 +115,4 @@ public class PlayerController : MonoBehaviour
     rb.linearVelocity = Vector3.zero;
     rb.isKinematic = true;
 }
-
-    }
+}
