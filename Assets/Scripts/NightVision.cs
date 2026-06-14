@@ -10,6 +10,8 @@ public class NightVision : MonoBehaviour
 
     void Update()
     {
+        if (PauseMenu.IsGamePaused) return;
+
         if (Input.GetKeyDown(KeyCode.V))
         {
             nightVisionOn = !nightVisionOn;

@@ -14,6 +14,10 @@ public class PauseMenu : MonoBehaviour
     public SafeInteraction safeInteraction;
 
     private bool isPaused = false;
+    public bool IsPaused => isPaused;
+
+    // Acessível globalmente para bloquear inputs enquanto a pausa está aberta
+    public static bool IsGamePaused { get; private set; }
 
     void Update()
     {
@@ -47,8 +51,8 @@ public class PauseMenu : MonoBehaviour
 
         if (safeInteraction != null && safeInteraction.IsZoomed)
         {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = false;
+            // Reaplica o cursor personalizado do zoom
+            safeInteraction.ApplyZoomCursor();
         }
         else
         {
@@ -57,6 +61,7 @@ public class PauseMenu : MonoBehaviour
         }
 
         isPaused = false;
+        IsGamePaused = false;
     }
 
     void Pause()
@@ -83,6 +88,7 @@ public class PauseMenu : MonoBehaviour
         Cursor.visible = true;
 
         isPaused = true;
+        IsGamePaused = true;
     }
 
     public void ShowPauseMenu()

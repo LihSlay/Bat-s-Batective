@@ -9,6 +9,10 @@ public class CutsceneVideo : MonoBehaviour
 
     void Start()
     {
+        // Esconde o cursor durante a cutscene
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
         videoPlayer = GetComponent<VideoPlayer>();
 
         RenderTexture rt = new RenderTexture(Screen.width, Screen.height, 0);

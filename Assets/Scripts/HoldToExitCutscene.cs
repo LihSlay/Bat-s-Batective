@@ -24,8 +24,9 @@ public class HoldToExitCutscene : MonoBehaviour
 
             if (holdTimer >= holdDuration)
             {
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
+                // Mantém o cursor escondido ao saltar a cutscene
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
                 SceneManager.LoadScene("Jogo");
             }
         }

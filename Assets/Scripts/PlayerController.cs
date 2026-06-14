@@ -23,6 +23,8 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (PauseMenu.IsGamePaused) return;
+
         if (Input.GetKeyDown(KeyCode.C) && !isFlipping)
         {
             StartCoroutine(FlipRoutine());
@@ -81,6 +83,9 @@ public class PlayerController : MonoBehaviour
 
         rb.isKinematic = false;
 
+        // Volta ao normal — ícone de flip desativado
+        IconActive.Instance?.SetFlipAtivo(false);
+
         return;
     }
 
@@ -111,6 +116,9 @@ public class PlayerController : MonoBehaviour
     {
         cam.SetUpsideDown(true);
     }
+
+    // Está virado numa FlipZone — ícone de flip ativo
+    IconActive.Instance?.SetFlipAtivo(true);
 
     rb.linearVelocity = Vector3.zero;
     rb.isKinematic = true;

@@ -9,6 +9,10 @@ public class CreditosVideo : MonoBehaviour
 
     void Start()
     {
+        // Esconde o cursor durante o vídeo dos créditos
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
         videoPlayer = GetComponent<VideoPlayer>();
 
         RenderTexture rt = new RenderTexture(Screen.width, Screen.height, 0);
@@ -35,6 +39,10 @@ public class CreditosVideo : MonoBehaviour
 
     private void OnVideoFinished(VideoPlayer vp)
     {
+        // Mostra o cursor ao voltar ao menu
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
         SceneManager.LoadScene("MenuInicial");
     }
 }

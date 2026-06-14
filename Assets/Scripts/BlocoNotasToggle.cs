@@ -8,6 +8,7 @@ public class BlocoNotasToggle : MonoBehaviour
     public GameObject descobrirEntry;
     public GameObject bunnyEntry;
     public SafeInteraction safeInteraction;
+    public PauseMenu pauseMenu;
 
     [Header("Notificação")]
     public GameObject notificacaoExclamacao;
@@ -20,14 +21,26 @@ public class BlocoNotasToggle : MonoBehaviour
 
     void Update()
     {
+        // Não permite abrir/fechar o bloco de notas com o menu de pausa aberto
+        if (pauseMenu != null && pauseMenu.IsPaused) return;
+
         if (Input.GetKeyDown(KeyCode.Q))
         {
             bool aberto = !blocoNotasUI.activeSelf;
             blocoNotasUI.SetActive(aberto);
 
             bool emZoom = safeInteraction != null && safeInteraction.IsZoomed;
-            Cursor.lockState = (aberto || emZoom) ? CursorLockMode.None : CursorLockMode.Locked;
-            Cursor.visible = false;
+
+            if (!aberto && emZoom)
+            {
+                // Ao fechar o bloco dentro do zoom, repõe o cursor personalizado visível
+                safeInteraction.ApplyZoomCursor();
+            }
+            else
+            {
+                Cursor.lockState = (aberto || emZoom) ? CursorLockMode.None : CursorLockMode.Locked;
+                Cursor.visible = false;
+            }
 
             if (aberto && notificacaoExclamacao != null)
                 notificacaoExclamacao.SetActive(false);

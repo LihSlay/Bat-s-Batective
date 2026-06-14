@@ -29,6 +29,8 @@ public class IconActive : MonoBehaviour
 
     private void Update()
     {
+        if (PauseMenu.IsGamePaused) return;
+
         if (Input.GetKeyDown(KeyCode.V))
         {
             visaoLigada = !visaoLigada;

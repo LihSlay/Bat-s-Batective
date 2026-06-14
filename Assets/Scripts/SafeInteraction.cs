@@ -10,6 +10,10 @@ public class SafeInteraction : MonoBehaviour
     public RectTransform crosshair;
     public GameObject exitZoomButton;
 
+    [Header("Cursor")]
+    public Texture2D cursorTexture;
+    public Vector2 cursorHotspot = Vector2.zero;
+
     private Transform originalParent;
     private Vector3 originalLocalPosition;
     private Quaternion originalLocalRotation;
@@ -37,13 +41,26 @@ public class SafeInteraction : MonoBehaviour
         playerCamera.transform.SetParent(null);
         playerCamera.transform.SetPositionAndRotation(lockedPosition, lockedRotation);
 
-        // Rato livre mas invisível — o crosshair segue o cursor
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = false;
+        // Esconde o crosshair durante o zoom
+        if (crosshair != null) crosshair.gameObject.SetActive(false);
 
         if (exitZoomButton != null) exitZoomButton.SetActive(true);
 
         isZoomed = true;
+
+        // Rato livre e visível com o cursor personalizado dentro do zoom
+        ApplyZoomCursor();
+    }
+
+    // Reaplica o estado do cursor do zoom (rato livre + textura personalizada).
+    // Chamado também ao retomar do menu de pausa.
+    public void ApplyZoomCursor()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        if (cursorTexture != null)
+            Cursor.SetCursor(cursorTexture, cursorHotspot, CursorMode.Auto);
     }
 
     public void ExitZoom()
@@ -57,9 +74,16 @@ public class SafeInteraction : MonoBehaviour
         if (playerController != null) playerController.enabled = true;
         if (playerCam != null) playerCam.enabled = true;
 
-        // Crosshair volta ao centro
+        // Crosshair volta ao centro e reaparece
         if (crosshair != null)
+        {
             crosshair.anchoredPosition = Vector2.zero;
+            crosshair.gameObject.SetActive(true);
+        }
+
+        // Repõe o cursor padrão do jogo (definido pelo CursorManager) e esconde-o
+        if (CursorManager.Instance != null)
+            CursorManager.Instance.ApplyDefaultCursor();
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
