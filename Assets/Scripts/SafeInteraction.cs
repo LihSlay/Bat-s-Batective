@@ -6,7 +6,7 @@ public class SafeInteraction : MonoBehaviour
     public Transform cameraZoomPoint;
     public Camera playerCamera;
     public MonoBehaviour playerController;
-    public MonoBehaviour playerCam;
+    public PlayerCam playerCam;
     public RectTransform crosshair;
     public GameObject exitZoomButton;
 
