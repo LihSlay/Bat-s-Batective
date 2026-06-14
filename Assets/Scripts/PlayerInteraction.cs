@@ -33,18 +33,20 @@ public class PlayerInteraction : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, interactDistance))
         {
-            //Flipzone adicionadoS
+
             {
                 Debug.Log("Estou a olhar para: " + hit.collider.name);
                 lastObject = hit.collider.name;
                 FlipZone lookedZone = hit.collider.GetComponent<FlipZone>();
 
-                if (lookedZone == null && hit.collider.transform.parent != null)
+                if (lookedZone != null)
                 {
-                    lookedZone = hit.collider.transform.parent.GetComponent<FlipZone>();
+                    CurrentLookedFlipZone = lookedZone;
                 }
-
-                CurrentLookedFlipZone = lookedZone;
+                else
+                {
+                    CurrentLookedFlipZone = null;
+                }
             }
 
             KeyPickup key = hit.collider.GetComponent<KeyPickup>();
