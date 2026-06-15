@@ -52,6 +52,7 @@ public class MusicManager : MonoBehaviour
         if (
             sceneName == "MenuInicial" ||
             sceneName == "SeleçãoNiveis" ||
+            sceneName == "SeleçãoNiveis2" ||
             sceneName == "GameOver"
         )
         {
@@ -82,7 +83,7 @@ public class MusicManager : MonoBehaviour
                 audioSource.Play();
             }
         }
-        if (sceneName == "Cutscene")
+        if (sceneName == "Cutscene" || sceneName == "Carruagem2")
         {
             audioSource.Stop();
             return;
