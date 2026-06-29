@@ -5406,7 +5406,7 @@ MonoBehaviour:
   safeAnimator: {fileID: 60237181}
   correctCode: 1936
   codeDisplay: {fileID: 810138219}
-  safeOpenSound: {fileID: 8300000, guid: c099b756c73dfbe4e81ef6b47cca60ae, type: 3}
+  safeOpenSound: {fileID: 8300000, guid: cd393042c77deee4bb5f4dd5c0fdb859, type: 3}
   correctCodeSound: {fileID: 8300000, guid: 06dc27fd144e2ed43b8d565e7ff4866d, type: 3}
   chaveObject: {fileID: 919132147871823889}
 --- !u!114 &522768763
@@ -9523,6 +9523,7 @@ GameObject:
   - component: {fileID: 1141629182}
   - component: {fileID: 1141629185}
   - component: {fileID: 1141629186}
+  - component: {fileID: 1141629187}
   m_Layer: 0
   m_Name: Porta
   m_TagString: Untagged
@@ -9567,8 +9568,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.048460007, y: 2.2516637, z: 0.98976517}
-  m_Center: {x: -13.880691, y: 0.4095328, z: -9.534321}
+  m_Size: {x: 0.054821968, y: 2.2516637, z: 0.98976517}
+  m_Center: {x: -13.87751, y: 0.4095328, z: -9.534321}
 --- !u!114 &1141629186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9581,6 +9582,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8ea4238826de434684af429049e5ba6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorTrigger
+  playerNear: 0
+--- !u!114 &1141629187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1141629181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a05ac010fd572741bc38b76ade97b28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoorInteraction
 --- !u!65 &1146542347
 BoxCollider:
   m_ObjectHideFlags: 0

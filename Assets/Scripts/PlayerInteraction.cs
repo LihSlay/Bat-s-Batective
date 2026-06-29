@@ -34,6 +34,23 @@ public class PlayerInteraction : MonoBehaviour
         if (Physics.Raycast(ray, out hit, interactDistance))
         {
 
+            //Porta Principal nível1
+            DoorInteraction door = hit.collider.GetComponent<DoorInteraction>();
+
+            if (door == null && hit.collider.transform.parent != null)
+            {
+                door = hit.collider.transform.parent.GetComponent<DoorInteraction>();
+            }
+
+            if (door != null)
+            {
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    door.Interact();
+                    return;
+                }
+            }
+
             {
                 Debug.Log("Estou a olhar para: " + hit.collider.name);
                 lastObject = hit.collider.name;
@@ -153,5 +170,6 @@ public class PlayerInteraction : MonoBehaviour
                 lookingAtSafeInicial = false;
             }
         }
+        
     }
 }

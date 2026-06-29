@@ -25,11 +25,11 @@ public class SFXManager : MonoBehaviour
         sfxOn = PlayerPrefs.GetInt("SFXOn", 1) == 1;
     }
 
-    public void PlaySFX(AudioClip clip)
+    public void PlaySFX(AudioClip clip, float volume = 0.2f)
     {
         if (!sfxOn) return;
 
-        audioSource.PlayOneShot(clip);
+        audioSource.PlayOneShot(clip, volume);
     }
 
     public void ToggleSFX()

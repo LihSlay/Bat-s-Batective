@@ -34,6 +34,8 @@ public class SafePuzzle : MonoBehaviour
 
     public void CheckCode()
     {
+        Debug.Log("CheckCode chamado");
+
         if (opened) return;
 
         if (currentCode == correctCode)
