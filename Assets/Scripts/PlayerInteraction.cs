@@ -54,15 +54,20 @@ public class PlayerInteraction : MonoBehaviour
             {
                 Debug.Log("Estou a olhar para: " + hit.collider.name);
                 lastObject = hit.collider.name;
-                FlipZone lookedZone = hit.collider.GetComponent<FlipZone>();
 
-                if (lookedZone != null)
+                // Procura a FlipZone ao longo de TODO o raio (e nos pais do collider),
+                // para que um objeto à frente (ex.: um item selecionável com outline)
+                // não impeça de detetar a zona.
+                CurrentLookedFlipZone = null;
+                RaycastHit[] flipHits = Physics.RaycastAll(ray, interactDistance);
+                foreach (RaycastHit flipHit in flipHits)
                 {
-                    CurrentLookedFlipZone = lookedZone;
-                }
-                else
-                {
-                    CurrentLookedFlipZone = null;
+                    FlipZone fz = flipHit.collider.GetComponentInParent<FlipZone>();
+                    if (fz != null)
+                    {
+                        CurrentLookedFlipZone = fz;
+                        break;
+                    }
                 }
             }
 
@@ -136,6 +141,7 @@ public class PlayerInteraction : MonoBehaviour
         }
         else
         {
+            CurrentLookedFlipZone = null;
             if (lastObject != "")
             {
                 lastObject = "";

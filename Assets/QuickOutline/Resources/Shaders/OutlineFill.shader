@@ -66,7 +66,10 @@ Shader "Custom/Outline Fill" {
         float3 viewPosition = UnityObjectToViewPos(input.vertex);
         float3 viewNormal = normalize(mul((float3x3)UNITY_MATRIX_IT_MV, normal));
 
-        output.position = UnityViewToClipPos(viewPosition + viewNormal * -viewPosition.z * _OutlineWidth / 1000.0);
+        // Extrusão em espaço de mundo (independente da distância à câmara):
+        // o contorno mantém a mesma espessura relativa ao objeto, em vez de
+        // crescer/encolher em pixels quando o player se afasta.
+        output.position = UnityViewToClipPos(viewPosition + viewNormal * _OutlineWidth / 700.0);
         output.color = _OutlineColor;
 
         return output;
