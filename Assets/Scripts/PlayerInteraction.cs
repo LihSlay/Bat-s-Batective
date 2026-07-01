@@ -7,11 +7,13 @@ public class PlayerInteraction : MonoBehaviour
     public SafeInteraction safeInteraction;
     public InteractionUI safeHint;
     public InteractionUI safeHintInicial;
+    public InteractionUI gradeHint;
 
     private string lastObject = "";
     private bool lookingAtKey = false;
     private bool lookingAtSafe = false;
     private bool lookingAtSafeInicial = false;
+    private bool lookingAtGrade = false;
     private bool safeFirstInteraction = false;
 
     public static FlipZone CurrentLookedFlipZone;
@@ -30,6 +32,7 @@ public class PlayerInteraction : MonoBehaviour
         RaycastHit hit;
 
         bool hittingSafe = false;
+        bool hittingGrade = false;
 
         if (Physics.Raycast(ray, out hit, interactDistance))
         {
@@ -118,6 +121,14 @@ public class PlayerInteraction : MonoBehaviour
             if (safeHit != null && !zoomed)
                 hittingSafe = true;
 
+            // Grade1: deteta o marcador GradeInteraction no collider ou no pai
+            hit.collider.transform.TryGetComponent(out GradeInteraction gradeHit);
+            if (gradeHit == null && hit.collider.transform.parent != null)
+                hit.collider.transform.parent.TryGetComponent(out gradeHit);
+
+            if (gradeHit != null && !zoomed)
+                hittingGrade = true;
+
             if (Input.GetKeyDown(KeyCode.E) && safeHit != null && !safeHit.IsZoomed)
             {
                 safeHit.EnterZoom();
@@ -176,6 +187,20 @@ public class PlayerInteraction : MonoBehaviour
                 lookingAtSafeInicial = false;
             }
         }
-        
+
+        if (gradeHint != null)
+        {
+            if (hittingGrade && !lookingAtGrade)
+            {
+                gradeHint.FadeIn();
+                lookingAtGrade = true;
+            }
+            else if (!hittingGrade && lookingAtGrade)
+            {
+                gradeHint.FadeOut();
+                lookingAtGrade = false;
+            }
+        }
+
     }
 }
