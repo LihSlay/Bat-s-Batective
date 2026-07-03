@@ -10,6 +10,10 @@ public class PlayerController : MonoBehaviour
     private bool upsideDown = false;
     private bool isFlipping = false;
 
+    // Estado partilhado para outros scripts saberem se o jogador está virado
+    // ao contrário (pendurado numa FlipZone) ou na posição normal (chão).
+    public static bool IsUpsideDown { get; private set; }
+
     private FlipZone currentFlipZone;
 
     private Vector3 savedPosition;
@@ -72,6 +76,7 @@ public class PlayerController : MonoBehaviour
     if (upsideDown)
     {
         upsideDown = false;
+        IsUpsideDown = false;
 
         transform.position = savedPosition;
         transform.rotation = savedRotation;
@@ -105,6 +110,7 @@ public class PlayerController : MonoBehaviour
     }
 
     upsideDown = true;
+    IsUpsideDown = true;
 
     savedPosition = transform.position;
     savedRotation = transform.rotation;

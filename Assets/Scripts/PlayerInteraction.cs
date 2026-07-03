@@ -74,6 +74,49 @@ public class PlayerInteraction : MonoBehaviour
                 }
             }
 
+            // FlipNumeros: mostra no bloco de notas a entrada correta consoante
+            // o jogador esteja na posição normal (chão) ou virado ao contrário.
+            FlipNumerosInteraction flipNumeros = hit.collider.GetComponent<FlipNumerosInteraction>();
+            if (flipNumeros == null && hit.collider.transform.parent != null)
+                flipNumeros = hit.collider.transform.parent.GetComponent<FlipNumerosInteraction>();
+
+            if (flipNumeros != null && Input.GetKeyDown(KeyCode.E))
+            {
+                if (BlocoNotasToggle.Instance != null)
+                {
+                    if (PlayerController.IsUpsideDown)
+                        BlocoNotasToggle.Instance.MostrarNumContrarioCerto();
+                    else
+                        BlocoNotasToggle.Instance.MostrarNumContrarioErrado();
+                }
+                return;
+            }
+
+            // Numeros: só é possível interagir com a visão noturna ligada.
+            // Ao premir E nesse estado, mostra a entrada NumVisaoCerto no bloco.
+            NumerosInteraction numeros = hit.collider.GetComponent<NumerosInteraction>();
+            if (numeros == null && hit.collider.transform.parent != null)
+                numeros = hit.collider.transform.parent.GetComponent<NumerosInteraction>();
+
+            if (numeros != null && NightVision.IsNightVisionOn && Input.GetKeyDown(KeyCode.E))
+            {
+                if (BlocoNotasToggle.Instance != null)
+                    BlocoNotasToggle.Instance.MostrarNumVisaoCerto();
+                return;
+            }
+
+            // Porta: ao premir E, mostra a entrada PortaChave no bloco de notas.
+            PortaInteraction porta = hit.collider.GetComponent<PortaInteraction>();
+            if (porta == null && hit.collider.transform.parent != null)
+                porta = hit.collider.transform.parent.GetComponent<PortaInteraction>();
+
+            if (porta != null && Input.GetKeyDown(KeyCode.E))
+            {
+                if (BlocoNotasToggle.Instance != null)
+                    BlocoNotasToggle.Instance.MostrarPortaChave();
+                return;
+            }
+
             KeyPickup key = hit.collider.GetComponent<KeyPickup>();
             if (key != null && !KeyPickup.HasKey)
             {

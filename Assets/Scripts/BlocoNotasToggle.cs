@@ -7,6 +7,10 @@ public class BlocoNotasToggle : MonoBehaviour
     public GameObject blocoNotasUI;
     public GameObject descobrirEntry;
     public GameObject bunnyEntry;
+    public GameObject numContrarioErrado;
+    public GameObject numContrarioCerto;
+    public GameObject numVisaoCerto;
+    public GameObject portaChave;
     public SafeInteraction safeInteraction;
     public PauseMenu pauseMenu;
 
@@ -61,6 +65,46 @@ public class BlocoNotasToggle : MonoBehaviour
     {
         if (bunnyEntry != null)
             bunnyEntry.SetActive(true);
+        MostrarNotificacao();
+    }
+
+    // Chamado quando o jogador interage com o FlipNumeros na posição normal (chão).
+    // Só notifica (som + exclamação) se a entrada ainda não estava ativa.
+    public void MostrarNumContrarioErrado()
+    {
+        if (numContrarioErrado == null || numContrarioErrado.activeSelf) return;
+
+        numContrarioErrado.SetActive(true);
+        MostrarNotificacao();
+    }
+
+    // Chamado quando o jogador interage com o FlipNumeros virado ao contrário.
+    // Só notifica (som + exclamação) se a entrada ainda não estava ativa.
+    public void MostrarNumContrarioCerto()
+    {
+        if (numContrarioCerto == null || numContrarioCerto.activeSelf) return;
+
+        numContrarioCerto.SetActive(true);
+        MostrarNotificacao();
+    }
+
+    // Chamado quando o jogador interage com os Numeros com a visão noturna ligada.
+    // Só notifica (som + exclamação) se a entrada ainda não estava ativa.
+    public void MostrarNumVisaoCerto()
+    {
+        if (numVisaoCerto == null || numVisaoCerto.activeSelf) return;
+
+        numVisaoCerto.SetActive(true);
+        MostrarNotificacao();
+    }
+
+    // Chamado quando o jogador interage com a Porta.
+    // Só notifica (som + exclamação) se a entrada ainda não estava ativa.
+    public void MostrarPortaChave()
+    {
+        if (portaChave == null || portaChave.activeSelf) return;
+
+        portaChave.SetActive(true);
         MostrarNotificacao();
     }
 

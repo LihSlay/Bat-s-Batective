@@ -8,6 +8,9 @@ public class NightVision : MonoBehaviour
 
     private bool nightVisionOn = false;
 
+    // Estado partilhado para outros scripts saberem se a visão noturna está ligada.
+    public static bool IsNightVisionOn { get; private set; }
+
     void Update()
     {
         if (PauseMenu.IsGamePaused) return;
@@ -15,6 +18,7 @@ public class NightVision : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.V))
         {
             nightVisionOn = !nightVisionOn;
+            IsNightVisionOn = nightVisionOn;
 
             volume.SetActive(nightVisionOn);
 
