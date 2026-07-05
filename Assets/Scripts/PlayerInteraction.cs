@@ -38,21 +38,13 @@ public class PlayerInteraction : MonoBehaviour
         {
 
             //Porta Principal nível1
-            DoorInteraction door = hit.collider.GetComponent<DoorInteraction>();
+           DoorInteraction door = hit.collider.GetComponentInParent<DoorInteraction>();
 
-            if (door == null && hit.collider.transform.parent != null)
-            {
-                door = hit.collider.transform.parent.GetComponent<DoorInteraction>();
-            }
-
-            if (door != null)
-            {
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    door.Interact();
-                    return;
-                }
-            }
+if (door != null && Input.GetKeyDown(KeyCode.E))
+{
+    door.Interact();
+    return;
+}
 
             {
                 Debug.Log("Estou a olhar para: " + hit.collider.name);

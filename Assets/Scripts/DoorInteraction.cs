@@ -1,16 +1,24 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class DoorInteraction : MonoBehaviour
 {
+    public SlidingDoor slidingDoor;
+
+    private bool opened = false;
+
     public void Interact()
     {
+        if (opened)
+            return;
+
         if (!KeyPickup.HasKey)
         {
-            Debug.Log("Não tem a chave!");
+            Debug.Log("Precisas da chave.");
             return;
         }
 
-        SceneManager.LoadScene("Créditos");
+        opened = true;
+
+        slidingDoor.OpenDoor();
     }
 }
