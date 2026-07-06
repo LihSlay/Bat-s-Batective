@@ -8962,7 +8962,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32bc6ffeec0abfd4497bbf6f374cee8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCam
-  mouseSensitivity: 200
+  mouseSensitivity: 250
   playerBody: {fileID: 120509337}
   rotationSmoothSpeed: 12
   bobFrequency: 2
