@@ -5503,7 +5503,7 @@ GameObject:
   - component: {fileID: 467882824}
   m_Layer: 0
   m_Name: portateste
-  m_TagString: Untagged
+  m_TagString: Selectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5516,12 +5516,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 467882821}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.624, y: 0.549, z: 0.396}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 543450653155031390}
+  m_Children:
+  - {fileID: 3061086437223769059}
+  m_Father: {fileID: 1141629182}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &467882823
 BoxCollider:
@@ -10925,10 +10926,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 467882822}
   - {fileID: 4819318492035244622}
   - {fileID: 8353479182429108922}
   - {fileID: 5115154133363454438}
-  - {fileID: 3061086437223769059}
   m_Father: {fileID: 543450653155031390}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1141629185
@@ -17322,8 +17323,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 27
-  m_fontSizeBase: 27
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -19138,7 +19139,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 772.2599, y: -496}
+  m_AnchoredPosition: {x: 772.2599, y: -488}
   m_SizeDelta: {x: 154.3965, y: 74.2573}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1946565454
@@ -19166,7 +19167,7 @@ MonoBehaviour:
 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e8f34eadd14b51a4e9f0d820db1de586, type: 2}
-  m_sharedMaterial: {fileID: -8295181696572532552, guid: e8f34eadd14b51a4e9f0d820db1de586, type: 2}
+  m_sharedMaterial: {fileID: -6093576989724706181, guid: e8f34eadd14b51a4e9f0d820db1de586, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -19190,8 +19191,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 27
-  m_fontSizeBase: 27
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -22644,8 +22645,6 @@ Transform:
   - {fileID: 1320697459}
   - {fileID: 1980602988}
   - {fileID: 1141629182}
-  - {fileID: 467882822}
-  - {fileID: 1982775951750100226}
   - {fileID: 39156492}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -24849,22 +24848,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1550284205}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1211446951828008888
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1982775951750100226}
-  m_Layer: 0
-  m_Name: cadeado2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!23 &1215595090485320363
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -27175,21 +27158,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1550284205}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1982775951750100226
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1211446951828008888}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0.0004998989, y: -0.698992, z: 0.00048725557, w: 0.71512914}
-  m_LocalPosition: {x: 314.541, y: -0.629, z: -10.453}
-  m_LocalScale: {x: 3.350347, y: 3.3503466, z: 3.3503466}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 543450653155031390}
-  m_LocalEulerAnglesHint: {x: -0.002, y: -88.692, z: 0.08}
 --- !u!33 &1986808072388563395
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -30226,12 +30194,12 @@ Transform:
   m_GameObject: {fileID: 8937713405125852849}
   serializedVersion: 2
   m_LocalRotation: {x: 0.00049368397, y: 0.70710665, z: 0.00049368397, w: 0.70710665}
-  m_LocalPosition: {x: -13.9167, y: 0.35512102, z: -9.143613}
+  m_LocalPosition: {x: -13.292701, y: -0.19387901, z: -9.539613}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 375500694}
-  m_Father: {fileID: 1141629182}
+  m_Father: {fileID: 467882822}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0.08}
 --- !u!4 &3063506629031264902
 Transform:
@@ -51598,7 +51566,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a05ac010fd572741bc38b76ade97b28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorInteraction
-  slidingDoor: {fileID: 0}
+  slidingDoor: {fileID: 1141629186}
 --- !u!1 &8964182535728423177
 GameObject:
   m_ObjectHideFlags: 0

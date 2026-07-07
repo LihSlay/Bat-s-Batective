@@ -38,13 +38,19 @@ public class PlayerInteraction : MonoBehaviour
         {
 
             //Porta Principal nível1
-           DoorInteraction door = hit.collider.GetComponentInParent<DoorInteraction>();
+            DoorInteraction door = hit.collider.GetComponentInParent<DoorInteraction>();
 
-if (door != null && Input.GetKeyDown(KeyCode.E))
-{
-    door.Interact();
-    return;
-}
+            if (door != null && Input.GetKeyDown(KeyCode.E))
+            {
+                // Com chave: abre a porta e não mostra nota.
+                // Sem chave: não sai daqui, deixa passar para o bloco da
+                // PortaInteraction mais abaixo, que mostra a nota no bloco de notas.
+                if (KeyPickup.HasKey)
+                {
+                    door.Interact();
+                    return;
+                }
+            }
 
             {
                 Debug.Log("Estou a olhar para: " + hit.collider.name);

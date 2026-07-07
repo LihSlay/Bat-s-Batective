@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using DialogueEditor;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -60,6 +61,11 @@ public class PauseMenu : MonoBehaviour
             Cursor.visible = false;
         }
 
+        // Limpa a seleção para o botão "Continuar" não ficar realçado
+        // da próxima vez que o menu de pausa abrir.
+        if (EventSystem.current != null)
+            EventSystem.current.SetSelectedGameObject(null);
+
         isPaused = false;
         IsGamePaused = false;
     }
@@ -86,6 +92,10 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+
+        // Garante que o menu abre sem nenhum botão pré-selecionado.
+        if (EventSystem.current != null)
+            EventSystem.current.SetSelectedGameObject(null);
 
         isPaused = true;
         IsGamePaused = true;
