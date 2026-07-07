@@ -1800,9 +1800,9 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.1
+  m_Volume: 0.04
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1900,6 +1900,7 @@ MonoBehaviour:
   menuMusic: {fileID: 8300000, guid: 8b3f779d30f96e044bcfb19365089cf2, type: 3}
   gameMusic: {fileID: 8300000, guid: 7f05af21ccd1bd142bf618ca1d4e9fa2, type: 3}
   creditsMusic: {fileID: 8300000, guid: f4fcc81f82bdc5e4785963fadf1ad917, type: 3}
+  gameMusicLevel2: {fileID: 8300000, guid: 6637dc92d276103488921771eadf0ec2, type: 3}
 --- !u!1 &2003213364
 GameObject:
   m_ObjectHideFlags: 0

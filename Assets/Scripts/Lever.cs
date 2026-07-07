@@ -12,13 +12,19 @@ public class Lever : MonoBehaviour
     public LeverState currentState = LeverState.Middle;
 
     public Transform leverModel;
+    public AudioClip leverSound;
 
     public float upAngle = -45f;
     public float middleAngle = 0f;
     public float downAngle = 45f;
 
     public void Interact()
+
     {
+        if (SFXManager.Instance != null)
+        {
+            SFXManager.Instance.PlaySFX(leverSound);
+        }
         switch (currentState)
         {
             case LeverState.Up:

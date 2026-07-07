@@ -10,6 +10,7 @@ public class MusicManager : MonoBehaviour
     public AudioClip menuMusic;
     public AudioClip gameMusic;
     public AudioClip creditsMusic;
+    public AudioClip gameMusicLevel2;
 
     private bool musicOn;
 
@@ -71,6 +72,10 @@ public class MusicManager : MonoBehaviour
         {
             targetMusic = creditsMusic;
         }
+        if (sceneName == "Carruagem2")
+        {
+            targetMusic = gameMusicLevel2;
+        }
 
         if (targetMusic != null && audioSource.clip != targetMusic)
         {
@@ -83,7 +88,7 @@ public class MusicManager : MonoBehaviour
                 audioSource.Play();
             }
         }
-        if (sceneName == "Cutscene" || sceneName == "Carruagem2")
+        if (sceneName == "Cutscene")
         {
             audioSource.Stop();
             return;

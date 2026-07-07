@@ -8,6 +8,7 @@ public class LeverPuzzle : MonoBehaviour
     public Lever lever4;
 
     public SlidingDoor door;
+    public AudioClip puzzleSolvedSound;
 
     private bool solved = false;
 
@@ -24,6 +25,10 @@ public class LeverPuzzle : MonoBehaviour
         if (correct)
         {
             solved = true;
+            if (SFXManager.Instance != null)
+            {
+                SFXManager.Instance.PlaySFX(puzzleSolvedSound);
+            }
             OpenDoor();
         }
     }

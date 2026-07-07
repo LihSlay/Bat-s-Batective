@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
     private bool upsideDown = false;
     private bool isFlipping = false;
+    private AudioSource footstepsAudio;
 
     // Estado partilhado para outros scripts saberem se o jogador está virado
     // ao contrário (pendurado numa FlipZone) ou na posição normal (chão).
@@ -22,6 +23,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        footstepsAudio = GetComponent<AudioSource>();
         rb.freezeRotation = true;
     }
 
@@ -42,6 +44,24 @@ public class PlayerController : MonoBehaviour
 
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
+        bool playerMoving = Mathf.Abs(x) > 0.1f || Mathf.Abs(z) > 0.1f;
+
+        bool canPlayFootsteps =
+            playerMoving &&
+            !PauseMenu.IsGamePaused &&
+            SFXManager.Instance != null &&
+            SFXManager.Instance.IsSFXOn();
+
+        if (canPlayFootsteps)
+        {
+            if (!footstepsAudio.isPlaying)
+                footstepsAudio.Play();
+        }
+        else
+        {
+            if (footstepsAudio.isPlaying)
+                footstepsAudio.Stop();
+        }
 
         Vector3 move = transform.right * x + transform.forward * z;
         Vector3 targetVelocity = move * speed;
