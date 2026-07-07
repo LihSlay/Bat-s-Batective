@@ -20,6 +20,15 @@ public class PauseMenu : MonoBehaviour
     // Acessível globalmente para bloquear inputs enquanto a pausa está aberta
     public static bool IsGamePaused { get; private set; }
 
+    void Start()
+    {
+        // Garante que ao (re)carregar a cena do jogo o estado estático de pausa
+        // está limpo — protege contra qualquer saída que não passe pelo Resume().
+        isPaused = false;
+        IsGamePaused = false;
+        Time.timeScale = 1f;
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) && !isPaused)
@@ -125,12 +134,21 @@ public class PauseMenu : MonoBehaviour
     public void GoToMainMenu()
     {
         Time.timeScale = 1f;
+
+        // Sair para o menu não passa pelo Resume(), por isso repõe aqui o
+        // estado de pausa. Sem isto, IsGamePaused (estático) fica preso em
+        // true e bloqueia o virar/visão noturna ao recomeçar o jogo.
+        isPaused = false;
+        IsGamePaused = false;
+
         sceneChanger.LoadScene("MenuInicial");
     }
 
     public void QuitGame()
     {
         Time.timeScale = 1f;
+        isPaused = false;
+        IsGamePaused = false;
         Application.Quit();
     }
 }

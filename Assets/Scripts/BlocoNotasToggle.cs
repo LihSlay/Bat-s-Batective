@@ -108,6 +108,25 @@ public class BlocoNotasToggle : MonoBehaviour
         MostrarNotificacao();
     }
 
+    // ---- Consultas: a nota de cada objeto já foi apontada? ----
+    // Usadas pelo cursor para saber quando deixar de mostrar a pena.
+
+    public bool NotaFlipNumerosApontada(bool aoContrario)
+    {
+        GameObject entry = aoContrario ? numContrarioCerto : numContrarioErrado;
+        return entry != null && entry.activeSelf;
+    }
+
+    public bool NotaNumerosApontada()
+    {
+        return numVisaoCerto != null && numVisaoCerto.activeSelf;
+    }
+
+    public bool NotaPortaApontada()
+    {
+        return portaChave != null && portaChave.activeSelf;
+    }
+
     private void MostrarNotificacao()
     {
         if (notificacaoExclamacao != null)

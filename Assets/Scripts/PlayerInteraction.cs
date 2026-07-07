@@ -9,6 +9,10 @@ public class PlayerInteraction : MonoBehaviour
     public InteractionUI safeHintInicial;
     public InteractionUI gradeHint;
 
+    [Header("Cursor de nota (troca o \"+\" pela pena)")]
+    public GameObject crosshairPadrao;   // o "+" no centro do ecrã
+    public GameObject crosshairNota;     // a imagem penanotar
+
     private string lastObject = "";
     private bool lookingAtKey = false;
     private bool lookingAtSafe = false;
@@ -33,6 +37,9 @@ public class PlayerInteraction : MonoBehaviour
 
         bool hittingSafe = false;
         bool hittingGrade = false;
+        // Verdadeiro quando o jogador está a olhar para um objeto que mostra
+        // nota (flipnumeros, numeros ou porta teste): troca o "+" pela pena.
+        bool hoveringNota = false;
 
         if (Physics.Raycast(ray, out hit, interactDistance))
         {
@@ -78,6 +85,11 @@ public class PlayerInteraction : MonoBehaviour
             if (flipNumeros == null && hit.collider.transform.parent != null)
                 flipNumeros = hit.collider.transform.parent.GetComponent<FlipNumerosInteraction>();
 
+            // Pena só enquanto a nota (consoante a orientação) ainda não foi apontada.
+            if (flipNumeros != null && BlocoNotasToggle.Instance != null &&
+                !BlocoNotasToggle.Instance.NotaFlipNumerosApontada(PlayerController.IsUpsideDown))
+                hoveringNota = true;
+
             if (flipNumeros != null && Input.GetKeyDown(KeyCode.E))
             {
                 if (BlocoNotasToggle.Instance != null)
@@ -96,6 +108,13 @@ public class PlayerInteraction : MonoBehaviour
             if (numeros == null && hit.collider.transform.parent != null)
                 numeros = hit.collider.transform.parent.GetComponent<NumerosInteraction>();
 
+            // Só interativo com a visão noturna ligada, por isso a pena só
+            // aparece nesse estado (sem visão noturna, premir E não faz nada).
+            // E deixa de aparecer assim que a nota é apontada.
+            if (numeros != null && NightVision.IsNightVisionOn && BlocoNotasToggle.Instance != null &&
+                !BlocoNotasToggle.Instance.NotaNumerosApontada())
+                hoveringNota = true;
+
             if (numeros != null && NightVision.IsNightVisionOn && Input.GetKeyDown(KeyCode.E))
             {
                 if (BlocoNotasToggle.Instance != null)
@@ -107,6 +126,11 @@ public class PlayerInteraction : MonoBehaviour
             PortaInteraction porta = hit.collider.GetComponent<PortaInteraction>();
             if (porta == null && hit.collider.transform.parent != null)
                 porta = hit.collider.transform.parent.GetComponent<PortaInteraction>();
+
+            // Pena só enquanto a nota da porta ainda não foi apontada.
+            if (porta != null && BlocoNotasToggle.Instance != null &&
+                !BlocoNotasToggle.Instance.NotaPortaApontada())
+                hoveringNota = true;
 
             if (porta != null && Input.GetKeyDown(KeyCode.E))
             {
@@ -243,5 +267,21 @@ public class PlayerInteraction : MonoBehaviour
             }
         }
 
+        AtualizarCursorNota(hoveringNota, zoomed);
+    }
+
+    // Troca o cursor "+" pela imagem da pena quando o jogador olha para um
+    // objeto interativo com nota. Durante o zoom do cofre não mexe no "+"
+    // (é o SafeInteraction que o gere), apenas garante que a pena está escondida.
+    private void AtualizarCursorNota(bool hoveringNota, bool zoomed)
+    {
+        if (zoomed)
+        {
+            if (crosshairNota != null) crosshairNota.SetActive(false);
+            return;
+        }
+
+        if (crosshairNota != null) crosshairNota.SetActive(hoveringNota);
+        if (crosshairPadrao != null) crosshairPadrao.SetActive(!hoveringNota);
     }
 }
