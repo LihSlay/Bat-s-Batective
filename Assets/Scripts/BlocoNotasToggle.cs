@@ -11,6 +11,7 @@ public class BlocoNotasToggle : MonoBehaviour
     public GameObject numContrarioCerto;
     public GameObject numVisaoCerto;
     public GameObject portaChave;
+    public GameObject moveisEntry;
     public SafeInteraction safeInteraction;
     public PauseMenu pauseMenu;
 
@@ -105,6 +106,26 @@ public class BlocoNotasToggle : MonoBehaviour
         if (portaChave == null || portaChave.activeSelf) return;
 
         portaChave.SetActive(true);
+        MostrarNotificacao();
+    }
+
+    // Chamado da primeira vez que o jogador apanha o Bilhete.
+    // Só notifica (som + exclamação) se a entrada ainda não estava ativa.
+    public void MostrarMoveis()
+    {
+        if (moveisEntry == null || moveisEntry.activeSelf) return;
+
+        moveisEntry.SetActive(true);
+        MostrarNotificacao();
+    }
+
+    // Ativa uma entrada qualquer do bloco de notas (usado pelos BilheteNota:
+    // Mesa, Lixo, Banco...). Só notifica se a entrada ainda não estava ativa.
+    public void MostrarEntrada(GameObject entry)
+    {
+        if (entry == null || entry.activeSelf) return;
+
+        entry.SetActive(true);
         MostrarNotificacao();
     }
 

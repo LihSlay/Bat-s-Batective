@@ -15,6 +15,7 @@ public class PlayerInteraction : MonoBehaviour
 
     private string lastObject = "";
     private bool lookingAtKey = false;
+    private bool lookingAtBilhete = false;
     private bool lookingAtSafe = false;
     private bool lookingAtSafeInicial = false;
     private bool lookingAtGrade = false;
@@ -40,6 +41,36 @@ public class PlayerInteraction : MonoBehaviour
         // Verdadeiro quando o jogador está a olhar para um objeto que mostra
         // nota (flipnumeros, numeros ou porta teste): troca o "+" pela pena.
         bool hoveringNota = false;
+
+        // Bilhete marcado com "alcance ilimitado" (ex.: BilheteArmario) pode ser
+        // lido a qualquer distância quando o jogador está ao contrário, ignorando
+        // paredes e qualquer objeto pelo caminho (procura ao longo de todo o raio).
+        if (PlayerController.IsUpsideDown)
+        {
+            BilheteNota bn = null;
+            RaycastHit[] bilheteHits = Physics.RaycastAll(ray, Mathf.Infinity);
+            foreach (RaycastHit bilheteHit in bilheteHits)
+            {
+                BilheteNota candidato = bilheteHit.collider.GetComponentInParent<BilheteNota>();
+                if (candidato != null && candidato.alcanceIlimitado)
+                {
+                    bn = candidato;
+                    break;
+                }
+            }
+
+            if (bn != null && bn.PodeInteragir)
+            {
+                if (bn.NotaPorApontar) hoveringNota = true;
+
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    bn.Interagir();
+                    AtualizarCursorNota(hoveringNota, zoomed);
+                    return;
+                }
+            }
+        }
 
         if (Physics.Raycast(ray, out hit, interactDistance))
         {
@@ -139,6 +170,22 @@ public class PlayerInteraction : MonoBehaviour
                 return;
             }
 
+            // Bilhetes-nota (BilheteMesa, BilheteLixo, BilheteBanco): por defeito
+            // só com a visão noturna ligada; ao premir E ativa a entrada respetiva.
+            BilheteNota bilheteNota = hit.collider.GetComponent<BilheteNota>();
+            if (bilheteNota == null && hit.collider.transform.parent != null)
+                bilheteNota = hit.collider.transform.parent.GetComponent<BilheteNota>();
+
+            // Pena só enquanto for interagível e a nota ainda não tiver sido apontada.
+            if (bilheteNota != null && bilheteNota.PodeInteragir && bilheteNota.NotaPorApontar)
+                hoveringNota = true;
+
+            if (bilheteNota != null && bilheteNota.PodeInteragir && Input.GetKeyDown(KeyCode.E))
+            {
+                bilheteNota.Interagir();
+                return;
+            }
+
             KeyPickup key = hit.collider.GetComponent<KeyPickup>();
             if (key != null && !KeyPickup.HasKey)
             {
@@ -160,6 +207,36 @@ public class PlayerInteraction : MonoBehaviour
             else
             {
                 lookingAtKey = false;
+            }
+
+            // Bilhete: mesmo comportamento da chave (fica no canto do ecrã,
+            // pousa-se com F), mas com estado próprio para não abrir a porta.
+            BilhetePickup bilhete = hit.collider.GetComponent<BilhetePickup>();
+            if (bilhete == null && hit.collider.transform.parent != null)
+                bilhete = hit.collider.transform.parent.GetComponent<BilhetePickup>();
+
+            if (bilhete != null && !BilhetePickup.HasBilhete)
+            {
+                // Mostra a pena enquanto o bilhete ainda não foi apanhado.
+                hoveringNota = true;
+
+                if (!lookingAtBilhete)
+                {
+                    Debug.Log("Estás a ver o Bilhete. Prime E para o apanhar.");
+                    lookingAtBilhete = true;
+                }
+
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    bilhete.Pickup();
+                    Debug.Log("Bilhete apanhado!");
+                    lookingAtBilhete = false;
+                    return;
+                }
+            }
+            else
+            {
+                lookingAtBilhete = false;
             }
 
             Lever lever = hit.collider.GetComponent<Lever>();
@@ -222,6 +299,7 @@ public class PlayerInteraction : MonoBehaviour
             {
                 lastObject = "";
                 lookingAtKey = false;
+                lookingAtBilhete = false;
             }
         }
 
