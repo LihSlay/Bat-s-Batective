@@ -170,6 +170,23 @@ public class PlayerInteraction : MonoBehaviour
                 return;
             }
 
+            //Cadeado da carrtuagem 3
+            PadlockWheel wheel = hit.collider.GetComponent<PadlockWheel>();
+
+            if (wheel == null)
+            {
+                wheel = hit.collider.GetComponentInParent<PadlockWheel>();
+            }
+
+            if (wheel != null)
+            {
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    wheel.Interact();
+                    return;
+                }
+            }
+
             // Bilhetes-nota (BilheteMesa, BilheteLixo, BilheteBanco): por defeito
             // só com a visão noturna ligada; ao premir E ativa a entrada respetiva.
             BilheteNota bilheteNota = hit.collider.GetComponent<BilheteNota>();

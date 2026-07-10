@@ -12915,7 +12915,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19de2f026c10b0945a1f598953b608dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneTransition
-  sceneName: "Cr\xE9ditos"
+  sceneName: Carruagem3
 --- !u!65 &1645360298
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22787,7 +22787,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22dee58b4e562b74e9e5a712ab9a16ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SlidingDoor
-  openOffset: {x: 0, y: 0, z: -2}
+  openOffset: {x: 0, y: 0, z: -2.5}
   speed: 2
 --- !u!1 &9201633143176530940
 GameObject:
