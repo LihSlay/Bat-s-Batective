@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class SafeInteraction : MonoBehaviour
 {
@@ -89,6 +90,11 @@ public class SafeInteraction : MonoBehaviour
         Cursor.visible = false;
 
         if (exitZoomButton != null) exitZoomButton.SetActive(false);
+
+        // Limpa a seleção para o botão "voltar atrás" não reaparecer preso no
+        // estado realçado/pressionado da próxima vez que entramos no zoom.
+        if (EventSystem.current != null)
+            EventSystem.current.SetSelectedGameObject(null);
 
         isZoomed = false;
     }

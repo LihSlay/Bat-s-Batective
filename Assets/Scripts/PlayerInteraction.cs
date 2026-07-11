@@ -180,7 +180,9 @@ public class PlayerInteraction : MonoBehaviour
 
             if (wheel != null)
             {
-                if (Input.GetKeyDown(KeyCode.E))
+                // Só deixa mexer nas roletas com clique esquerdo e apenas
+                // quando o jogador está no zoom do cadeado (CameraZoomPoint).
+                if (zoomed && Input.GetMouseButtonDown(0))
                 {
                     wheel.Interact();
                     return;
