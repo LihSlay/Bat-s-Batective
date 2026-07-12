@@ -7,6 +7,11 @@ public class BilhetePickup : MonoBehaviour
 {
     public static bool HasBilhete { get; private set; } = false;
 
+    // Verdadeiro depois de o jogador ter apanhado o bilhete pelo menos uma vez.
+    // Ao contrário de HasBilhete, NÃO volta a false ao pousar (F) — serve para
+    // deixar de mostrar a pena depois da primeira interação.
+    public static bool JaInteragido { get; private set; } = false;
+
     public Camera playerCamera;
 
     public Vector3 heldLocalPosition = new Vector3(0.25f, -0.15f, 0.4f);
@@ -24,6 +29,7 @@ public class BilhetePickup : MonoBehaviour
     public void Pickup()
     {
         HasBilhete = true;
+        JaInteragido = true;
         SFXManager.Instance.PlaySFX(pickupSound);
         if (pousarUI != null) pousarUI.SetActive(true);
 
@@ -67,5 +73,6 @@ public class BilhetePickup : MonoBehaviour
     private void OnDestroy()
     {
         HasBilhete = false;
+        JaInteragido = false;
     }
 }

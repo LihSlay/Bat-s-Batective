@@ -236,8 +236,10 @@ public class PlayerInteraction : MonoBehaviour
 
             if (bilhete != null && !BilhetePickup.HasBilhete)
             {
-                // Mostra a pena enquanto o bilhete ainda não foi apanhado.
-                hoveringNota = true;
+                // Mostra a pena só até à primeira interação. Depois de já ter sido
+                // apanhado uma vez, mantém o cursor normal mesmo ao voltar a pegar.
+                if (!BilhetePickup.JaInteragido)
+                    hoveringNota = true;
 
                 if (!lookingAtBilhete)
                 {
@@ -250,6 +252,9 @@ public class PlayerInteraction : MonoBehaviour
                     bilhete.Pickup();
                     Debug.Log("Bilhete apanhado!");
                     lookingAtBilhete = false;
+                    // Ao apanhar, o bilhete vai para a mão (collider desativado),
+                    // por isso repõe já o cursor "+" normal em vez da pena.
+                    AtualizarCursorNota(false, zoomed);
                     return;
                 }
             }
