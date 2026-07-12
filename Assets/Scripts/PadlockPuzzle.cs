@@ -7,10 +7,15 @@ public class PadlockPuzzle : MonoBehaviour
     public PadlockWheel wheel3;
     public PadlockWheel wheel4;
 
-    public int code1 = 3;
-    public int code2 = 7;
-    public int code3 = 2;
-    public int code4 = 5;
+    public PadlockOpen padlock;
+
+    public DoorAnimator leftDoor;
+    public DoorAnimator rightDoor;
+
+    public int code1 = 4;
+    public int code2 = 8;
+    public int code3 = 9;
+    public int code4 = 3;
 
     private bool opened = false;
 
@@ -28,7 +33,20 @@ public class PadlockPuzzle : MonoBehaviour
         {
             opened = true;
 
-            Debug.Log("CADEADO ABERTO!");
+            // Abre o cadeado
+            padlock.Open();
+
+            // Espera um pouco e abre as portas
+            Invoke(nameof(OpenDoors), 0.6f);
         }
+    }
+
+    void OpenDoors()
+    {
+        if (leftDoor != null)
+            leftDoor.OpenDoor();
+
+        if (rightDoor != null)
+            rightDoor.OpenDoor();
     }
 }

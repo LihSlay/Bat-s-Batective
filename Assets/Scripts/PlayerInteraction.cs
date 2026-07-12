@@ -171,23 +171,23 @@ public class PlayerInteraction : MonoBehaviour
             }
 
             //Cadeado da carrtuagem 3
-            PadlockWheel wheel = hit.collider.GetComponent<PadlockWheel>();
+            PadlockArrow arrow = hit.collider.GetComponent<PadlockArrow>();
 
-            if (wheel == null)
+            if (arrow == null)
             {
-                wheel = hit.collider.GetComponentInParent<PadlockWheel>();
+                arrow = hit.collider.GetComponentInParent<PadlockArrow>();
             }
 
-            if (wheel != null)
+            if (arrow != null)
             {
-                // Só deixa mexer nas roletas com clique esquerdo e apenas
-                // quando o jogador está no zoom do cadeado (CameraZoomPoint).
+                Debug.Log("Estou a clicar numa seta!");
                 if (zoomed && Input.GetMouseButtonDown(0))
                 {
-                    wheel.Interact();
+                    arrow.Interact();
                     return;
                 }
             }
+
 
             // Bilhetes-nota (BilheteMesa, BilheteLixo, BilheteBanco): por defeito
             // só com a visão noturna ligada; ao premir E ativa a entrada respetiva.

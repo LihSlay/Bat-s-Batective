@@ -11,7 +11,7 @@ public class PadlockWheel : MonoBehaviour
         UpdateNumber();
     }
 
-    public void Interact()
+    public void NextNumber()
     {
         currentNumber++;
 
@@ -19,18 +19,26 @@ public class PadlockWheel : MonoBehaviour
             currentNumber = 0;
 
         UpdateNumber();
+    }
 
-        PadlockPuzzle puzzle = FindFirstObjectByType<PadlockPuzzle>();
+    public void PreviousNumber()
+    {
+        currentNumber--;
 
-        if (puzzle != null)
-        {
-            puzzle.CheckCode();
-        }
+        if (currentNumber < 0)
+            currentNumber = 9;
+
+        UpdateNumber();
     }
 
     void UpdateNumber()
     {
         if (numberText != null)
             numberText.text = currentNumber.ToString();
+
+        PadlockPuzzle puzzle = FindFirstObjectByType<PadlockPuzzle>();
+
+        if (puzzle != null)
+            puzzle.CheckCode();
     }
 }
