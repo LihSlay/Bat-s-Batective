@@ -20,7 +20,13 @@ public class IconActive : MonoBehaviour
     [SerializeField] private Sprite flipNormal;
     [SerializeField] private Sprite flipAtivo;
 
+    [Header("Ouvir")]
+    [SerializeField] private Image imagemOuvir;
+    [SerializeField] private Sprite ouvirNormal;
+    [SerializeField] private Sprite ouvirAtivo;
+
     private bool visaoLigada;
+    private bool ouvirLigado;
 
     private void Awake()
     {
@@ -36,6 +42,13 @@ public class IconActive : MonoBehaviour
             visaoLigada = !visaoLigada;
             if (imagemVisao != null)
                 imagemVisao.sprite = visaoLigada ? visaoAtivo : visaoNormal;
+        }
+
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            ouvirLigado = !ouvirLigado;
+            if (imagemOuvir != null)
+                imagemOuvir.sprite = ouvirLigado ? ouvirAtivo : ouvirNormal;
         }
 
     }
