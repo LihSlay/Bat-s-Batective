@@ -263,6 +263,23 @@ public class PlayerInteraction : MonoBehaviour
                 lookingAtBilhete = false;
             }
 
+            // Papel1..4: apanha-se com E (fica na mão, pousa-se com F). Só se
+            // pode ter um papel de cada vez, por isso ignora enquanto já houver
+            // outro papel na mão (PapelPickup.HasPapel).
+            PapelPickup papel = hit.collider.GetComponent<PapelPickup>();
+            if (papel == null && hit.collider.transform.parent != null)
+                papel = hit.collider.transform.parent.GetComponent<PapelPickup>();
+
+            if (papel != null && !PapelPickup.HasPapel)
+            {
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    papel.Pickup();
+                    Debug.Log("Papel apanhado!");
+                    return;
+                }
+            }
+
             Lever lever = hit.collider.GetComponent<Lever>();
 
             if (lever == null && hit.collider.transform.parent != null)
