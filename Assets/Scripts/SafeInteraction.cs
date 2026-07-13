@@ -18,6 +18,7 @@ public class SafeInteraction : MonoBehaviour
     private Transform originalParent;
     private Vector3 originalLocalPosition;
     private Quaternion originalLocalRotation;
+    private Vector3 originalLocalScale;
 
     private Vector3 lockedPosition;
     private Quaternion lockedRotation;
@@ -32,6 +33,11 @@ public class SafeInteraction : MonoBehaviour
         originalParent = playerCamera.transform.parent;
         originalLocalPosition = playerCamera.transform.localPosition;
         originalLocalRotation = playerCamera.transform.localRotation;
+        // Guarda a escala local: ao fazer SetParent(null) o Unity reescreve a
+        // localScale da câmara para a escala de mundo. Sem repor isto, a escala
+        // da câmara ia "derivando" a cada zoom, e como o papel apanhado é filho
+        // da câmara, ficava com um offset (held position) diferente.
+        originalLocalScale = playerCamera.transform.localScale;
 
         if (playerController != null) playerController.enabled = false;
         if (playerCam != null) playerCam.enabled = false;
@@ -71,6 +77,7 @@ public class SafeInteraction : MonoBehaviour
         playerCamera.transform.SetParent(originalParent, false);
         playerCamera.transform.localPosition = originalLocalPosition;
         playerCamera.transform.localRotation = originalLocalRotation;
+        playerCamera.transform.localScale = originalLocalScale;
 
         if (playerController != null) playerController.enabled = true;
         if (playerCam != null) playerCam.enabled = true;
