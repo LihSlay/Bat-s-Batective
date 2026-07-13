@@ -110,6 +110,13 @@ public class SafeInteraction : MonoBehaviour
     {
         if (!isZoomed) return;
 
+        // Sair do zoom com a tecla F em vez de clicar no botão "Sair"
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            ExitZoom();
+            return;
+        }
+
         playerCamera.transform.SetPositionAndRotation(lockedPosition, lockedRotation);
 
         if (crosshair != null)

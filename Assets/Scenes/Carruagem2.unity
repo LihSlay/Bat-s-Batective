@@ -1894,7 +1894,6 @@ RectTransform:
   m_Children:
   - {fileID: 1914964069}
   - {fileID: 278861795}
-  - {fileID: 438507139}
   - {fileID: 1166088706}
   - {fileID: 1097468535}
   m_Father: {fileID: 1650355619}
@@ -2574,6 +2573,7 @@ RectTransform:
   m_LocalScale: {x: 0.14, y: 0.14, z: 0.14}
   m_ConstrainProportionsScale: 1
   m_Children:
+  - {fileID: 438507139}
   - {fileID: 1682423604}
   m_Father: {fileID: 1650355619}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3506,6 +3506,11 @@ MonoBehaviour:
   lever2: {fileID: 143552502}
   lever3: {fileID: 1287778605}
   lever4: {fileID: 1587738768}
+  armarioFlip: {fileID: 233206821}
+  armarioNormal: {fileID: 163578739}
+  mesa: {fileID: 586631482}
+  banco: {fileID: 970858586}
+  lixo: {fileID: 1767394357}
   door: {fileID: 9141927313844713952}
   puzzleSolvedSound: {fileID: 8300000, guid: 243fdb209c7046c49975a27ff4cbec1e, type: 3}
 --- !u!4 &367202194
@@ -4283,14 +4288,14 @@ RectTransform:
   m_GameObject: {fileID: 438507138}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.1764662, y: 1.1764662, z: 1.1764662}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 163578740}
+  m_Father: {fileID: 233206822}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -98.08427, y: 19.327526}
+  m_AnchoredPosition: {x: -0.00016021729, y: -0.00018310547}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &438507140
@@ -5809,6 +5814,9 @@ MonoBehaviour:
   imagemFlip: {fileID: 1920190498}
   flipNormal: {fileID: 21300000, guid: 8b46dbfd411ba0f4fade4948128fe591, type: 3}
   flipAtivo: {fileID: 21300000, guid: 41eae1ebf178c4949881f422fe16c67d, type: 3}
+  imagemOuvir: {fileID: 0}
+  ouvirNormal: {fileID: 0}
+  ouvirAtivo: {fileID: 0}
 --- !u!1 &595701451
 GameObject:
   m_ObjectHideFlags: 0

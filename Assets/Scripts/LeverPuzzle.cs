@@ -7,6 +7,14 @@ public class LeverPuzzle : MonoBehaviour
     public Lever lever3;
     public Lever lever4;
 
+    [Header("Objetos do BlocoNotas que têm de estar ativos")]
+    // Canvas -> FundoBlocoNotasUI -> BlocoNotas -> ...
+    public GameObject armarioFlip;
+    public GameObject armarioNormal;
+    public GameObject mesa;
+    public GameObject banco;
+    public GameObject lixo;
+
     public SlidingDoor door;
     public AudioClip puzzleSolvedSound;
 
@@ -15,6 +23,9 @@ public class LeverPuzzle : MonoBehaviour
     public void CheckPuzzle()
     {
         if (solved) return;
+
+        // A porta só abre se todas as pistas do BlocoNotas já estiverem ativas.
+        if (!AllNotesActive()) return;
 
         bool correct =
             lever1.currentState == LeverState.Up &&
@@ -31,6 +42,16 @@ public class LeverPuzzle : MonoBehaviour
             }
             OpenDoor();
         }
+    }
+
+    // Verdadeiro só quando os 5 objetos do BlocoNotas estão ativos.
+    bool AllNotesActive()
+    {
+        return armarioFlip != null && armarioFlip.activeSelf &&
+               armarioNormal != null && armarioNormal.activeSelf &&
+               mesa != null && mesa.activeSelf &&
+               banco != null && banco.activeSelf &&
+               lixo != null && lixo.activeSelf;
     }
 
     void OpenDoor()
