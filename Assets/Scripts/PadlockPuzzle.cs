@@ -9,8 +9,8 @@ public class PadlockPuzzle : MonoBehaviour
 
     public PadlockOpen padlock;
 
-    public DoorAnimator leftDoor;
-    public DoorAnimator rightDoor;
+
+    public PadlockAnimator padlockAnimator;
 
     public int code1 = 4;
     public int code2 = 8;
@@ -18,7 +18,7 @@ public class PadlockPuzzle : MonoBehaviour
     public int code4 = 3;
 
     private bool opened = false;
-
+    public bool IsSolved => opened;
     public void CheckCode()
     {
         if (opened) return;
@@ -33,20 +33,18 @@ public class PadlockPuzzle : MonoBehaviour
         {
             opened = true;
 
-            // Abre o cadeado
+            // A argola sobe
             padlock.Open();
 
-            // Espera um pouco e abre as portas
-            Invoke(nameof(OpenDoors), 0.6f);
+            // Meio segundo depois, o cadeado cai
+            Invoke(nameof(DropPadlock), 0.5f);
         }
     }
-
-    void OpenDoors()
+    void DropPadlock()
     {
-        if (leftDoor != null)
-            leftDoor.OpenDoor();
-
-        if (rightDoor != null)
-            rightDoor.OpenDoor();
+        if (padlockAnimator != null)
+            padlockAnimator.Fall();
     }
+
+
 }

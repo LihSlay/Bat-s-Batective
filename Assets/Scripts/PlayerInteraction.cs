@@ -295,6 +295,7 @@ public class PlayerInteraction : MonoBehaviour
 
             Lever lever = hit.collider.GetComponent<Lever>();
 
+
             if (lever == null && hit.collider.transform.parent != null)
             {
                 lever = hit.collider.transform.parent.GetComponent<Lever>();
@@ -308,6 +309,18 @@ public class PlayerInteraction : MonoBehaviour
                     return;
                 }
             }
+
+            DoorInteractionPuzzle puzzleDoor = hit.collider.GetComponentInParent<DoorInteractionPuzzle>();
+
+            if (puzzleDoor != null)
+            {
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    puzzleDoor.Interact();
+                    return;
+                }
+            }
+
 
 
             hit.collider.transform.TryGetComponent(out SafeInteraction safeHit);
