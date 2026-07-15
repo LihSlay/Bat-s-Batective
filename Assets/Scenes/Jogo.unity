@@ -24271,7 +24271,6 @@ GameObject:
   - component: {fileID: 3469287837792595216}
   - component: {fileID: 3469287837792595215}
   - component: {fileID: 3469287837792595217}
-  - component: {fileID: 3469287837792595218}
   m_Layer: 0
   m_Name: Chave
   m_TagString: Selectable
@@ -30467,7 +30466,7 @@ Transform:
   m_GameObject: {fileID: 8937713405125852849}
   serializedVersion: 2
   m_LocalRotation: {x: 0.00049368397, y: 0.70710665, z: 0.00049368397, w: 0.70710665}
-  m_LocalPosition: {x: -13.292701, y: -0.19387901, z: -9.539613}
+  m_LocalPosition: {x: -13.286, y: -0.19387901, z: -9.539613}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -32046,7 +32045,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KeyPickup
   playerCamera: {fileID: 1896588124}
-  heldLocalPosition: {x: 0.27, y: -0.1, z: 0.5}
+  heldLocalPosition: {x: 0.27, y: -0.09, z: 0.5}
   heldLocalRotation: {x: 70, y: 20, z: -140}
   pickupSound: {fileID: 8300000, guid: 507367ded73f1824f905e89f82b0ac20, type: 3}
   pousarUI: {fileID: 1946565452}
@@ -32077,18 +32076,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &3469287837792595218
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919132147871823889}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb71edb7b116e754bae63fa720d211ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::OutlineSelection
 --- !u!23 &3469979032316941789
 MeshRenderer:
   m_ObjectHideFlags: 0

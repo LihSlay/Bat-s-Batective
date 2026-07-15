@@ -4,6 +4,11 @@ public class KeyPickup : MonoBehaviour
 {
     public static bool HasKey { get; private set; } = false;
 
+    // Verdadeiro depois de o jogador ter apanhado a chave pelo menos uma vez.
+    // Ao contrário de HasKey, NÃO volta a false ao pousar (F) — serve para a
+    // Porta deixar de mostrar a pena/nota a partir daí.
+    public static bool JaApanhada { get; private set; } = false;
+
     public Camera playerCamera;
 
     public Vector3 heldLocalPosition = new Vector3(0.25f, -0.15f, 0.4f);
@@ -25,6 +30,7 @@ public class KeyPickup : MonoBehaviour
     public void Pickup()
     {
         HasKey = true;
+        JaApanhada = true;
         SFXManager.Instance.PlaySFX(pickupSound);
         if (pousarUI != null) pousarUI.SetActive(true);
 
@@ -64,5 +70,6 @@ public class KeyPickup : MonoBehaviour
     private void OnDestroy()
     {
         HasKey = false;
+        JaApanhada = false;
     }
 }

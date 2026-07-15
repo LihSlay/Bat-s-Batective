@@ -158,12 +158,16 @@ public class PlayerInteraction : MonoBehaviour
             if (porta == null && hit.collider.transform.parent != null)
                 porta = hit.collider.transform.parent.GetComponent<PortaInteraction>();
 
+            // Depois de apanhar a chave, a nota da porta deixa de fazer sentido
+            // (mesmo que a chave volte a ser pousada com F).
+            bool portaPorApontar = porta != null && !KeyPickup.JaApanhada;
+
             // Pena só enquanto a nota da porta ainda não foi apontada.
-            if (porta != null && BlocoNotasToggle.Instance != null &&
+            if (portaPorApontar && BlocoNotasToggle.Instance != null &&
                 !BlocoNotasToggle.Instance.NotaPortaApontada())
                 hoveringNota = true;
 
-            if (porta != null && Input.GetKeyDown(KeyCode.E))
+            if (portaPorApontar && Input.GetKeyDown(KeyCode.E))
             {
                 if (BlocoNotasToggle.Instance != null)
                     BlocoNotasToggle.Instance.MostrarPortaChave();
@@ -314,9 +318,15 @@ public class PlayerInteraction : MonoBehaviour
 
             if (puzzleDoor != null)
             {
+                // Pena só depois do cadeado aberto e enquanto a nota do armário
+                // ainda não tiver sido apontada.
+                if (puzzleDoor.NotaPorApontar) hoveringNota = true;
+
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     puzzleDoor.Interact();
+                    // Se abriu, a nota ficou apontada: repõe já o "+".
+                    AtualizarCursorNota(false, zoomed);
                     return;
                 }
             }
@@ -329,6 +339,11 @@ public class PlayerInteraction : MonoBehaviour
 
             if (safeHit != null && !zoomed)
                 hittingSafe = true;
+
+            // Pena enquanto a nota do cofre/cadeado ainda não foi apontada: é a
+            // primeira interação (o E que entra no zoom) que a aponta.
+            if (hittingSafe && !safeFirstInteraction)
+                hoveringNota = true;
 
             // Grade1: deteta o marcador GradeInteraction no collider ou no pai
             hit.collider.transform.TryGetComponent(out GradeInteraction gradeHit);
@@ -349,6 +364,9 @@ public class PlayerInteraction : MonoBehaviour
                         BlocoNotasToggle.Instance.MostrarEntradaCofre();
                 }
 
+                // Acabámos de entrar no zoom: tira já a pena. O "+" fica por
+                // conta do SafeInteraction, que o escondeu no EnterZoom.
+                AtualizarCursorNota(false, true);
                 return;
             }
 

@@ -44,6 +44,19 @@ public class PadlockPuzzle : MonoBehaviour
     {
         if (padlockAnimator != null)
             padlockAnimator.Fall();
+
+        DesligarColliders();
+    }
+
+    // Depois de aberto, o cadeado cai e deixa de ser interativo, por isso os
+    // colliders (o do próprio cadeado e os das rodas) só serviriam para bloquear
+    // o jogador no sítio onde o cadeado ficou.
+    void DesligarColliders()
+    {
+        if (padlock == null) return;
+
+        foreach (Collider col in padlock.GetComponentsInChildren<Collider>())
+            col.enabled = false;
     }
 
 
