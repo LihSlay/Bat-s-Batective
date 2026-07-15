@@ -35,6 +35,7 @@ public class PlayerInteraction : MonoBehaviour
             ? playerCamera.ScreenPointToRay(Input.mousePosition)
             : playerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         RaycastHit hit;
+        Bandejas bandejaOlhada = null;
 
         bool hittingSafe = false;
         bool hittingGrade = false;
@@ -331,6 +332,13 @@ public class PlayerInteraction : MonoBehaviour
                 }
             }
 
+            bandejaOlhada = hit.collider.GetComponent<Bandejas>();
+
+            if (bandejaOlhada == null && hit.collider.transform.parent != null)
+            {
+                bandejaOlhada = hit.collider.transform.parent.GetComponent<Bandejas>();
+            }
+
 
 
             hit.collider.transform.TryGetComponent(out SafeInteraction safeHit);
@@ -385,6 +393,28 @@ public class PlayerInteraction : MonoBehaviour
                 lastObject = "";
                 lookingAtKey = false;
                 lookingAtBilhete = false;
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            if (ControladorOlhos.Instance.olhosFechados)
+            {
+                // Se já estão fechados, abre-os
+                ControladorOlhos.Instance.AlternarOlhos();
+            }
+            else
+            {
+                // Se estiver a olhar para uma bandeja, usa o som dela
+                if (bandejaOlhada != null)
+                {
+                    ControladorOlhos.Instance.AlternarOlhos(bandejaOlhada.fonteAudio);
+                }
+                else
+                {
+                    // Caso contrário, usa o som ambiente
+                    ControladorOlhos.Instance.AlternarOlhos();
+                }
             }
         }
 

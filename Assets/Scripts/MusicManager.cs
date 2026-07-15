@@ -11,6 +11,7 @@ public class MusicManager : MonoBehaviour
     public AudioClip gameMusic;
     public AudioClip creditsMusic;
     public AudioClip gameMusicLevel2;
+    public AudioClip gameMusicLevel3;
 
     private bool musicOn;
 
@@ -52,8 +53,9 @@ public class MusicManager : MonoBehaviour
         // Cenas do menu
         if (
             sceneName == "MenuInicial" ||
-            sceneName == "SeleçãoNiveis" ||
-            sceneName == "SeleçãoNiveis2" ||
+            sceneName == "SeleçãoNivel1" ||
+            sceneName == "SeleçãoNivel2" ||
+            sceneName == "SeleçãoNivel3" ||
             sceneName == "GameOver"
         )
         {
@@ -75,6 +77,10 @@ public class MusicManager : MonoBehaviour
         if (sceneName == "Carruagem2")
         {
             targetMusic = gameMusicLevel2;
+        }
+        if (sceneName == "Carruagem3")
+        {
+            targetMusic = gameMusicLevel3;
         }
 
         if (targetMusic != null && audioSource.clip != targetMusic)

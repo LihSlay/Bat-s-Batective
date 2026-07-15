@@ -7,6 +7,8 @@ public class PadlockOpen : MonoBehaviour
     public float targetY = 0.01f;
     public float speed = 2f;
 
+    public AudioClip unlockSound;
+
     private bool opening = false;
 
     void Update()
@@ -27,5 +29,10 @@ public class PadlockOpen : MonoBehaviour
     public void Open()
     {
         opening = true;
+
+        if (unlockSound != null)
+        {
+            SFXManager.Instance.PlaySFX(unlockSound, 0.50f);
+        }
     }
 }

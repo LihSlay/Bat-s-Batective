@@ -5,6 +5,7 @@ using System.Collections;
 public class PlayerController : MonoBehaviour
 {
     public float speed = 5f;
+    public bool podeMover = true;
 
     private Rigidbody rb;
     private bool upsideDown = false;
@@ -39,8 +40,15 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (upsideDown || isFlipping)
+        if (upsideDown || isFlipping || !podeMover)
+        {
+            rb.linearVelocity = Vector3.zero;
+
+            if (footstepsAudio.isPlaying)
+                footstepsAudio.Stop();
+
             return;
+        }
 
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");

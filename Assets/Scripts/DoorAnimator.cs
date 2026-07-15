@@ -4,7 +4,9 @@ public class DoorAnimator : MonoBehaviour
 {
     private Animator anim;
 
-    void Start()
+    public AudioClip openDoorSound;
+
+    void Awake()
     {
         anim = GetComponent<Animator>();
     }
@@ -12,5 +14,10 @@ public class DoorAnimator : MonoBehaviour
     public void OpenDoor()
     {
         anim.SetTrigger("Open");
+
+        if (openDoorSound != null)
+        {
+            SFXManager.Instance.PlaySFX(openDoorSound, 0.10f);
+        }
     }
 }

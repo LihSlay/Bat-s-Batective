@@ -20,6 +20,7 @@ public class PlayerCam : MonoBehaviour
 
     // ALTERAÇÃO: guarda estado upside down para corrigir controlos
     bool upsideDown = false;
+    public bool podeOlhar = true;
 
     // ALTERAÇÃO: guarda rotação atual e alvo da rotação
     float yRotation = 0f;
@@ -43,6 +44,11 @@ public class PlayerCam : MonoBehaviour
     // ALTERAÇÃO: LateUpdate reduz jitter da câmara
     void LateUpdate()
     {
+        if (!podeOlhar)
+        {
+            return;
+        }
+
         float mouseX = Input.GetAxisRaw("Mouse X") * mouseSensitivity * Time.deltaTime;
         float mouseY = Input.GetAxisRaw("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
