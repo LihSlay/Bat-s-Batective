@@ -1,0 +1,245 @@
+fileFormatVersion: 2
+guid: 444c3640b98bdfb48bb538d8e7239525
+ModelImporter:
+  serializedVersion: 24200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MTRAdesivoBotaoAmaerlo
+    second: {fileID: 2100000, guid: e1707ca146e8d8a48bec93deeb22c510, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MTRAdesivoBotaoBranco
+    second: {fileID: 2100000, guid: 75c69cd42ca82274f92ad344f970654b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MTRAdesivoBotaoEmergencia
+    second: {fileID: 2100000, guid: 015f46149c658954789c9a642b601521, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MTRAdesivoBotaoVermelho
+    second: {fileID: 2100000, guid: edc5c957c02a9684fadfc2ade8dd66e4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MTRAdesivoOff
+    second: {fileID: 2100000, guid: 6598d43fbfd86a2429901a179f130639, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MTRAdesivoOn
+    second: {fileID: 2100000, guid: 61cf07749604c4247a829f55a025606d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MTRBaseBrancaRoda
+    second: {fileID: 2100000, guid: 0839a41ad96595b43a69dd7fe0c8e7dd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MTRBorracha
+    second: {fileID: 2100000, guid: da1cf3ea7eaed0240afae7b4ec07c2c2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MTRBorrachaPneu
+    second: {fileID: 2100000, guid: 0fa4fafe0f38c614d957f8f26c215bad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MTRMetalAluminio
+    second: {fileID: 2100000, guid: 8d2931b13a7347941b53ddcdd6485a0a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MTRMetalBronzeado
+    second: {fileID: 2100000, guid: 5d11fa3029c99a24280caaab3ae6945a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MTRMetalCarbono
+    second: {fileID: 2100000, guid: e6f217839e3bde24aadf4578912b877a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MTRMetalCinza
+    second: {fileID: 2100000, guid: 0c00c8a04159d9a4593c81c98ef90a5b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MTRMetalCobre
+    second: {fileID: 2100000, guid: 94c5db05384afa54fb346de52bc2de61, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MTRMetalPreto
+    second: {fileID: 2100000, guid: f1026f7018c7dcf4a8faf2e57be39f3a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MTRMetalVermelho
+    second: {fileID: 2100000, guid: b466eff7490183845b29d5e254a6127e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MTRPlasticoAmarelo
+    second: {fileID: 2100000, guid: 078c21d5c3ca02a4781a6e3b23d53479, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MTRPlasticoBranco
+    second: {fileID: 2100000, guid: d6447221c44bfd94da1e96dea7d5af41, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MTRPlasticoPreto
+    second: {fileID: 2100000, guid: a1a61887fef231f42ae7bff6eed7aeac, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MTRPlasticoVermelho
+    second: {fileID: 2100000, guid: ca97b91a34b349a4b83dc19d8e9419f6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MTRPlastioAzul
+    second: {fileID: 2100000, guid: 87e9b62436e6fc148838244613280db3, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TXTAdesivoBotaoAmarelo
+    second: {fileID: 2800000, guid: 20c93cb92c41ff24a9f7abedc8dd9783, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TXTAdesivoBotaoBranco
+    second: {fileID: 2800000, guid: 5f16cf7f472e93944a080f7ce028b778, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TXTAdesivoBotaoEmergencia
+    second: {fileID: 2800000, guid: b0d7dcb0fbd9e704896a16d9d7d72b7e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TXTAdesivoBotaoVermelho
+    second: {fileID: 2800000, guid: c035c7c5a0c87b7409cdc9f37a32f475, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TXTAdesivoOff
+    second: {fileID: 2800000, guid: 405e6187aef145a459b41046173d77a4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TXTAdesivoOn
+    second: {fileID: 2800000, guid: a544730d61751484983cc01f24b7e245, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    generateMeshLods: 0
+    meshLodGenerationFlags: 0
+    maximumMeshLod: -1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
