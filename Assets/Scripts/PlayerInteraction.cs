@@ -75,7 +75,14 @@ public class PlayerInteraction : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, interactDistance))
         {
+            // Interação com fios
+            WireCut wire = hit.collider.GetComponentInParent<WireCut>();
 
+            if (wire != null && Input.GetKeyDown(KeyCode.E))
+            {
+                wire.Cut();
+                return;
+            }
             //Porta Principal nível1
             DoorInteraction door = hit.collider.GetComponentInParent<DoorInteraction>();
 
