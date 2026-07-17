@@ -37,14 +37,14 @@ public class IconActive : MonoBehaviour
     {
         if (PauseMenu.IsGamePaused) return;
 
-        if (Input.GetKeyDown(KeyCode.V))
+        if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             visaoLigada = !visaoLigada;
             if (imagemVisao != null)
                 imagemVisao.sprite = visaoLigada ? visaoAtivo : visaoNormal;
         }
 
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             ouvirLigado = !ouvirLigado;
             if (imagemOuvir != null)

@@ -396,7 +396,7 @@ public class PlayerInteraction : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             if (ControladorOlhos.Instance.olhosFechados)
             {
