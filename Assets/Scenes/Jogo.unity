@@ -610,7 +610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19de2f026c10b0945a1f598953b608dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneTransition
-  sceneName: Carruagem2
+  sceneName: CutsceneRaposa
 --- !u!65 &39156494
 BoxCollider:
   m_ObjectHideFlags: 0

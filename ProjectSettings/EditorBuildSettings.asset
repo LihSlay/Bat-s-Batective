@@ -30,6 +30,9 @@ EditorBuildSettings:
     path: Assets/Scenes/GameOver.unity
     guid: 69b1e42aef9f51e4ab6dd83db62e2615
   - enabled: 1
+    path: Assets/Scenes/CutsceneRaposa.unity
+    guid: 30c1da7bfe1b8c249a669d416259be7a
+  - enabled: 1
     path: Assets/Scenes/Carruagem2.unity
     guid: 7e7fb4a3d79ecdc43a77a16a0ce19db8
   - enabled: 1
