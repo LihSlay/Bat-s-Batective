@@ -9,6 +9,7 @@ public class PadlockPuzzle : MonoBehaviour
 
     public PadlockOpen padlock;
 
+    [SerializeField] private ConversationStarterCar3 conversationStarter;
 
     public PadlockAnimator padlockAnimator;
 
@@ -32,6 +33,11 @@ public class PadlockPuzzle : MonoBehaviour
         if (correct)
         {
             opened = true;
+
+            if (conversationStarter != null)
+            {
+                conversationStarter.SetPadlockSolved(true);
+            }
 
             // A argola sobe
             padlock.Open();

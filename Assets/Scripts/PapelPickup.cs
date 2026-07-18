@@ -166,6 +166,7 @@ public class PapelPickup : MonoBehaviour
         if (snapSound != null)
             SFXManager.Instance.PlaySFX(snapSound);
 
+
         return true;
     }
 

@@ -1,6 +1,7 @@
 using UnityEngine;
 
 public class PadlockOpen : MonoBehaviour
+
 {
     public Transform shackle;
 
@@ -8,6 +9,7 @@ public class PadlockOpen : MonoBehaviour
     public float speed = 2f;
 
     public AudioClip unlockSound;
+
 
     private bool opening = false;
 

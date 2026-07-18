@@ -104,7 +104,7 @@ public class PlayerInteraction : MonoBehaviour
             }
 
             {
-                Debug.Log("Estou a olhar para: " + hit.collider.name);
+                //Debug.Log("Estou a olhar para: " + hit.collider.name);
                 lastObject = hit.collider.name;
 
                 // Procura a FlipZone ao longo de TODO o raio (e nos pais do collider),
