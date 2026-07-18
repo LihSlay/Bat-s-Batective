@@ -11,6 +11,11 @@ public class SafeInteraction : MonoBehaviour
     public RectTransform crosshair;
     public GameObject exitZoomButton;
 
+    // Corpo visível do jogador (ex.: PlayerObj). Opcional: quando definido, é
+    // escondido durante o zoom para não aparecer no enquadramento da câmara
+    // (útil quando o ponto de zoom fica virado para o jogador, como no painel).
+    public GameObject playerBody;
+
     [Header("Cursor")]
     public Texture2D cursorTexture;
     public Vector2 cursorHotspot = Vector2.zero;
@@ -25,6 +30,11 @@ public class SafeInteraction : MonoBehaviour
 
     private bool isZoomed = false;
     public bool IsZoomed => isZoomed;
+
+    // Verdadeiro enquanto QUALQUER zoom (cofre/painel) estiver ativo. Serve para
+    // outros sistemas (ex.: pickups) saberem que estão dentro de um zoom e assim
+    // bloquearem o pousar de objetos e esconderem o UI de "pousar".
+    public static bool AnyZoomed { get; private set; } = false;
 
     public void EnterZoom()
     {
@@ -53,7 +63,11 @@ public class SafeInteraction : MonoBehaviour
 
         if (exitZoomButton != null) exitZoomButton.SetActive(true);
 
+        // Esconde o corpo do jogador para não aparecer no plano durante o zoom
+        if (playerBody != null) playerBody.SetActive(false);
+
         isZoomed = true;
+        AnyZoomed = true;
 
         // Rato livre e visível com o cursor personalizado dentro do zoom
         ApplyZoomCursor();
@@ -82,6 +96,9 @@ public class SafeInteraction : MonoBehaviour
         if (playerController != null) playerController.enabled = true;
         if (playerCam != null) playerCam.enabled = true;
 
+        // Repõe o corpo do jogador ao sair do zoom
+        if (playerBody != null) playerBody.SetActive(true);
+
         // Crosshair volta ao centro e reaparece
         if (crosshair != null)
         {
@@ -104,6 +121,7 @@ public class SafeInteraction : MonoBehaviour
             EventSystem.current.SetSelectedGameObject(null);
 
         isZoomed = false;
+        AnyZoomed = false;
     }
 
     void LateUpdate()

@@ -17,7 +17,11 @@ public class OutlineSelection : MonoBehaviour
             highlight = null;
         }
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (!EventSystem.current.IsPointerOverGameObject()) //Make sure you have EventSystem in the hierarchy before using EventSystem
+        // Fora do zoom, não faz outline quando o rato está sobre UI. Dentro do
+        // zoom do painel há UI (moldura/botão) que ficaria por baixo do rato e
+        // bloquearia o outline dos fios, por isso ignora essa guarda no zoom
+        // (tal como o corte já ignora).
+        if (SafeInteraction.AnyZoomed || !EventSystem.current.IsPointerOverGameObject()) //Make sure you have EventSystem in the hierarchy before using EventSystem
         {
             // Apanha TODOS os colliders no caminho do raio e ordena do mais perto ao mais longe,
             // para podermos ignorar as FlipZones que estejam à frente do objeto.
@@ -33,7 +37,6 @@ public class OutlineSelection : MonoBehaviour
                     continue;
                 }
 
-                // Primeiro collider "real" (não-FlipZone): é este que decide.
                 // Sobe na hierarquia à procura da tag "Selectable".
                 Transform target = GetSelectable(h.transform);
                 if (target != null)
@@ -49,11 +52,15 @@ public class OutlineSelection : MonoBehaviour
                     outline.OutlineWidth = 100.0f;
                     outline.enabled = true;
                     highlight = target;
+                    break;
                 }
 
-                // Se o primeiro collider não-FlipZone não for selecionável (ex.: uma parede),
-                // pára aqui: está a tapar o objeto, não deve haver outline.
-                break;
+                // Collider não-selecionável. Fora do zoom pára aqui: está a tapar
+                // o que está atrás, não deve haver outline através dele. Dentro do
+                // zoom do painel a câmara está encostada ao painel, por isso
+                // atravessa-o até encontrar os fios (Selectable) por trás.
+                if (!SafeInteraction.AnyZoomed)
+                    break;
             }
         }
     }

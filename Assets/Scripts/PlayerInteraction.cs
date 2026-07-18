@@ -75,10 +75,15 @@ public class PlayerInteraction : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, interactDistance))
         {
-            // Interação com fios
-            WireCut wire = hit.collider.GetComponentInParent<WireCut>();
+            // Interação com fios: só se corta com o alicate na mão. Dentro do
+            // zoom do painel a câmara está encostada ao painel, por isso procura
+            // o fio ao longo de todo o raio (atravessa o collider do painel que
+            // fica à frente); fora do zoom basta o primeiro collider atingido.
+            WireCut wire = zoomed
+                ? FindWireAlongRay(ray)
+                : hit.collider.GetComponentInParent<WireCut>();
 
-            if (wire != null && Input.GetKeyDown(KeyCode.E))
+            if (wire != null && AlicatePickup.HasAlicate && Input.GetMouseButtonDown(0))
             {
                 wire.Cut();
                 return;
@@ -275,6 +280,37 @@ public class PlayerInteraction : MonoBehaviour
                 lookingAtBilhete = false;
             }
 
+            // Martelo: apanha-se com E (fica na mão, pousa-se com F). Estado
+            // próprio (HasMartelo) para não interferir com a chave/porta.
+            MarteloPickup martelo = hit.collider.GetComponent<MarteloPickup>();
+            if (martelo == null && hit.collider.transform.parent != null)
+                martelo = hit.collider.transform.parent.GetComponent<MarteloPickup>();
+
+            if (martelo != null && !MarteloPickup.HasMartelo)
+            {
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    martelo.Pickup();
+                    Debug.Log("Martelo apanhado!");
+                    return;
+                }
+            }
+
+            // Alicate: apanha-se com E (fica na mão, pousa-se com F). A malha é
+            // filha do objeto-raiz (Rigidbody), por isso procura o pickup ao
+            // longo de toda a cadeia de pais. Estado próprio (HasAlicate).
+            AlicatePickup alicate = hit.collider.GetComponentInParent<AlicatePickup>();
+
+            if (alicate != null && !AlicatePickup.HasAlicate)
+            {
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    alicate.Pickup();
+                    Debug.Log("Alicate apanhado!");
+                    return;
+                }
+            }
+
             // Papel1..4: apanha-se com E (fica na mão). Pousa-se com F no chão
             // ou com E numa bandeja. Só se pode ter um papel de cada vez, por
             // isso ignora enquanto já houver outro papel na mão (HasPapel).
@@ -468,6 +504,21 @@ public class PlayerInteraction : MonoBehaviour
         }
 
         AtualizarCursorNota(hoveringNota, zoomed);
+    }
+
+    // Procura um fio (WireCut) ao longo de TODO o raio, do mais perto ao mais
+    // longe, atravessando colliders que estejam à frente (ex.: o painel durante
+    // o zoom). Devolve o primeiro fio encontrado ou null.
+    private WireCut FindWireAlongRay(Ray ray)
+    {
+        RaycastHit[] hits = Physics.RaycastAll(ray, interactDistance);
+        System.Array.Sort(hits, (a, b) => a.distance.CompareTo(b.distance));
+        foreach (RaycastHit h in hits)
+        {
+            WireCut w = h.collider.GetComponentInParent<WireCut>();
+            if (w != null) return w;
+        }
+        return null;
     }
 
     // Troca o cursor "+" pela imagem da pena quando o jogador olha para um
