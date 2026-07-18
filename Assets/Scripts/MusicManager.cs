@@ -12,6 +12,7 @@ public class MusicManager : MonoBehaviour
     public AudioClip creditsMusic;
     public AudioClip gameMusicLevel2;
     public AudioClip gameMusicLevel3;
+    public AudioClip gameMusicLevel4;
 
     private bool musicOn;
 
@@ -82,6 +83,10 @@ public class MusicManager : MonoBehaviour
         {
             targetMusic = gameMusicLevel3;
         }
+        if (sceneName == "Carruagem4")
+        {
+            targetMusic = gameMusicLevel4;
+        }
 
         if (targetMusic != null && audioSource.clip != targetMusic)
         {
@@ -95,6 +100,12 @@ public class MusicManager : MonoBehaviour
             }
         }
         if (sceneName == "Cutscene")
+        {
+            audioSource.Stop();
+            return;
+        }
+
+        if (sceneName == "CutsceneRaposa")
         {
             audioSource.Stop();
             return;

@@ -1902,6 +1902,7 @@ MonoBehaviour:
   creditsMusic: {fileID: 8300000, guid: f4fcc81f82bdc5e4785963fadf1ad917, type: 3}
   gameMusicLevel2: {fileID: 8300000, guid: 6637dc92d276103488921771eadf0ec2, type: 3}
   gameMusicLevel3: {fileID: 8300000, guid: aace34606f459ab4795fde7c0ada8b66, type: 3}
+  gameMusicLevel4: {fileID: 8300000, guid: 8be8a553688e2a2428ceabc1e528a40c, type: 3}
 --- !u!1 &2003213364
 GameObject:
   m_ObjectHideFlags: 0

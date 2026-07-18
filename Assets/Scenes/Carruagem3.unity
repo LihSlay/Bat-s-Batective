@@ -6238,7 +6238,7 @@ MonoBehaviour:
   playerController: {fileID: 120509338}
   playerCam: {fileID: 1896588126}
   somAmbiente: {fileID: 808076507}
-  olhosFechados: 0
+  olhosFechados: 1
 --- !u!4 &808076506
 Transform:
   m_ObjectHideFlags: 0
