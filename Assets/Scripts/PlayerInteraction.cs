@@ -205,6 +205,27 @@ public class PlayerInteraction : MonoBehaviour
                 }
             }
 
+            SwitchButton switchButton = hit.collider.GetComponent<SwitchButton>();
+
+            if (switchButton == null)
+            {
+                switchButton = hit.collider.GetComponentInChildren<SwitchButton>();
+            }
+
+            if (switchButton == null)
+            {
+                switchButton = hit.collider.GetComponentInParent<SwitchButton>();
+            }
+
+            if (switchButton != null)
+            {
+                if (Input.GetMouseButtonDown(0))
+                {
+                    switchButton.Alternar();
+                    return;
+                }
+            }
+
 
             // Bilhetes-nota (BilheteMesa, BilheteLixo, BilheteBanco): por defeito
             // só com a visão noturna ligada; ao premir E ativa a entrada respetiva.
@@ -292,6 +313,24 @@ public class PlayerInteraction : MonoBehaviour
                 {
                     martelo.Pickup();
                     Debug.Log("Martelo apanhado!");
+                    return;
+                }
+            }
+
+            // Vidro: só quebra se o martelo estiver na mão. Ao premir E
+            // quebra o vidro e toca o som. O collider do vidro é filho do objeto
+            GlassBreak glass = hit.collider.GetComponent<GlassBreak>();
+
+            if (glass == null)
+            {
+                glass = hit.collider.GetComponentInParent<GlassBreak>();
+            }
+
+            if (glass != null && MarteloPickup.HasMartelo)
+            {
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    glass.BreakGlass();
                     return;
                 }
             }
