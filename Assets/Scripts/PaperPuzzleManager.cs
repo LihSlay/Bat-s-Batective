@@ -17,4 +17,15 @@ public class PaperPuzzleManager : MonoBehaviour
 
         return true;
     }
+
+    public bool AreAllPapersPlaced()
+    {
+        foreach (PapelLocal slot in paperSlots)
+        {
+            if (!slot.Ocupado)
+                return false;
+        }
+
+        return true;
+    }
 }

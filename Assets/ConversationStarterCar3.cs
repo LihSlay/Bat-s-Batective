@@ -5,6 +5,7 @@ public class ConversationStarterCar3 : MonoBehaviour
 {
     [SerializeField] private NPCConversation beforePadlockConversation;
     [SerializeField] private NPCConversation afterPadlockConversation;
+    [SerializeField] private NPCConversation ratoConversationRight;
     [SerializeField] private PaperPuzzleManager paperPuzzleManager;
     [SerializeField] private NPCConversation wrongOrderConversation;
 
@@ -14,6 +15,7 @@ public class ConversationStarterCar3 : MonoBehaviour
 
     private bool playerInside = false;
     private bool padlockSolved = false;
+    private bool papersConfirmed = false;
 
     private void OnEnable()
     {
@@ -33,6 +35,7 @@ public class ConversationStarterCar3 : MonoBehaviour
             {
                 Debug.Log("PadlockSolved: " + padlockSolved);
                 Debug.Log("PuzzleSolved: " + paperPuzzleManager.IsPuzzleSolved());
+
                 NPCConversation conversation;
 
                 if (!padlockSolved)
@@ -40,15 +43,31 @@ public class ConversationStarterCar3 : MonoBehaviour
                     // Antes de abrir o cadeado
                     conversation = beforePadlockConversation;
                 }
-                else if (paperPuzzleManager.IsPuzzleSolved())
-                {
-                    // Cadeado aberto + papéis corretos
-                    conversation = afterPadlockConversation;
-                }
                 else
                 {
-                    // Cadeado aberto + papéis errados
-                    conversation = wrongOrderConversation;
+                    // Ainda faltam papéis colocar
+                    if (!paperPuzzleManager.AreAllPapersPlaced())
+                    {
+                        conversation = afterPadlockConversation;
+                    }
+                    // Todos colocados mas errados
+                    else if (!paperPuzzleManager.IsPuzzleSolved())
+                    {
+                        conversation = wrongOrderConversation;
+                    }
+                    // Todos colocados e certos
+                    else
+                    {
+                        if (!papersConfirmed)
+                        {
+                            conversation = ratoConversationRight;
+                            papersConfirmed = true;
+                        }
+                        else
+                        {
+                            conversation = afterPadlockConversation;
+                        }
+                    }
                 }
 
                 ConversationManager.Instance.StartConversation(conversation);

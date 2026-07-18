@@ -197,7 +197,7 @@ public class PlayerInteraction : MonoBehaviour
 
             if (arrow != null)
             {
-                Debug.Log("Estou a clicar numa seta!");
+                // Debug.Log("Estou a clicar numa seta!");
                 if (zoomed && Input.GetMouseButtonDown(0))
                 {
                     arrow.Interact();
