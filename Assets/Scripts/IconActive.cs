@@ -26,7 +26,6 @@ public class IconActive : MonoBehaviour
     [SerializeField] private Sprite ouvirAtivo;
 
     private bool visaoLigada;
-    private bool ouvirLigado;
 
     private void Awake()
     {
@@ -37,20 +36,19 @@ public class IconActive : MonoBehaviour
     {
         if (PauseMenu.IsGamePaused) return;
 
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             visaoLigada = !visaoLigada;
             if (imagemVisao != null)
                 imagemVisao.sprite = visaoLigada ? visaoAtivo : visaoNormal;
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            ouvirLigado = !ouvirLigado;
-            if (imagemOuvir != null)
-                imagemOuvir.sprite = ouvirLigado ? ouvirAtivo : ouvirNormal;
-        }
+    }
 
+    public void SetOuvirAtivo(bool ativo)
+    {
+        if (imagemOuvir != null)
+            imagemOuvir.sprite = ativo ? ouvirAtivo : ouvirNormal;
     }
 
     public void SetBlocoAtivo(bool ativo)

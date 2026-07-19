@@ -13,9 +13,14 @@ public class ConversationStarterCar3 : MonoBehaviour
     [SerializeField] private MonoBehaviour playerController;
     [SerializeField] private MonoBehaviour playerCam;
 
+    [Header("Bloco de Notas")]
+    [Tooltip("Entrada do bloco de notas que fica ativa depois de falar com o Rato com o armário/cadeado já aberto (ex.: PosDialogo).")]
+    [SerializeField] private GameObject posDialogoEntry;
+
     private bool playerInside = false;
     private bool padlockSolved = false;
     private bool papersConfirmed = false;
+    private bool startedByMe = false;
 
     private void OnEnable()
     {
@@ -45,7 +50,7 @@ public class ConversationStarterCar3 : MonoBehaviour
                 }
                 else
                 {
-                    // Ainda faltam pap�is colocar
+                    // Ainda faltam pap�is colocar
                     if (!paperPuzzleManager.AreAllPapersPlaced())
                     {
                         conversation = afterPadlockConversation;
@@ -72,6 +77,7 @@ public class ConversationStarterCar3 : MonoBehaviour
                 }
 
                 ConversationManager.Instance.StartConversation(conversation);
+                startedByMe = true;
                 npcDescriptionText.FadeOut();
                 SetPlayerLocked(true);
             }
@@ -97,6 +103,21 @@ public class ConversationStarterCar3 : MonoBehaviour
 
         if (playerInside)
             npcDescriptionText.FadeIn();
+
+        // Só reage ao fim de um diálogo que este NPC (Rato) iniciou.
+        if (startedByMe)
+        {
+            startedByMe = false;
+
+            // Depois de falar com o Rato, e desde que o armário/cadeado já esteja
+            // aberto, ativa a entrada PosDialogo no bloco de notas (só uma vez).
+            if (padlockSolved &&
+                posDialogoEntry != null &&
+                BlocoNotasToggle.Instance != null)
+            {
+                BlocoNotasToggle.Instance.MostrarEntrada(posDialogoEntry);
+            }
+        }
     }
 
     public void SetPadlockSolved(bool solved)

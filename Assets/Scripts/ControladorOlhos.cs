@@ -5,7 +5,7 @@ public class ControladorOlhos : MonoBehaviour
 {
     public static ControladorOlhos Instance;
 
-    [Header("Referências")]
+    [Header("Referï¿½ncias")]
     public PlayerController playerController;
     public PlayerCam playerCam;
     public AudioSource somAmbiente;
@@ -55,6 +55,9 @@ public class ControladorOlhos : MonoBehaviour
             {
                 somAtual.Play();
             }
+
+            if (IconActive.Instance != null)
+                IconActive.Instance.SetOuvirAtivo(true);
         }
         else
         {
@@ -72,6 +75,9 @@ public class ControladorOlhos : MonoBehaviour
             yield return StartCoroutine(ScreenFader.Instance.FadeIn(0.4f));
 
             olhosFechados = false;
+
+            if (IconActive.Instance != null)
+                IconActive.Instance.SetOuvirAtivo(false);
         }
 
         emTransicao = false;

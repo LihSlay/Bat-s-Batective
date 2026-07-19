@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Amarante-Regular Atlas Material3
+  m_Name: Amarante-Regular Atlas Material3 1
   m_Shader: {fileID: 4800000, guid: 68e6db2ebdc24f95958faec2be5558d6, type: 3}
   m_Parent: {fileID: 2100000, guid: 7e69082f9ed83f8499fae04f24844d66, type: 2}
   m_ModifiedSerializedProperties: 0
@@ -30,6 +30,6 @@ Material:
     m_Ints: []
     m_Floats: []
     m_Colors:
-    - _FaceColor: {r: 1, g: 1, b: 1, a: 1}
+    - _FaceColor: {r: 0.87169814, g: 0.87169814, b: 0.87169814, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

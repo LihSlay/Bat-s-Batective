@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
     {
         if (PauseMenu.IsGamePaused) return;
 
-        if (Input.GetKeyDown(KeyCode.Alpha3) && !isFlipping)
+        if (Input.GetKeyDown(KeyCode.Alpha2) && !isFlipping)
         {
             StartCoroutine(FlipRoutine());
         }

@@ -29,7 +29,7 @@ public class BlocoNotasToggle : MonoBehaviour
         // Não permite abrir/fechar o bloco de notas com o menu de pausa aberto
         if (pauseMenu != null && pauseMenu.IsPaused) return;
 
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             bool aberto = !blocoNotasUI.activeSelf;
             blocoNotasUI.SetActive(aberto);

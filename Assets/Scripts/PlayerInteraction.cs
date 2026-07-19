@@ -187,6 +187,21 @@ public class PlayerInteraction : MonoBehaviour
                 return;
             }
 
+            // Vitrine: ao premir E na primeira vez, mostra a entrada VitrineNota.
+            VitrineInteraction vitrine = hit.collider.GetComponent<VitrineInteraction>();
+            if (vitrine == null && hit.collider.transform.parent != null)
+                vitrine = hit.collider.transform.parent.GetComponent<VitrineInteraction>();
+
+            // Pena só enquanto a nota da vitrine ainda não foi apontada.
+            if (vitrine != null && !vitrine.NotaApontada)
+                hoveringNota = true;
+
+            if (vitrine != null && Input.GetKeyDown(KeyCode.E))
+            {
+                vitrine.MostrarNota();
+                return;
+            }
+
             //Cadeado da carrtuagem 3
             PadlockArrow arrow = hit.collider.GetComponent<PadlockArrow>();
 
@@ -478,7 +493,7 @@ public class PlayerInteraction : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha4))
+        if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             if (ControladorOlhos.Instance.olhosFechados)
             {

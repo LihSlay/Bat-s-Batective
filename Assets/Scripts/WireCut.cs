@@ -10,6 +10,10 @@ public class WireCut : MonoBehaviour
 
     public InteractionUI mensagem;
 
+    [Header("Bloco de Notas")]
+    [Tooltip("Entrada FiosNota que fica ativa na primeira vez que o jogador tenta cortar um fio sem o alicate.")]
+    public GameObject fiosNota;
+
     private void OnMouseDown()
     {
         // Só deixa cortar se o jogador tiver o alicate na mão
@@ -20,6 +24,11 @@ public class WireCut : MonoBehaviour
                 mensagem.FadeIn();
                 Invoke(nameof(EsconderMensagem), 2f);
             }
+
+            // Primeira vez que tenta cortar sem alicate: ativa a nota no bloco.
+            // MostrarEntrada só notifica se a entrada ainda não estava ativa.
+            if (fiosNota != null && BlocoNotasToggle.Instance != null)
+                BlocoNotasToggle.Instance.MostrarEntrada(fiosNota);
 
             return;
         }
