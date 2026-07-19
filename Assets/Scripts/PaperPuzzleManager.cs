@@ -8,6 +8,14 @@ public class PaperPuzzleManager : MonoBehaviour
     {
         foreach (PapelLocal slot in paperSlots)
         {
+            Debug.Log(
+                $"{slot.name} | " +
+                $"Ocupado: {slot.Ocupado} | " +
+                $"Correto: {slot.EstaCorreto} | " +
+                $"Colocado: {(slot.PapelColocado != null ? slot.PapelColocado.name : "Nenhum")} | " +
+                $"Esperado: {(slot.papelCorreto != null ? slot.papelCorreto.name : "Nenhum")}"
+            );
+
             if (!slot.Ocupado)
                 return false;
 

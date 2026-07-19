@@ -53,6 +53,7 @@ public class ConversationStarterCar3 : MonoBehaviour
                     // Todos colocados mas errados
                     else if (!paperPuzzleManager.IsPuzzleSolved())
                     {
+                        papersConfirmed = false;
                         conversation = wrongOrderConversation;
                     }
                     // Todos colocados e certos
