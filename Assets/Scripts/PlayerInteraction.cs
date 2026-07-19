@@ -351,6 +351,7 @@ public class PlayerInteraction : MonoBehaviour
 
             // Vidro: só quebra se o martelo estiver na mão. Ao premir E
             // quebra o vidro e toca o som. O collider do vidro é filho do objeto
+
             GlassBreak glass = hit.collider.GetComponent<GlassBreak>();
 
             if (glass == null)
@@ -358,13 +359,10 @@ public class PlayerInteraction : MonoBehaviour
                 glass = hit.collider.GetComponentInParent<GlassBreak>();
             }
 
-            if (glass != null)
+            if (glass != null && Input.GetMouseButtonDown(0))
             {
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    glass.BreakGlass();
-                    return;
-                }
+                glass.BreakGlass();
+                return;
             }
 
             // Alicate: apanha-se com E (fica na mão, pousa-se com F). A malha é
