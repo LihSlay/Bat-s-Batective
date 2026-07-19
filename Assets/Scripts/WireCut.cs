@@ -4,14 +4,23 @@ public class WireCut : MonoBehaviour
 {
     public GameObject fioCortado;
 
+    public bool Cortado => cortado;
+
     private bool cortado = false;
+
+    public InteractionUI mensagem;
 
     private void OnMouseDown()
     {
         // Só deixa cortar se o jogador tiver o alicate na mão
         if (!AlicatePickup.HasAlicate)
         {
-            Debug.Log("É preciso ter o alicate na mão para cortar o fio.");
+            if (mensagem != null)
+            {
+                mensagem.FadeIn();
+                Invoke(nameof(EsconderMensagem), 2f);
+            }
+
             return;
         }
 
@@ -28,5 +37,11 @@ public class WireCut : MonoBehaviour
         fioCortado.SetActive(true);
 
         Debug.Log("Fio cortado!");
+    }
+
+    void EsconderMensagem()
+    {
+        if (mensagem != null)
+            mensagem.FadeOut();
     }
 }

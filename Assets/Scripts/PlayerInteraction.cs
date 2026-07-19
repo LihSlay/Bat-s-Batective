@@ -326,7 +326,7 @@ public class PlayerInteraction : MonoBehaviour
                 glass = hit.collider.GetComponentInParent<GlassBreak>();
             }
 
-            if (glass != null && MarteloPickup.HasMartelo)
+            if (glass != null)
             {
                 if (Input.GetKeyDown(KeyCode.E))
                 {

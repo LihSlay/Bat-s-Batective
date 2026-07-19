@@ -338,6 +338,56 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlipZone
   hangPoint: {fileID: 1035546939}
+--- !u!1 &49287921
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 49287923}
+  - component: {fileID: 49287922}
+  m_Layer: 0
+  m_Name: WirePuzzle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &49287922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 49287921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7567dab3e367c448a0cd9937bcf38e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WirePuzzle
+  fio1: {fileID: 8209713074808422037}
+  fio2: {fileID: 8720303799026034173}
+  fio3: {fileID: 6865014155987831485}
+  fio4: {fileID: 8217514005887085824}
+  fio5: {fileID: 8667125052029447830}
+  fio6: {fileID: 2004445839}
+--- !u!4 &49287923
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 49287921}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 27.37986, y: 1.49037, z: -23.03281}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &56936492
 GameObject:
   m_ObjectHideFlags: 0
@@ -1747,10 +1797,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9469552f21ee4304b9489d212025c905, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SwitchPuzzle
-  botao1: {fileID: 8997212731162151311}
-  botao2: {fileID: 1818908268}
-  botao3: {fileID: 1140467489}
-  botao4: {fileID: 1307584803}
+  botao1: {fileID: 0}
+  botao2: {fileID: 0}
+  botao3: {fileID: 0}
+  botao4: {fileID: 0}
   corretoBotao1: 1
   corretoBotao2: 0
   corretoBotao3: 0
@@ -2884,7 +2934,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7a574cd29f0249438cdca8179b194cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SwitchButton
-  ligado: 1
+  ligado: 0
 --- !u!65 &547238839
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4225,7 +4275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7a574cd29f0249438cdca8179b194cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SwitchButton
-  ligado: 1
+  ligado: 0
 --- !u!65 &689521615
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4979,7 +5029,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7a574cd29f0249438cdca8179b194cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SwitchButton
-  ligado: 1
+  ligado: 0
 --- !u!65 &867293286
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6428,7 +6478,6 @@ GameObject:
   - component: {fileID: 1140467488}
   - component: {fileID: 1140467487}
   - component: {fileID: 1140467486}
-  - component: {fileID: 1140467489}
   m_Layer: 0
   m_Name: Botao3
   m_TagString: Untagged
@@ -6530,19 +6579,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1140467484}
   m_Mesh: {fileID: -647431810690819447, guid: b9470283d3402da43b82028b97c1324e, type: 3}
---- !u!114 &1140467489
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1140467484}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7a574cd29f0249438cdca8179b194cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SwitchButton
-  ligado: 0
 --- !u!1 &1160647055
 GameObject:
   m_ObjectHideFlags: 0
@@ -6916,7 +6952,6 @@ GameObject:
   - component: {fileID: 1307584802}
   - component: {fileID: 1307584801}
   - component: {fileID: 1307584800}
-  - component: {fileID: 1307584803}
   m_Layer: 0
   m_Name: Botao4
   m_TagString: Untagged
@@ -7018,19 +7053,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1307584798}
   m_Mesh: {fileID: -647431810690819447, guid: b9470283d3402da43b82028b97c1324e, type: 3}
---- !u!114 &1307584803
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1307584798}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7a574cd29f0249438cdca8179b194cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SwitchButton
-  ligado: 0
 --- !u!1 &1310491079
 GameObject:
   m_ObjectHideFlags: 0
@@ -10339,7 +10361,6 @@ GameObject:
   - component: {fileID: 1818908267}
   - component: {fileID: 1818908266}
   - component: {fileID: 1818908265}
-  - component: {fileID: 1818908268}
   m_Layer: 0
   m_Name: Botao2
   m_TagString: Untagged
@@ -10441,19 +10462,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1818908263}
   m_Mesh: {fileID: -647431810690819447, guid: b9470283d3402da43b82028b97c1324e, type: 3}
---- !u!114 &1818908268
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1818908263}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7a574cd29f0249438cdca8179b194cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SwitchButton
-  ligado: 0
 --- !u!1 &1823342136
 GameObject:
   m_ObjectHideFlags: 0
@@ -17313,7 +17321,6 @@ GameObject:
   - component: {fileID: 6741783339448756988}
   - component: {fileID: 8997212731162151309}
   - component: {fileID: 8997212731162151310}
-  - component: {fileID: 8997212731162151311}
   m_Layer: 0
   m_Name: Botao1
   m_TagString: Untagged
@@ -17792,7 +17799,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7a574cd29f0249438cdca8179b194cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SwitchButton
-  ligado: 1
+  ligado: 0
 --- !u!95 &7163607085408214621
 Animator:
   serializedVersion: 7
@@ -19193,19 +19200,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.66542, y: 0.10915788, z: 1.0538865}
   m_Center: {x: -1.5602244e-10, y: -0.00867996, z: -0.000002861541}
---- !u!114 &8997212731162151311
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6622266543705813651}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7a574cd29f0249438cdca8179b194cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SwitchButton
-  ligado: 0
 --- !u!4 &9070249312411408603
 Transform:
   m_ObjectHideFlags: 0
@@ -19466,3 +19460,4 @@ SceneRoots:
   - {fileID: 117930331}
   - {fileID: 858242934}
   - {fileID: 304991849}
+  - {fileID: 49287923}
