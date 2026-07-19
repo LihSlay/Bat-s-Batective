@@ -365,6 +365,21 @@ public class PlayerInteraction : MonoBehaviour
                 }
             }
 
+            // Chave1..3 (Carruagem 4): apanha-se com E e pousa-se com F. Só se
+            // pode segurar uma de cada vez, por isso ignora enquanto já houver
+            // outra chave na mão.
+            ChavePickup chave = hit.collider.GetComponentInParent<ChavePickup>();
+
+            if (chave != null && !ChavePickup.HasChave)
+            {
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    chave.Pickup();
+                    Debug.Log("Chave apanhada!");
+                    return;
+                }
+            }
+
             // Papel1..4: apanha-se com E (fica na mão). Pousa-se com F no chão
             // ou com E numa bandeja. Só se pode ter um papel de cada vez, por
             // isso ignora enquanto já houver outro papel na mão (HasPapel).

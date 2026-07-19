@@ -17961,15 +17961,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: a8d35b9c21956bc41ba4a855b7e9f64e, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.98
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a8d35b9c21956bc41ba4a855b7e9f64e, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.98
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a8d35b9c21956bc41ba4a855b7e9f64e, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.98
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a8d35b9c21956bc41ba4a855b7e9f64e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19044,7 +19044,7 @@ GameObject:
   - component: {fileID: 1947276689}
   m_Layer: 0
   m_Name: Numeros
-  m_TagString: Selectable
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20483,7 +20483,7 @@ GameObject:
   - component: {fileID: 2140466452}
   m_Layer: 0
   m_Name: FlipNumeros
-  m_TagString: Selectable
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26164,7 +26164,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: cd5e4aad37c348741892385750c3e03f, type: 3}
+  - {fileID: 2100000, guid: b2f2fd87e69e7ba4c815f54a5e0677ce, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -31559,8 +31559,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KeyPickup
   playerCamera: {fileID: 1896588124}
-  heldLocalPosition: {x: 0.27, y: -0.09, z: 0.5}
-  heldLocalRotation: {x: 70, y: 20, z: -140}
+  heldLocalPosition: {x: 0.31, y: -0.08, z: 0.5}
+  heldLocalRotation: {x: -3.6, y: 90, z: -111}
   pickupSound: {fileID: 8300000, guid: 507367ded73f1824f905e89f82b0ac20, type: 3}
   pousarUI: {fileID: 1946565452}
 --- !u!54 &3469287837792595217
@@ -52225,8 +52225,8 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1016795906}
-  - {fileID: 543450653155031390}
   - {fileID: 120509337}
+  - {fileID: 543450653155031390}
   - {fileID: 592723195}
   - {fileID: 451934527}
   - {fileID: 2140466450}
