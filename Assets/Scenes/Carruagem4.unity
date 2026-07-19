@@ -6731,7 +6731,7 @@ GameObject:
   - component: {fileID: 1216738002}
   - component: {fileID: 1216738001}
   m_Layer: 5
-  m_Name: VitrineNota
+  m_Name: VitrinaNota
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16262,7 +16262,7 @@ GameObject:
   - component: {fileID: 6776786642611282194}
   - component: {fileID: 6776786642611282193}
   m_Layer: 0
-  m_Name: Vidro.003
+  m_Name: VidroFrente
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16472,7 +16472,7 @@ GameObject:
   - component: {fileID: 6579992037048544150}
   - component: {fileID: 6579992037048544149}
   m_Layer: 0
-  m_Name: Vitrine
+  m_Name: VitrinaHitboxes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17515,7 +17515,7 @@ GameObject:
   - component: {fileID: 1219419802822086685}
   - component: {fileID: 6446478967970914789}
   m_Layer: 0
-  m_Name: Vidro.001
+  m_Name: VidroEsq
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18525,7 +18525,7 @@ GameObject:
   - component: {fileID: 4486788047469417232}
   - component: {fileID: 8679832948316464539}
   m_Layer: 0
-  m_Name: Vidro.002
+  m_Name: VidroDir
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18711,7 +18711,7 @@ GameObject:
   - component: {fileID: 7039336491621832821}
   - component: {fileID: 8012266094675986156}
   m_Layer: 0
-  m_Name: Vidro
+  m_Name: "VidroTr\xE1s"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
