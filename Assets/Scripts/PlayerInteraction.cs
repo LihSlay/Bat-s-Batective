@@ -202,6 +202,23 @@ public class PlayerInteraction : MonoBehaviour
                 return;
             }
 
+            // Papel1..Papel9 (Carruagem 4): ao premir E, ativa a entrada
+            // respetiva (pap1..pap9) no bloco de notas. A malha visível é filha
+            // do papel, por isso procura o marcador ao longo da cadeia de pais.
+            PapelNota papelNota = hit.collider.GetComponentInParent<PapelNota>();
+
+            // Pena só enquanto a nota deste papel ainda não foi apontada.
+            if (papelNota != null && papelNota.NotaPorApontar)
+                hoveringNota = true;
+
+            if (papelNota != null && Input.GetKeyDown(KeyCode.E))
+            {
+                papelNota.MostrarNota();
+                // A nota ficou apontada: repõe já o "+".
+                AtualizarCursorNota(false, zoomed);
+                return;
+            }
+
             //Cadeado da carrtuagem 3
             PadlockArrow arrow = hit.collider.GetComponent<PadlockArrow>();
 

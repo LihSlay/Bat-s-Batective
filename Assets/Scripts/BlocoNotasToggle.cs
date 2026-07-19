@@ -12,6 +12,15 @@ public class BlocoNotasToggle : MonoBehaviour
     public GameObject numVisaoCerto;
     public GameObject portaChave;
     public GameObject moveisEntry;
+
+    [Tooltip("Entrada geral que aparece na primeira interação com qualquer " +
+             "Papel1..Papel9 da Carruagem 4 (papeisencontrar).")]
+    public GameObject papeisEncontrar;
+
+    [Tooltip("Risco por cima da entrada papeisencontrar. Fica ativo quando TODOS " +
+             "os papéis já estiverem anotados no bloco de notas.")]
+    public GameObject riscado;
+
     public SafeInteraction safeInteraction;
     public PauseMenu pauseMenu;
 
@@ -127,6 +136,43 @@ public class BlocoNotasToggle : MonoBehaviour
 
         entry.SetActive(true);
         MostrarNotificacao();
+    }
+
+    // Chamado por cada PapelNota (Papel1..Papel9 da Carruagem 4). Ativa a
+    // entrada desse papel e, na primeira vez que qualquer papel é anotado,
+    // também a entrada geral papeisencontrar. Notifica uma só vez, mesmo
+    // quando as duas entradas passam a ativas ao mesmo tempo.
+    public void MostrarPapel(GameObject entry)
+    {
+        bool entradaPapelNova = entry != null && !entry.activeSelf;
+        bool entradaGeralNova = papeisEncontrar != null && !papeisEncontrar.activeSelf;
+
+        if (!entradaPapelNova && !entradaGeralNova) return;
+
+        if (entradaPapelNova) entry.SetActive(true);
+        if (entradaGeralNova) papeisEncontrar.SetActive(true);
+
+        VerificarPapeisTodosAnotados();
+
+        MostrarNotificacao();
+    }
+
+    // O Riscado aparece assim que não restar nenhum papel por anotar. Procura
+    // os PapelNota na cena (incluindo inativos) em vez de uma lista fixa, para
+    // continuar certo se algum papel for acrescentado ou removido.
+    private void VerificarPapeisTodosAnotados()
+    {
+        if (riscado == null || riscado.activeSelf) return;
+
+        PapelNota[] papeis = FindObjectsByType<PapelNota>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+        if (papeis.Length == 0) return;
+
+        foreach (PapelNota papel in papeis)
+        {
+            if (papel.NotaPorApontar) return;
+        }
+
+        riscado.SetActive(true);
     }
 
     // ---- Consultas: a nota de cada objeto já foi apontada? ----
