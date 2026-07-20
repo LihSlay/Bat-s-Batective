@@ -3764,7 +3764,7 @@ MonoBehaviour:
   lever2: {fileID: 143552502}
   lever3: {fileID: 1287778605}
   lever4: {fileID: 1587738768}
-  armarioFlip: {fileID: 0}
+  armarioFlip: {fileID: 233206821}
   armarioNormal: {fileID: 163578739}
   mesa: {fileID: 586631482}
   banco: {fileID: 970858586}

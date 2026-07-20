@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class PanelPuzzleManager : MonoBehaviour
 {
+    [SerializeField] private AudioSource somBomba;
     public SwitchPuzzle switchPuzzle;
     public WirePuzzle wirePuzzle;
     public KeyPuzzle keyPuzzle;
@@ -14,6 +15,10 @@ public class PanelPuzzleManager : MonoBehaviour
 
     public void ConfirmarPainel()
     {
+        if (somBomba != null && somBomba.isPlaying)
+        {
+            somBomba.Stop();
+        }
         if (switchPuzzle.EstaResolvido() &&
             wirePuzzle.EstaResolvido() &&
             keyPuzzle.EstaResolvido())
