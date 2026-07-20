@@ -18,7 +18,7 @@ public class PanelPuzzleManager : MonoBehaviour
             wirePuzzle.EstaResolvido() &&
             keyPuzzle.EstaResolvido())
         {
-            SceneManager.LoadScene("Créditos");
+            SceneManager.LoadScene("CutsceneFinal");
         }
         else
         {

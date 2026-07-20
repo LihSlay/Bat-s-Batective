@@ -6,6 +6,8 @@ public class ConfirmButton : MonoBehaviour
 
     public void Confirmar()
     {
+
+        Debug.Log("Botão clicado!");
         panelPuzzleManager.ConfirmarPainel();
     }
 }
