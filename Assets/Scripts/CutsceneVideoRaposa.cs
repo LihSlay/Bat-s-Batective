@@ -15,6 +15,9 @@ public class CutsceneVideoRaposa : MonoBehaviour
 
         videoPlayer = GetComponent<VideoPlayer>();
 
+        videoPlayer.source = VideoSource.Url;
+        videoPlayer.url = System.IO.Path.Combine(Application.streamingAssetsPath, "RAPOSA CUTSCENE GRV.mp4");
+
         RenderTexture rt = new RenderTexture(Screen.width, Screen.height, 0);
         videoPlayer.targetTexture = rt;
 

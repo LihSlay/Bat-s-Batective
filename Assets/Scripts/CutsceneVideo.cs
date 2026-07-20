@@ -15,6 +15,9 @@ public class CutsceneVideo : MonoBehaviour
 
         videoPlayer = GetComponent<VideoPlayer>();
 
+        videoPlayer.source = VideoSource.Url;
+        videoPlayer.url = System.IO.Path.Combine(Application.streamingAssetsPath, "INICIO E CORUJA GRV.mp4");
+
         RenderTexture rt = new RenderTexture(Screen.width, Screen.height, 0);
         videoPlayer.targetTexture = rt;
 
