@@ -365,6 +365,53 @@ public class PlayerInteraction : MonoBehaviour
                 return;
             }
 
+            //
+            //
+            KeySlot slot = hit.collider.GetComponent<KeySlot>();
+
+            if (slot == null)
+            {
+                slot = hit.collider.GetComponentInParent<KeySlot>();
+            }
+
+            if (slot != null && Input.GetMouseButtonDown(0))
+            {
+                // Se já existe uma chave na entrada, retira-a
+                if (slot.Ocupado)
+                {
+                    slot.RetirarChave();
+                }
+                // Se a entrada está vazia e o jogador tem uma chave
+                else if (ChavePickup.HasChave)
+                {
+                    slot.ColocarChave(ChavePickup.Segurada);
+                }
+
+                return;
+            }
+
+            //
+            //
+            ConfirmButton confirmButton = hit.collider.GetComponent<ConfirmButton>();
+
+            if (confirmButton == null)
+            {
+                confirmButton = hit.collider.GetComponentInParent<ConfirmButton>();
+            }
+
+            if (confirmButton != null)
+            {
+                Debug.Log("Botão Confirmar encontrado!");
+
+                if (Input.GetMouseButtonDown(0))
+                {
+                    Debug.Log("Clique no botão!");
+
+                    confirmButton.Confirmar();
+                    return;
+                }
+            }
+
             // Alicate: apanha-se com E (fica na mão, pousa-se com F). A malha é
             // filha do objeto-raiz (Rigidbody), por isso procura o pickup ao
             // longo de toda a cadeia de pais. Estado próprio (HasAlicate).

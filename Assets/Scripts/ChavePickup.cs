@@ -20,6 +20,8 @@ public class ChavePickup : MonoBehaviour
     public AudioClip pickupSound;
     public GameObject pousarUI;
 
+    public KeyType tipoChave;
+
     void Update()
     {
         if (Segurada != this) return;

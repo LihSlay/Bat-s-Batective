@@ -11069,7 +11069,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d027f9280ba18148b1bd07230f126eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameTimer
-  timeRemaining: 600
+  timeRemaining: 900
   timerText: {fileID: 924090795}
   audioSource: {fileID: 1746597242}
   explosionSound: {fileID: 8300000, guid: b417391a83fa98c4f88fa4e525c8a167, type: 3}

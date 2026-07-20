@@ -22,6 +22,14 @@ public class ConversationStarterCar3 : MonoBehaviour
     private bool papersConfirmed = false;
     private bool startedByMe = false;
 
+    [Header("Porta")]
+    [SerializeField] private SlidingDoor porta;
+
+    [Header("Som")]
+    [SerializeField] private AudioSource audioSource;
+
+    [SerializeField] private AudioClip somAcerto;
+
     private void OnEnable()
     {
         ConversationManager.OnConversationEnded += OnConversationEnded;
@@ -117,6 +125,16 @@ public class ConversationStarterCar3 : MonoBehaviour
             {
                 BlocoNotasToggle.Instance.MostrarEntrada(posDialogoEntry);
             }
+        }
+
+        // Se o puzzle estiver resolvido, toca o som e abre a porta
+        if (papersConfirmed && paperPuzzleManager.IsPuzzleSolved())
+        {
+            if (audioSource != null && somAcerto != null)
+                audioSource.PlayOneShot(somAcerto);
+
+            if (porta != null)
+                porta.OpenDoor();
         }
     }
 
