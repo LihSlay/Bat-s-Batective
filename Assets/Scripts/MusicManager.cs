@@ -117,6 +117,18 @@ public class MusicManager : MonoBehaviour
             return;
         }
 
+        if (sceneName == "CutsceneGuaxinim")
+        {
+            audioSource.Stop();
+            return;
+        }
+
+        if (sceneName == "CutsceneFinal")
+        {
+            audioSource.Stop();
+            return;
+        }
+
 
 
         if (targetMusic == null)
