@@ -6,6 +6,11 @@ public class BlocoNotasToggle : MonoBehaviour
 
     public GameObject blocoNotasUI;
     public GameObject descobrirEntry;
+
+    [Tooltip("Segunda entrada opcional que aparece na mesma primeira interação que a " +
+             "Descobrir Entry (Carruagem 4: ChavesNota, a par da FiosNota do painel).")]
+    public GameObject descobrirEntry2;
+
     public GameObject bunnyEntry;
     public GameObject numContrarioErrado;
     public GameObject numContrarioCerto;
@@ -64,11 +69,29 @@ public class BlocoNotasToggle : MonoBehaviour
         }
     }
 
+    // Chamado na primeira interação com o cofre/cadeado (e com o Painel Central da
+    // Carruagem 4, que também usa o SafeInteraction). Ativa a entrada principal e,
+    // se estiver definida, a segunda entrada — com uma só notificação.
     public void MostrarEntradaCofre()
     {
-        if (descobrirEntry != null)
-            descobrirEntry.SetActive(true);
-        MostrarNotificacao();
+        MostrarEntradas(descobrirEntry, descobrirEntry2);
+    }
+
+    // Ativa várias entradas de uma vez. Só notifica (som + exclamação) se alguma
+    // delas ainda não estava ativa, e nunca mais do que uma vez.
+    public void MostrarEntradas(params GameObject[] entries)
+    {
+        bool algumaNova = false;
+
+        foreach (GameObject entry in entries)
+        {
+            if (entry == null || entry.activeSelf) continue;
+
+            entry.SetActive(true);
+            algumaNova = true;
+        }
+
+        if (algumaNova) MostrarNotificacao();
     }
 
     public void MostrarEntradaBunny()
