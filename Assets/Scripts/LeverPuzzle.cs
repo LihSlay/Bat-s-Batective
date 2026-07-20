@@ -9,7 +9,6 @@ public class LeverPuzzle : MonoBehaviour
 
     [Header("Objetos do BlocoNotas que têm de estar ativos")]
     // Canvas -> FundoBlocoNotasUI -> BlocoNotas -> ...
-    public GameObject armarioFlip;
     public GameObject armarioNormal;
     public GameObject mesa;
     public GameObject banco;
@@ -49,11 +48,11 @@ public class LeverPuzzle : MonoBehaviour
         }
     }
 
-    // Verdadeiro só quando os 5 objetos do BlocoNotas estão ativos.
+    // Verdadeiro só quando os 4 objetos do BlocoNotas estão ativos.
+    // O ArmarioFlip é opcional e não entra nesta verificação.
     bool AllNotesActive()
     {
-        return armarioFlip != null && armarioFlip.activeSelf &&
-               armarioNormal != null && armarioNormal.activeSelf &&
+        return armarioNormal != null && armarioNormal.activeSelf &&
                mesa != null && mesa.activeSelf &&
                banco != null && banco.activeSelf &&
                lixo != null && lixo.activeSelf;

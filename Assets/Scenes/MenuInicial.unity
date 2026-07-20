@@ -683,8 +683,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 791.04706, y: -457}
-  m_SizeDelta: {x: 186.7343, y: 50}
+  m_AnchoredPosition: {x: 784.652, y: -459.132}
+  m_SizeDelta: {x: 199.524, y: 54.263}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &306058380
 MonoBehaviour:
@@ -706,7 +706,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "vers\xE3o final"
+  m_text: "Vers\xE3o Final"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e8f34eadd14b51a4e9f0d820db1de586, type: 2}
   m_sharedMaterial: {fileID: -6093576989724706181, guid: e8f34eadd14b51a4e9f0d820db1de586, type: 2}
