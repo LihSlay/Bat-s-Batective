@@ -399,14 +399,13 @@ public class PlayerInteraction : MonoBehaviour
                 confirmButton = hit.collider.GetComponentInParent<ConfirmButton>();
             }
 
-            if (confirmButton != null)
+            // Só se pode carregar no botão de dentro do zoom do painel
+            // (PainelZoomPoint). De fora, olhar para o BotaoDesativar e clicar
+            // não faz nada — senão dava para acabar o nível à distância.
+            if (confirmButton != null && zoomed)
             {
-                Debug.Log("Botão Confirmar encontrado!");
-
                 if (Input.GetMouseButtonDown(0))
                 {
-                    Debug.Log("Clique no botão!");
-
                     confirmButton.Confirmar();
                     return;
                 }

@@ -36,7 +36,12 @@ public class GameTimer : MonoBehaviour
         {
             finished = true;
 
-            audioSource.PlayOneShot(explosionSound);
+            // O som é opcional: se o AudioSource não estiver atribuído na cena,
+            // o fim de jogo tem de acontecer na mesma. Sem esta verificação, a
+            // exceção rebentava antes do StartCoroutine e, como o finished já
+            // estava a true, o nível continuava a correr para sempre.
+            if (audioSource != null && explosionSound != null)
+                audioSource.PlayOneShot(explosionSound);
 
             StartCoroutine(FadeAndLoad());
         }
@@ -44,27 +49,48 @@ public class GameTimer : MonoBehaviour
 
     IEnumerator FadeAndLoad()
     {
-        Color color = fadePanel.color;
-
-        float duration = 3f;
-        float timer = 0f;
-
-        while (timer < duration)
+        // O fade também é opcional: sem painel atribuído salta-se o escurecer,
+        // mas nunca se salta a ida para o GameOver.
+        if (fadePanel != null)
         {
-            timer += Time.deltaTime;
+            Color color = fadePanel.color;
 
-            float alpha = timer / duration;
+            float duration = 3f;
+            float timer = 0f;
 
-            fadePanel.color = new Color(
-                color.r,
-                color.g,
-                color.b,
-                alpha
-            );
+            while (timer < duration)
+            {
+                timer += Time.deltaTime;
 
-            yield return null;
+                float alpha = timer / duration;
+
+                fadePanel.color = new Color(
+                    color.r,
+                    color.g,
+                    color.b,
+                    alpha
+                );
+
+                yield return null;
+            }
         }
 
+        LiberarCursorParaMenu();
+
         SceneManager.LoadScene("GameOver");
+    }
+
+    // O estado do cursor persiste entre cenas: durante o jogo fica trancado e
+    // escondido (PlayerCam), e na cena GameOver não há nada que o volte a
+    // soltar. Sem isto, os botões do GameOver ficavam inclicáveis.
+    private void LiberarCursorParaMenu()
+    {
+        // Repõe a textura padrão, caso se tenha perdido dentro de um zoom
+        // (o SafeInteraction troca o cursor enquanto o zoom está ativo).
+        if (CursorManager.Instance != null)
+            CursorManager.Instance.ApplyDefaultCursor();
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 }
