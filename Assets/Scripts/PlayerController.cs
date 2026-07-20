@@ -157,6 +157,13 @@ public class PlayerController : MonoBehaviour
     rb.linearVelocity = Vector3.zero;
     rb.isKinematic = true;
 }
-
+    public void PararPassos()
+    {
+        if (footstepsAudio != null && footstepsAudio.isPlaying)
+        {
+            footstepsAudio.Stop();
+        }
     }
+
+}
 

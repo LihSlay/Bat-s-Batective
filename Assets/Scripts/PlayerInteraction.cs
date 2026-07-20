@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour
 {
+    private PlayerController playerController;
     public Camera playerCamera;
     public float interactDistance = 3f;
     public SafeInteraction safeInteraction;
@@ -24,9 +25,11 @@ public class PlayerInteraction : MonoBehaviour
     public static FlipZone CurrentLookedFlipZone;
     void Start()
     {
+        playerController = FindFirstObjectByType<PlayerController>();
         if (safeHintInicial != null)
             safeHintInicial.FadeIn();
     }
+
 
     void Update()
     {
@@ -85,6 +88,7 @@ public class PlayerInteraction : MonoBehaviour
 
             if (wire != null && AlicatePickup.HasAlicate && Input.GetMouseButtonDown(0))
             {
+                playerController?.PararPassos();
                 wire.Cut();
                 return;
             }
@@ -98,6 +102,7 @@ public class PlayerInteraction : MonoBehaviour
                 // PortaInteraction mais abaixo, que mostra a nota no bloco de notas.
                 if (KeyPickup.HasKey)
                 {
+                    playerController?.PararPassos();
                     door.Interact();
                     return;
                 }
@@ -232,6 +237,7 @@ public class PlayerInteraction : MonoBehaviour
                 // Debug.Log("Estou a clicar numa seta!");
                 if (zoomed && Input.GetMouseButtonDown(0))
                 {
+                    playerController?.PararPassos();
                     arrow.Interact();
                     return;
                 }
@@ -253,6 +259,7 @@ public class PlayerInteraction : MonoBehaviour
             {
                 if (Input.GetMouseButtonDown(0))
                 {
+                    playerController?.PararPassos();
                     switchButton.Alternar();
                     return;
                 }
@@ -361,6 +368,7 @@ public class PlayerInteraction : MonoBehaviour
 
             if (glass != null && Input.GetMouseButtonDown(0))
             {
+                playerController?.PararPassos();
                 glass.BreakGlass();
                 return;
             }
@@ -379,11 +387,13 @@ public class PlayerInteraction : MonoBehaviour
                 // Se já existe uma chave na entrada, retira-a
                 if (slot.Ocupado)
                 {
+                    playerController?.PararPassos();
                     slot.RetirarChave();
                 }
                 // Se a entrada está vazia e o jogador tem uma chave
                 else if (ChavePickup.HasChave)
                 {
+                    playerController?.PararPassos();
                     slot.ColocarChave(ChavePickup.Segurada);
                 }
 
@@ -406,6 +416,7 @@ public class PlayerInteraction : MonoBehaviour
             {
                 if (Input.GetMouseButtonDown(0))
                 {
+                    playerController?.PararPassos();
                     confirmButton.Confirmar();
                     return;
                 }
@@ -483,6 +494,7 @@ public class PlayerInteraction : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.E))
                 {
+                    playerController?.PararPassos();
                     lever.Interact();
                     return;
                 }
@@ -498,6 +510,7 @@ public class PlayerInteraction : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
+                    playerController?.PararPassos();
                     puzzleDoor.Interact();
                     // Se abriu, a nota ficou apontada: repõe já o "+".
                     AtualizarCursorNota(false, zoomed);
@@ -536,6 +549,7 @@ public class PlayerInteraction : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.E) && safeHit != null && !safeHit.IsZoomed)
             {
+                playerController?.PararPassos();
                 safeHit.EnterZoom();
 
                 if (!safeFirstInteraction)

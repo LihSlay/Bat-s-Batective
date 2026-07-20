@@ -145,6 +145,12 @@ namespace DialogueEditor
 
         public void StartConversation(NPCConversation conversation)
         {
+            PlayerController player = FindFirstObjectByType<PlayerController>();
+
+            if (player != null)
+            {
+                player.PararPassos();
+            }
             m_conversation = conversation.Deserialize();
             if (OnConversationStarted != null)
                 OnConversationStarted.Invoke();
