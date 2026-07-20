@@ -4,6 +4,8 @@ public class WireCut : MonoBehaviour
 {
     public GameObject fioCortado;
 
+    public AudioClip somCorte;
+
     public bool Cortado => cortado;
 
     private bool cortado = false;
@@ -41,6 +43,10 @@ public class WireCut : MonoBehaviour
         if (cortado) return;
 
         cortado = true;
+        if (somCorte != null && SFXManager.Instance != null)
+        {
+            SFXManager.Instance.PlaySFX(somCorte);
+        }
 
         gameObject.SetActive(false);
         fioCortado.SetActive(true);

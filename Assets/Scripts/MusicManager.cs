@@ -111,6 +111,13 @@ public class MusicManager : MonoBehaviour
             return;
         }
 
+        if (sceneName == "CutsceneRato")
+        {
+            audioSource.Stop();
+            return;
+        }
+
+
 
         if (targetMusic == null)
         {

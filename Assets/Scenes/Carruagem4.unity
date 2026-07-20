@@ -4156,6 +4156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7a574cd29f0249438cdca8179b194cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SwitchButton
+  somClique: {fileID: 8300000, guid: a7437d73f2a403f48a414f89081c356a, type: 3}
   ligado: 0
 --- !u!65 &547238839
 BoxCollider:
@@ -5806,6 +5807,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7a574cd29f0249438cdca8179b194cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SwitchButton
+  somClique: {fileID: 8300000, guid: a7437d73f2a403f48a414f89081c356a, type: 3}
   ligado: 0
 --- !u!65 &689521615
 BoxCollider:
@@ -6823,6 +6825,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7a574cd29f0249438cdca8179b194cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SwitchButton
+  somClique: {fileID: 8300000, guid: a7437d73f2a403f48a414f89081c356a, type: 3}
   ligado: 0
 --- !u!65 &867293286
 BoxCollider:
@@ -16392,6 +16395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WireCut
   fioCortado: {fileID: 6798678300054149065}
+  somCorte: {fileID: 8300000, guid: 74486aad774b3b942baad73ba04f4ff2, type: 3}
   mensagem: {fileID: 271829490}
   fiosNota: {fileID: 2134442775}
 --- !u!65 &2004445842
@@ -23570,6 +23574,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WireCut
   fioCortado: {fileID: 1908900348}
+  somCorte: {fileID: 8300000, guid: 74486aad774b3b942baad73ba04f4ff2, type: 3}
   mensagem: {fileID: 271829490}
   fiosNota: {fileID: 2134442775}
 --- !u!1 &6977698212885241923
@@ -23712,6 +23717,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7a574cd29f0249438cdca8179b194cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SwitchButton
+  somClique: {fileID: 8300000, guid: a7437d73f2a403f48a414f89081c356a, type: 3}
   ligado: 0
 --- !u!95 &7163607085408214621
 Animator:
@@ -24589,6 +24595,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WireCut
   fioCortado: {fileID: 969357526}
+  somCorte: {fileID: 8300000, guid: 74486aad774b3b942baad73ba04f4ff2, type: 3}
   mensagem: {fileID: 271829490}
   fiosNota: {fileID: 2134442775}
 --- !u!33 &8217514005887085822
@@ -24633,6 +24640,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WireCut
   fioCortado: {fileID: 1405250862}
+  somCorte: {fileID: 8300000, guid: 74486aad774b3b942baad73ba04f4ff2, type: 3}
   mensagem: {fileID: 271829490}
   fiosNota: {fileID: 2134442775}
 --- !u!33 &8373555443438942276
@@ -24728,6 +24736,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WireCut
   fioCortado: {fileID: 1396964872}
+  somCorte: {fileID: 8300000, guid: 74486aad774b3b942baad73ba04f4ff2, type: 3}
   mensagem: {fileID: 271829490}
   fiosNota: {fileID: 2134442775}
 --- !u!1 &8673360168523483460
@@ -24846,6 +24855,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WireCut
   fioCortado: {fileID: 1202504521}
+  somCorte: {fileID: 8300000, guid: 74486aad774b3b942baad73ba04f4ff2, type: 3}
   mensagem: {fileID: 271829490}
   fiosNota: {fileID: 2134442775}
 --- !u!33 &8758493729744526320
