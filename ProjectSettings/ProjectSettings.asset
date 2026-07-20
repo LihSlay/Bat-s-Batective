@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: SrDinhaStudios
-  productName: Bat's Batective
+  productName: Bat's The Mystery
   defaultCursor: {fileID: 2800000, guid: de624cf6b4e926349b3c9f769e4a2aa9, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.10588236, g: 0.078431375, b: 0.2784314, a: 1}
