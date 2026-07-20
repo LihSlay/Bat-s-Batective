@@ -25,6 +25,11 @@ public class ConversationStarterCar3 : MonoBehaviour
     [Header("Porta")]
     [SerializeField] private SlidingDoor porta;
 
+    [Tooltip("Trigger de passagem para a carruagem seguinte (NextLevel). Começa " +
+             "inativo na cena e só liga quando a porta abre, para não se poder " +
+             "atravessar antes de resolver o puzzle.")]
+    [SerializeField] private GameObject nextLevel;
+
     [Header("Som")]
     [SerializeField] private AudioSource audioSource;
 
@@ -135,6 +140,9 @@ public class ConversationStarterCar3 : MonoBehaviour
 
             if (porta != null)
                 porta.OpenDoor();
+
+            if (nextLevel != null)
+                nextLevel.SetActive(true);
         }
     }
 
