@@ -6,6 +6,9 @@ public class ConversationStarterCar3 : MonoBehaviour
     [SerializeField] private NPCConversation beforePadlockConversation;
     [SerializeField] private NPCConversation afterPadlockConversation;
     [SerializeField] private NPCConversation ratoConversationRight;
+
+    [SerializeField] private NPCConversation ratoConversationDepoisRight;
+
     [SerializeField] private PaperPuzzleManager paperPuzzleManager;
     [SerializeField] private NPCConversation wrongOrderConversation;
 
@@ -21,6 +24,9 @@ public class ConversationStarterCar3 : MonoBehaviour
     private bool padlockSolved = false;
     private bool papersConfirmed = false;
     private bool startedByMe = false;
+
+    private bool doorOpened = false;
+    private bool openDoorOnEnd = false;
 
     [Header("Porta")]
     [SerializeField] private SlidingDoor porta;
@@ -81,10 +87,13 @@ public class ConversationStarterCar3 : MonoBehaviour
                         {
                             conversation = ratoConversationRight;
                             papersConfirmed = true;
+                            openDoorOnEnd = true;   // só este diálogo abre a porta e faz o som
                         }
                         else
                         {
-                            conversation = afterPadlockConversation;
+                            conversation = ratoConversationDepoisRight != null
+                                ? ratoConversationDepoisRight
+                                : afterPadlockConversation;
                         }
                     }
                 }
@@ -132,17 +141,24 @@ public class ConversationStarterCar3 : MonoBehaviour
             }
         }
 
-        // Se o puzzle estiver resolvido, toca o som e abre a porta
-        if (papersConfirmed && paperPuzzleManager.IsPuzzleSolved())
+        // Só depois do ratoConversationRight: som + abrir porta (uma única vez)
+        if (openDoorOnEnd)
         {
-            if (audioSource != null && somAcerto != null)
-                audioSource.PlayOneShot(somAcerto);
+            openDoorOnEnd = false;
 
-            if (porta != null)
-                porta.OpenDoor();
+            if (!doorOpened && papersConfirmed && paperPuzzleManager.IsPuzzleSolved())
+            {
+                doorOpened = true;
 
-            if (nextLevel != null)
-                nextLevel.SetActive(true);
+                if (audioSource != null && somAcerto != null)
+                    audioSource.PlayOneShot(somAcerto);
+
+                if (porta != null)
+                    porta.OpenDoor();
+
+                if (nextLevel != null)
+                    nextLevel.SetActive(true);
+            }
         }
     }
 
