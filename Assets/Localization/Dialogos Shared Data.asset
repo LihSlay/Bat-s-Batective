@@ -67,6 +67,18 @@ MonoBehaviour:
     m_Key: 01bat_06
     m_Metadata:
       m_Items: []
+  - m_Id: 25027751284736
+    m_Key: 02name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25095069863936
+    m_Key: 02raposa_01
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25264461025280
+    m_Key: 02bat_01
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

@@ -81,23 +81,23 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 27407620345856
-    m_Localized: VOLUME
+    m_Localized: Volume
     m_Metadata:
       m_Items: []
   - m_Id: 27542525939712
-    m_Localized: SOUND EFFECTS
+    m_Localized: Sound Effects
     m_Metadata:
       m_Items: []
   - m_Id: 29074113794048
-    m_Localized: ON
+    m_Localized: On
     m_Metadata:
       m_Items: []
   - m_Id: 29215176626176
-    m_Localized: OFF
+    m_Localized: Off
     m_Metadata:
       m_Items: []
   - m_Id: 42789324296192
-    m_Localized: LANGUAGE
+    m_Localized: Language
     m_Metadata:
       m_Items: []
   - m_Id: 47072874696704
@@ -184,11 +184,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 61841845358592
-    m_Localized: The door won't budge, I need a key.
+    m_Localized: "The door won't budge, \nI need a key."
     m_Metadata:
       m_Items: []
   - m_Id: 61970266558464
-    m_Localized: A 4 digit code is needed to unlock the safe
+    m_Localized: A 4 digit code is needed to unlock the safe.
     m_Metadata:
       m_Items: []
   - m_Id: 62751736696832
@@ -197,6 +197,39 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 63788618977280
     m_Localized: Press "2" to turn upside down
+    m_Metadata:
+      m_Items: []
+  - m_Id: 286971745898496
+    m_Localized: "Did you miss me, \nDetective?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 287047151095808
+    m_Localized: "I must confess, I\u2019ve been terribly bored \nsince the sardine
+      incident.\r\n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 287821558026240
+    m_Localized: "This can\u2019t just be a \ncoincidence..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 287982342475776
+    m_Localized: What made him come back?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 286731525525504
+    m_Localized: "This furniture must \nbe hiding something."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 288760163569664
+    m_Localized: Down
+    m_Metadata:
+      m_Items: []
+  - m_Id: 288728370745344
+    m_Localized: Middle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 288697735548928
+    m_Localized: Up
     m_Metadata:
       m_Items: []
   references:

@@ -81,6 +81,19 @@ MonoBehaviour:
     m_Localized: Owl
     m_Metadata:
       m_Items: []
+  - m_Id: 25027751284736
+    m_Localized: Fox
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25095069863936
+    m_Localized: "Papers everywhere, yet not a single scribble! Either there\u2019s
+      been a pen strike, I\u2019m not seeing the whole picture."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25264461025280
+    m_Localized: A pen strike. How convenient.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -183,6 +183,40 @@ MonoBehaviour:
     m_Key: 01upside_down
     m_Metadata:
       m_Items: []
+  - m_Id: 286971745898496
+    m_Key: 02verse_mystery1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 287047151095808
+    m_Key: 02verse_mystery2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 287821558026240
+    m_Key: 02note_mystery1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 287982342475776
+    m_Key: '02note_mystery2
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 286731525525504
+    m_Key: 02note_furniture
+    m_Metadata:
+      m_Items: []
+  - m_Id: 288697735548928
+    m_Key: 02note_up
+    m_Metadata:
+      m_Items: []
+  - m_Id: 288728370745344
+    m_Key: 02note_middle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 288760163569664
+    m_Key: 02note_down
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

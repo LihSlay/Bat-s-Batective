@@ -81,23 +81,23 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 27407620345856
-    m_Localized: "M\xDASICA"
+    m_Localized: "M\xFAsica"
     m_Metadata:
       m_Items: []
   - m_Id: 27542525939712
-    m_Localized: EFEITOS SONOROS
+    m_Localized: Efeitos Sonoros
     m_Metadata:
       m_Items: []
   - m_Id: 29074113794048
-    m_Localized: LIGADO
+    m_Localized: Ligado
     m_Metadata:
       m_Items: []
   - m_Id: 29215176626176
-    m_Localized: DESLIGADO
+    m_Localized: Desligado
     m_Metadata:
       m_Items: []
   - m_Id: 42789324296192
-    m_Localized: IDIOMA
+    m_Localized: Idioma
     m_Metadata:
       m_Items: []
   - m_Id: 47072874696704
@@ -177,11 +177,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 61841845358592
-    m_Localized: "N\xE3o vou conseguir abrir a porta sem uma chave"
+    m_Localized: "N\xE3o vou conseguir abrir a porta sem uma chave."
     m_Metadata:
       m_Items: []
   - m_Id: 61970266558464
-    m_Localized: "O cofre abre com um c\xF3digo de 4 d\xEDgitos"
+    m_Localized: "O cofre abre com um c\xF3digo de 4 d\xEDgitos."
     m_Metadata:
       m_Items: []
   - m_Id: 62751736696832
@@ -190,6 +190,38 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 63788618977280
     m_Localized: "Pressiona \"2\" para virar ao contr\xE1rio"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 286971745898496
+    m_Localized: "Sentiu a minha falta, \r\nDetetive? \r\n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 287047151095808
+    m_Localized: "Confesso que desde o \r\nincidente das sardinhas andava aborrecido."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 287821558026240
+    m_Localized: "N\xE3o pode ser uma mera \r\ncoincid\xEAncia..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 287982342475776
+    m_Localized: "Porque \xE9 que ele voltou agora?\n\r\n\r\n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 286731525525504
+    m_Localized: "Sinto que estes m\xF3veis \r\nescondem alguma coisa."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 288697735548928
+    m_Localized: Cima
+    m_Metadata:
+      m_Items: []
+  - m_Id: 288728370745344
+    m_Localized: Meio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 288760163569664
+    m_Localized: Baixo
     m_Metadata:
       m_Items: []
   references:

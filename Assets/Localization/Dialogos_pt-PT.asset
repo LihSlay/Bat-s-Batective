@@ -83,6 +83,19 @@ MonoBehaviour:
     m_Localized: Coruja
     m_Metadata:
       m_Items: []
+  - m_Id: 25027751284736
+    m_Localized: Raposa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25095069863936
+    m_Localized: "Pap\xE9is por todo o lado e nem um \xFAnico rabisco! Ou houve aqui
+      uma greve de canetas ou sou eu que n\xE3o estou a ver isto bem..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25264461025280
+    m_Localized: Greve de canetas, que conveniente.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -71,7 +71,7 @@ public class MusicManager : MonoBehaviour
             targetMusic = gameMusic;
         }
 
-        if (sceneName == "Créditos")
+        if (sceneName == "Creditos")
         {
             targetMusic = creditsMusic;
         }
