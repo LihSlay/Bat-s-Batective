@@ -11,7 +11,7 @@ public class CutsceneVideo : MonoBehaviour
 
     [Header("Nomes dos ficheiros em StreamingAssets")]
     public string videoPT = "INICIO E CORUJA GRV.mp4";
-    public string videoEN = "owlcutscene.mp4";
+    public string videoEN = "trainowlcutscene.mp4";
 
     IEnumerator Start()
     {

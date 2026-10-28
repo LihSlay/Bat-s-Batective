@@ -96,6 +96,136 @@ MonoBehaviour:
     m_Localized: Greve de canetas, que conveniente.
     m_Metadata:
       m_Items: []
+  - m_Id: 87760253325312
+    m_Localized: Rato
+    m_Metadata:
+      m_Items: []
+  - m_Id: 87813718118400
+    m_Localized: "Quem me mandou cozinhar com manteiga!? Com as patas besuntadas
+      nem consigo abrir o raio do arm\xE1rio para buscar mais ingredientes!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88497423224832
+    m_Localized: "O c\xF3digo? Com a pressa toda n\xE3o me lembro, mas sei que o
+      escrevi enquanto preparava o menu. \nE n\xE3o se esque\xE7a de vir falar comigo
+      se abrir o arm\xE1rio!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 91254330855424
+    m_Localized: "J\xE1 abriu o arm\xE1rio? Ainda existe esperan\xE7a para esta cozinha!
+      Pressione a tecla \"3\" enquanto olha para uma bandeja, vai ajudar a ouvir
+      o que precisa."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104603466698752
+    m_Localized: "Olhe, um dos clientes ao fazer o pedido n\xE3o parava de repetir
+      o que eu dizia: Morangos? Laranjas? Claro que sim, o que mais \xE9 que poderia
+      levar uma salada de frutas??"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104893616066560
+    m_Localized: "Outro cliente n\xE3o parava de se babar quando lhe disse que havia
+      pernil! Tamb\xE9m \xE9 da minha comida que estamos a falar, n\xE3o aceitava
+      menos que isso!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104990814867456
+    m_Localized: "Ao ver o menu, este cliente disse-me logo que era pescetariano.
+      Mencionei que peixe \xE9 carne e quase me espetou as unhas!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 105221795188736
+    m_Localized: "Sugeri a sopa de legumes a outro cliente e ele muito s\xE9rio perguntou:
+      \u2018Vem com moscas?\u2019 Pensei que era o in\xEDcio de uma piada, mas estava
+      a falar a s\xE9rio\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 105294079823872
+    m_Localized: "Depois venha falar comigo outra vez para eu confirmar se est\xE1
+      correto. Se n\xE3o estiver, leva uma tareia! (Se estiver, leva uma tareia na
+      mesma.)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 105389881921536
+    m_Localized: "N\xE3o, n\xE3o, n\xE3o, est\xE3o mal as bandejas! \nOi\xE7a direito!
+      N\xE3o quero lidar com uma manada de clientes furiosos!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 105462053310464
+    m_Localized: "Afinal voc\xEA \xE9 capaz de alguma coisa! Pode prosseguir para
+      o seu t\xE3o desejado condutor."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 105583260307456
+    m_Localized: "O que \xE9 que ainda c\xE1 est\xE1 a fazer?\nDesampare-me a loja!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 107966644195328
+    m_Localized: "Lave as patas\u2026 ou ent\xE3o diga-me o c\xF3digo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 108146118463488
+    m_Localized: "Espero que a sua letra esteja leg\xEDvel."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 108487237013504
+    m_Localized: "Como \xE9 que sei para quem s\xE3o os pratos?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 108791613460480
+    m_Localized: Na minha terra leva mosquitos.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 109136586575872
+    m_Localized: "J\xE1 comia alguma coisa\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 109437511110656
+    m_Localized: "Teve sorte de n\xE3o o ter mordido."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 109635352236032
+    m_Localized: "Deve andar no gin\xE1sio. Prote\xEDna \xE9 prote\xEDna."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 109945583931392
+    m_Localized: ...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 110222554796032
+    m_Localized: Vou fingir que isso foi um pedido educado.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 110544442462208
+    m_Localized: "O chefe \xE9 muito generoso..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 110869496827904
+    m_Localized: "S\xF3 me vinha despedir..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 133963280125952
+    m_Localized: Guaxinim
+    m_Metadata:
+      m_Items: []
+  - m_Id: 134132126027776
+    m_Localized: "O mecanismo s\xF3... s\xF3 d\xE1 uma hip\xF3tese! UMA! Se alguma
+      parte estiver errada, \xE9 o fim, \xE9 o fim para todos n\xF3s!!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 134539820765184
+    m_Localized: "Nunca tinha reparado como a parede tem... pormenores estranhos.
+      Estou a enlouquecer s\xF3 pode\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 134725301276672
+    m_Localized: Mais alguma coisa a apontar?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 134837314359296
+    m_Localized: Daqui a pouco somos dois...
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

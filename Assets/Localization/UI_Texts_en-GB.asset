@@ -232,6 +232,66 @@ MonoBehaviour:
     m_Localized: Up
     m_Metadata:
       m_Items: []
+  - m_Id: 391283230740480
+    m_Localized: "The chef mentioned the \nmenu and code."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 391425392480256
+    m_Localized: "I\u2019d better ask the chef.\nHe\u2019ll know whose orders \nthese
+      are."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 391754691481600
+    m_Localized: 'Customer 1: Repeated everything
+
+      Customer 2: Drooled
+
+      Customer
+      3: Scratched
+
+      Customer 4: Asked for flies'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 394942865838080
+    m_Localized: "These wires are too sturdy, I can\u2019t cut them."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 395118980468736
+    m_Localized: "The symbols seem to have a rhythm of their own\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 395270885576704
+    m_Localized: "Glass won\u2019t break itself. A hammer would do wonders!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 395461546053632
+    m_Localized: "Pieces are missing\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 397784863313920
+    m_Localized: 'Four choices lie ahead,
+
+      The first arises, the second falls
+      asleep,
+
+      The third awakens, the fourth rests,
+
+      Get the order right
+      to earn your keep.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 398606632325120
+    m_Localized: PRESS THE BUTTON TO VALIDATE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 398744364879872
+    m_Localized: WHEN ALL MODULES ARE COMPLETE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 399266601865216
+    m_Localized: CONFIRM
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

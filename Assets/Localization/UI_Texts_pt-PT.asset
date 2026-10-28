@@ -224,6 +224,54 @@ MonoBehaviour:
     m_Localized: Baixo
     m_Metadata:
       m_Items: []
+  - m_Id: 391283230740480
+    m_Localized: "O chef mencionou algo\nsobre o c\xF3digo e o menu."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 391425392480256
+    m_Localized: "Tenho de falar com o chef, deve saber a quem \npertencem estes
+      pedidos."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 391754691481600
+    m_Localized: "Cliente 1: Repetia tudo\nCliente 2: Babava-se \nCliente 3: Arranhava\nCliente
+      4: Pediu moscas"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 394942865838080
+    m_Localized: "Estes fios s\xE3o resistentes, \nn\xE3o consigo cort\xE1-los."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 395118980468736
+    m_Localized: "Os s\xEDmbolos parecem ter \num ritmo pr\xF3prio..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 395270885576704
+    m_Localized: "Vidro n\xE3o parte sozinho, um \nmartelo resolvia logo isto!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 395461546053632
+    m_Localized: "Faltam peda\xE7os..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 397784863313920
+    m_Localized: "Quatro decis\xF5es pelo caminho,\nA primeira acorda, a segunda
+      adormece,\nA terceira desperta, a quarta descansa,\nS\xF3 quem seguir a ordem
+      certa avan\xE7a."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 398606632325120
+    m_Localized: "PRESSIONAR O BOT\xC3O PARA VALIDAR"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 398744364879872
+    m_Localized: "AO COMPLETAR TODOS OS M\xD3DULOS"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 399266601865216
+    m_Localized: CONFIRMAR
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

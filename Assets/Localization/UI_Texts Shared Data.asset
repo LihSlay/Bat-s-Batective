@@ -217,6 +217,50 @@ MonoBehaviour:
     m_Key: 02note_down
     m_Metadata:
       m_Items: []
+  - m_Id: 391283230740480
+    m_Key: 03note_code
+    m_Metadata:
+      m_Items: []
+  - m_Id: 391425392480256
+    m_Key: 03note_cupboard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 391754691481600
+    m_Key: 03note_after
+    m_Metadata:
+      m_Items: []
+  - m_Id: 394942865838080
+    m_Key: 04note_cable
+    m_Metadata:
+      m_Items: []
+  - m_Id: 395118980468736
+    m_Key: 04note_keys
+    m_Metadata:
+      m_Items: []
+  - m_Id: 395270885576704
+    m_Key: 04note_hammer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 395461546053632
+    m_Key: 04note_missing
+    m_Metadata:
+      m_Items: []
+  - m_Id: 397784863313920
+    m_Key: 04puzzle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 398744364879872
+    m_Key: 04bomb_text1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 398606632325120
+    m_Key: 04bomb_text2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 399266601865216
+    m_Key: 04bomb_confirm
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

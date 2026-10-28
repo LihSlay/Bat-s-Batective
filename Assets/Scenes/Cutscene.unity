@@ -362,6 +362,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 567300ebcb0fe9d4a8d8cb04cc60353d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CutsceneVideo
+  videoPT: INICIO E CORUJA GRV.mp4
+  videoEN: trainowlcutscene.mp4
 --- !u!1 &990431018
 GameObject:
   m_ObjectHideFlags: 0

@@ -94,6 +94,135 @@ MonoBehaviour:
     m_Localized: A pen strike. How convenient.
     m_Metadata:
       m_Items: []
+  - m_Id: 87760253325312
+    m_Localized: Mouse
+    m_Metadata:
+      m_Items: []
+  - m_Id: 87813718118400
+    m_Localized: "What possessed me to cook with butter?! My paws are so greasy that
+      I can\u2019t even open the bloody cupboard to get more ingredients!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88497423224832
+    m_Localized: "The code? I was in such a rush that I forgot about it. \nAlthough
+      I\u2019m sure I wrote it down while I was preparing the menu. Let me know when
+      you get that cupboard open though."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 91254330855424
+    m_Localized: "The cupboard\u2019s open? Perhaps all is not lost for this kitchen
+      just yet! Press the \u20183\u2019 key while looking at a tray, that should
+      help you hear what you\u2019re looking for."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104603466698752
+    m_Localized: "One customer kept repeating every single thing I said while placing
+      his order: \u201CStrawberries? Oranges?\u201D Obviously! What else could possibly
+      go in a fruit salad?!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104893616066560
+    m_Localized: "Another customer wouldn\u2019t stop drooling when I mentioned the
+      roasted pork! I can hardly blame him, after all, I\u2019m a culinary genius!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104990814867456
+    m_Localized: This customer had barely glanced at the menu before informing me
+      he was a pescatarian. I simply pointed out that fish is meat, and the bloke
+      nearly clawed my eyes out!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 105221795188736
+    m_Localized: "I recommended the potato soup to another customer, and he asked
+      me, completely straight-faced: \u201CDoes it come with flies?\u201D I thought
+      he was setting up a joke, but he was dead serious\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 105294079823872
+    m_Localized: Come find me afterwards so I can make sure you've got it right.
+      If you haven't, I'll beat you to a pulp! (And if you have, I'll do it anyway.)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 105389881921536
+    m_Localized: "No, no, no, the trays are all wrong! \nGet your ears working! I
+      don't want to deal with \na herd of angry customers!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 105462053310464
+    m_Localized: Well, I'll be damned! You managed to actually be useful! Go on then,
+      off to your precious driver you go.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 105583260307456
+    m_Localized: Are you lost or what? Get outta here!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 107966644195328
+    m_Localized: "Wash your paws\u2026 or tell me the code."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 108146118463488
+    m_Localized: Your handwriting better be legible.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 108487237013504
+    m_Localized: "And how am I supposed to know \nwho's getting which dish?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 108791613460480
+    m_Localized: Back home, we garnish ours with mosquitoes.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 109136586575872
+    m_Localized: I could grab a bite...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 109437511110656
+    m_Localized: Got lucky this time.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 109635352236032
+    m_Localized: Probably a gym bro trying to hit his protein goal.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 109945583931392
+    m_Localized: ...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 110222554796032
+    m_Localized: "I\u2019ll take that as a polite request."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 110544442462208
+    m_Localized: So awfully kind of you...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 110869496827904
+    m_Localized: "I only came to say my goodbyes\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 133963280125952
+    m_Localized: Raccoon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 134132126027776
+    m_Localized: "The mechanism only\u2026 only gives us one shot! ONE! If even one
+      part is wrong, it\u2019s over, over \nfor all of us!!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 134539820765184
+    m_Localized: "Since when did the wall have\u2026 such strange details? I'm going
+      insane\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 134725301276672
+    m_Localized: Anything else?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 134837314359296
+    m_Localized: "At this rate, there\u2019ll be two of us\u2026"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
