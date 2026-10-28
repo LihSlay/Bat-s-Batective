@@ -1,0 +1,204 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: UI_Texts_en-GB
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en-GB
+  m_SharedData: {fileID: 11400000, guid: 238e9805e4df7fe47a8f15e77b1ead37, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 825082089472
+    m_Localized: Play
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3347481989120
+    m_Localized: Settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4188599324672
+    m_Localized: Credits
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4372897042432
+    m_Localized: Quit Game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4956215676928
+    m_Localized: Version 2.0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5533544845312
+    m_Localized: GO BACK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5688759259136
+    m_Localized: CHAPTER 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5873228943360
+    m_Localized: Hop on this adventure and solve mysteries to defuse a bomb before
+      time runs out.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8901503848448
+    m_Localized: CHAPTER 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8986241372160
+    m_Localized: CHAPTER 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8999528927232
+    m_Localized: CHAPTER 4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9655660679168
+    m_Localized: Can you solve the mystery of this carriage? What purpose do these
+      levers serve?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9673054457856
+    m_Localized: Is it just a kitchen... or something deeper?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9686098743296
+    m_Localized: Every second counts. Are you capable of preventing the explosion?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14744316121088
+    m_Localized: Hold "E" to skip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27407620345856
+    m_Localized: VOLUME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27542525939712
+    m_Localized: SOUND EFFECTS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29074113794048
+    m_Localized: ON
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29215176626176
+    m_Localized: OFF
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42789324296192
+    m_Localized: LANGUAGE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47072874696704
+    m_Localized: NEW TICKET
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47857704472576
+    m_Localized: Movement
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48015326416896
+    m_Localized: Walking
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48110587449344
+    m_Localized: Interactions
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48194863599616
+    m_Localized: Notepad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48361016758272
+    m_Localized: Inspecting and Talking
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48695961292800
+    m_Localized: Dropping Items
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48788667994112
+    m_Localized: Skills
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49237622099968
+    m_Localized: Turning Upside Down
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51920328298496
+    m_Localized: '"E" Next
+
+      "F" Leave'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52919147270144
+    m_Localized: Resume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53426813243392
+    m_Localized: Controls
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55195844841472
+    m_Localized: '
+
+      "F" Leave'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55309858607104
+    m_Localized: '"F" Drop
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56020071714816
+    m_Localized: '"E" Assign'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57221425238016
+    m_Localized: Press "E" to interact
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57741414076416
+    m_Localized: 'Two tables, choose with care,
+
+      The first guards truth, the
+      second one lies.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 60020938608640
+    m_Localized: 'Upon the wood, beware,
+
+      The answer in disguise.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61841845358592
+    m_Localized: The door won't budge, I need a key.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61970266558464
+    m_Localized: A 4 digit code is needed to unlock the safe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62751736696832
+    m_Localized: "I\u2019ve seen this before\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 63788618977280
+    m_Localized: Press "2" to turn upside down
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

@@ -60,5 +60,7 @@ EditorBuildSettings:
     path: "Assets/Scenes/Sele\xE7\xE3oNivel4.unity"
     guid: bb332977235c5d4428e219dd495d5a95
   m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: 2d7fb11e3c0b231498ede940ee15274a, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+    com.unity.localization.settings: {fileID: 11400000, guid: eda4a05fd29945e4ebc5db728023aa1c, type: 2}
   m_UseUCBPForAssetBundles: 0

@@ -1,0 +1,196 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: UI_Texts Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: UI_Texts
+  m_TableCollectionNameGuidString: 238e9805e4df7fe47a8f15e77b1ead37
+  m_Entries:
+  - m_Id: 825082089472
+    m_Key: 0play
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3347481989120
+    m_Key: 0settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4188599324672
+    m_Key: 0creds
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4372897042432
+    m_Key: 0leave_game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5533544845312
+    m_Key: 00go_back
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4956215676928
+    m_Key: 0version
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27407620345856
+    m_Key: 0music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27542525939712
+    m_Key: 0sound_effects
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47072874696704
+    m_Key: 0gameover
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42789324296192
+    m_Key: 0language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29074113794048
+    m_Key: 0on_toggle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29215176626176
+    m_Key: 0off_toggle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5688759259136
+    m_Key: 00chapter1_sel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8901503848448
+    m_Key: 00chapter2_sel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8986241372160
+    m_Key: 00chapter3_sel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8999528927232
+    m_Key: 00chapter4_sel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5873228943360
+    m_Key: 00chapter1_text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9655660679168
+    m_Key: 00chapter2_text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9673054457856
+    m_Key: 00chapter3_text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9686098743296
+    m_Key: 00chapter4_text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14744316121088
+    m_Key: 00skip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52919147270144
+    m_Key: 00resume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51920328298496
+    m_Key: 00ui_chat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55309858607104
+    m_Key: 00ui_drop
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56020071714816
+    m_Key: 00ui_assign
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53426813243392
+    m_Key: 00controls
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55195844841472
+    m_Key: 00ui_leave
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57221425238016
+    m_Key: 00ui_interact
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47857704472576
+    m_Key: 000con_move
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48015326416896
+    m_Key: 000con_walking
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48110587449344
+    m_Key: 000con_inter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48194863599616
+    m_Key: 000con_notepad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48361016758272
+    m_Key: 000con_exam
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48695961292800
+    m_Key: 000con_drop
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48788667994112
+    m_Key: 000_con_skills
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49237622099968
+    m_Key: 000con_flip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57741414076416
+    m_Key: 01verse_poem
+    m_Metadata:
+      m_Items: []
+  - m_Id: 60020938608640
+    m_Key: 01verse_poem2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61841845358592
+    m_Key: 01note_door
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61970266558464
+    m_Key: 01note_code
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62751736696832
+    m_Key: 01note_bunny
+    m_Metadata:
+      m_Items: []
+  - m_Id: 63788618977280
+    m_Key: 01upside_down
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 3064715567012511957
+  references:
+    version: 2
+    RefIds:
+    - rid: 3064715567012511957
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1793120453363
