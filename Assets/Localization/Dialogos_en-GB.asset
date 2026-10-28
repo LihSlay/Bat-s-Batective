@@ -1,0 +1,86 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Dialogos_en-GB
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en-GB
+  m_SharedData: {fileID: 11400000, guid: ca04b4563edbfa94da0e38426ad7282a, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 1885939011584
+    m_Localized: "Before you venture any further, allow me to\noffer some advice.
+      \nThis train has its quirks."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2023369576448
+    m_Localized: "To interact with passengers or objects, press \u201CE\u201D. \nIf
+      you\u2019d like to keep your wings free, just press \u201CF\u201D to drop what
+      you\u2019re carrying.\r\n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2027467411456
+    m_Localized: "You also possess a notepad to keep track of clues. \nPress \u201CE\u201D
+      to write them down and \u201CQ\u201D to review them."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2029568757760
+    m_Localized: "If you press \u201C1\u201D you will uncover some of the train\u2019s
+      fading memories."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2701978603520
+    m_Localized: "Lastly, if you fancy a change of perspective, \nwalk up to a bar
+      above the seats and press \u201C2\u201D \nto hang from it."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2726376869888
+    m_Localized: "If you have any further questions, feel free to speak to me again,
+      or press \u201CP\u201D to review the controls in the pause menu. \nGood luck,
+      Detective."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7272570392576
+    m_Localized: "I\u2019m all ears."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7301112631296
+    m_Localized: "Sadly, being a sociopathic detective \ndoes involve talking to
+      people."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7316916768768
+    m_Localized: "Having me think this hard at a time \nlike this is nothing short
+      of torture."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7331366146048
+    m_Localized: I once solved a case with nothing but a sardine tin. No sardines,
+      mind you.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7339893166080
+    m_Localized: "Those bars better be secure, or someone\u2019s \ngetting sued."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7350345371648
+    m_Localized: Thank you miss.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10216074219520
+    m_Localized: Owl
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

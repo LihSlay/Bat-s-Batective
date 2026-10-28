@@ -72,7 +72,7 @@ namespace DialogueEditor
         public int m_targetScrollTextCount;
         private eState m_state;
         private float m_stateTime;
-        
+
         private Conversation m_conversation;
         private SpeechNode m_currentSpeech;
         private OptionNode m_selectedOption;
@@ -238,7 +238,7 @@ namespace DialogueEditor
                 LogWarning("parameter \'" + paramName + "\' does not exist.");
             }
         }
-        
+
         public void SetBool(string paramName, bool value)
         {
             eParamStatus status;
@@ -309,7 +309,7 @@ namespace DialogueEditor
                         SetColorAlpha(NameText, 0);
 
                         DialogueText.text = "";
-                        NameText.text = m_currentSpeech.Name;
+                        NameText.text = DialogueLocalizer.Translate(m_currentSpeech.Name);
                         NpcIcon.sprite = m_currentSpeech.Icon != null ? m_currentSpeech.Icon : BlankSprite;
                     }
                     break;
@@ -510,10 +510,11 @@ namespace DialogueEditor
             }
 
             // Set name
-            NameText.text = speech.Name;
-
+            NameText.text = DialogueLocalizer.Translate(speech.Name);
             // Set text
-            if (string.IsNullOrEmpty(speech.Text))
+            string localizedText = DialogueLocalizer.Translate(speech.Text);
+
+            if (string.IsNullOrEmpty(localizedText))
             {
                 if (ScrollText)
                 {
@@ -533,19 +534,18 @@ namespace DialogueEditor
             {
                 if (ScrollText)
                 {
-                    DialogueText.text = speech.Text;
-                    m_targetScrollTextCount = speech.Text.Length + 1;
+                    DialogueText.text = localizedText;
+                    m_targetScrollTextCount = localizedText.Length + 1;
                     DialogueText.maxVisibleCharacters = 0;
                     m_elapsedScrollTime = 0f;
                     m_scrollIndex = 0;
                 }
                 else
                 {
-                    DialogueText.text = speech.Text;
-                    DialogueText.maxVisibleCharacters = speech.Text.Length;
+                    DialogueText.text = localizedText;
+                    DialogueText.maxVisibleCharacters = localizedText.Length;
                 }
             }
-
             // Call the event
             if (speech.Event != null)
                 speech.Event.Invoke();
@@ -572,7 +572,7 @@ namespace DialogueEditor
             else
             {
                 SetState(eState.TransitioningOptionsOn);
-            }            
+            }
         }
 
 
@@ -715,7 +715,7 @@ namespace DialogueEditor
                         {
                             uiOption.SetupButton(UIConversationButton.eButtonType.Speech, next, continueFont: m_conversation.ContinueFont);
                         }
-                        
+
                     }
                     else if (m_currentSpeech.ConnectionType == Connection.eConnectionType.None)
                     {

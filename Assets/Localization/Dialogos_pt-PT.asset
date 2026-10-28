@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Dialogos_pt-PT
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: pt-PT
+  m_SharedData: {fileID: 11400000, guid: ca04b4563edbfa94da0e38426ad7282a, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 1885939011584
+    m_Localized: 'Antes que se ponha a explorar, permita-me
+
+      dar-lhe umas dicas.
+
+      Este
+      comboio tem as suas particularidades.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2023369576448
+    m_Localized: "Para interagir com passageiros ou objetos, basta pressionar \u201CE\u201D.
+      \nE se n\xE3o quiser andar com as patas ocupadas, pode largar pressionando
+      'F'."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2027467411456
+    m_Localized: "O Detetive tem um bloco de notas, pressione 'E' para apontar pistas.
+      \nSe precisar de as consultar, \xE9 s\xF3 pressionar 'Q'."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2029568757760
+    m_Localized: "Se pressionar '1', deve conseguir recuperar algumas informa\xE7\xF5es
+      mais apagadas deste comboio."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2701978603520
+    m_Localized: "Por \xFAltimo, para mudar de perspetiva, aproxime-\n-se de uma
+      das barras por cima dos bancos e pressione '2' para ficar pendurado."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2726376869888
+    m_Localized: "No caso de ter mais alguma d\xFAvida, pode voltar a falar comigo
+      ou pressionar \"P\" para consultar os controlos no menu de pausa. \nBoa sorte
+      Detetive."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7272570392576
+    m_Localized: Sou todo ouvidos.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7301112631296
+    m_Localized: "Sou sociopata, mas infelizmente \necomunicar \xE9 o meu trabalho."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7316916768768
+    m_Localized: "Consumir tanta informa\xE7\xE3o a esta hora \xE9 pecado..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7331366146048
+    m_Localized: "Eu consegui resolver um caso apenas \ncom uma lata de sardinhas,
+      sem as sardinhas."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7339893166080
+    m_Localized: Espero que estejam bem presas.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7350345371648
+    m_Localized: Obrigado.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10216074219520
+    m_Localized: Coruja
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

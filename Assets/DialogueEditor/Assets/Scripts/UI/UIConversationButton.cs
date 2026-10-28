@@ -30,7 +30,7 @@ namespace DialogueEditor
 
         // Node data
         private eButtonType m_buttonType;
-        private ConversationNode m_node;    
+        private ConversationNode m_node;
 
         // Hovering 
         private float m_hoverT = 0.0f;
@@ -62,7 +62,7 @@ namespace DialogueEditor
                 }
                 Vector3 size = Vector3.one;
                 float ease = EaseOutQuart(normalised);
-                
+
 
                 switch (m_hoverState)
                 {
@@ -180,21 +180,21 @@ namespace DialogueEditor
             {
                 case eButtonType.Option:
                     {
-                        TextMesh.text = node.Text;
+                        TextMesh.text = DialogueLocalizer.Translate(node.Text);
                         TextMesh.font = node.TMPFont;
                     }
                     break;
 
                 case eButtonType.Speech:
                     {
-                        TextMesh.text = "Continue.";
+                        TextMesh.text = DialogueLocalizer.Translate("@botao_continuar");
                         TextMesh.font = continueFont;
                     }
                     break;
 
                 case eButtonType.End:
                     {
-                        TextMesh.text = "End.";
+                        TextMesh.text = DialogueLocalizer.Translate("@botao_terminar");
                         TextMesh.font = endFont;
                     }
                     break;

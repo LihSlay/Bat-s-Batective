@@ -15,6 +15,12 @@ MonoBehaviour:
   m_GroupName: Localization-String-Tables-English (United Kingdom) (en-GB)
   m_GUID: ea36e7c0f29e2134b9bc14cbc52cde0e
   m_SerializeEntries:
+  - m_GUID: 0ff434339e53cee48a5870b8f3368bf6
+    m_Address: Dialogos_en-GB
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-GB
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 34c14c0778d4f2d448cc971d914de0a9
     m_Address: UI_Texts_en-GB
     m_ReadOnly: 1
