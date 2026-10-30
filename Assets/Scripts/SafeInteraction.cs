@@ -35,7 +35,18 @@ public class SafeInteraction : MonoBehaviour
     // outros sistemas (ex.: pickups) saberem que estão dentro de um zoom e assim
     // bloquearem o pousar de objetos e esconderem o UI de "pousar".
     public static bool AnyZoomed { get; private set; } = false;
+    private void Awake()
+    {
+        // Repõe o estado estático ao entrar na cena (os estáticos sobrevivem à recarga)
+        AnyZoomed = false;
+    }
 
+    private void OnDestroy()
+    {
+        // Se a cena for destruída com o zoom ativo (ex.: Game Over), não deixa o estado preso
+        if (isZoomed)
+            AnyZoomed = false;
+    }
     public void EnterZoom()
     {
         if (isZoomed) return;

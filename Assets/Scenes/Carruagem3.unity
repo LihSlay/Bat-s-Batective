@@ -1906,7 +1906,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_fontColor: {r: 0.22745098, g: 0.15294118, b: 0.13333334, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2322,7 +2322,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '"F" Sair'
+  m_text: '
+
+    "F" Sair'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e8f34eadd14b51a4e9f0d820db1de586, type: 2}
   m_sharedMaterial: {fileID: -6093576989724706181, guid: e8f34eadd14b51a4e9f0d820db1de586, type: 2}
@@ -2418,7 +2420,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 772.25995, y: -488}
+  m_AnchoredPosition: {x: 772.2598, y: -433}
   m_SizeDelta: {x: 154.3965, y: 74.2573}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &327190045
@@ -3226,7 +3228,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_fontColor: {r: 0.22745098, g: 0.15294118, b: 0.13333334, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4446,7 +4448,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_fontColor: {r: 0.22745098, g: 0.15294118, b: 0.13333334, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4790,7 +4792,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_fontColor: {r: 0.22745098, g: 0.15294118, b: 0.13333334, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -9735,11 +9737,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NightVision
   volume: {fileID: 299175654}
-  hiddenObjects:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  hiddenObjects: []
 --- !u!4 &1310491081
 Transform:
   m_ObjectHideFlags: 0
@@ -11681,6 +11679,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 7ce92f611110bb145ab29573cc2ce0d2, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: df5ea341fc4446a4fa41359fa7df53bd, type: 2}
     - target: {fileID: 919132149155446097, guid: 7ce92f611110bb145ab29573cc2ce0d2, type: 3}
       propertyPath: m_Name
       value: MENU
@@ -13971,7 +13973,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueEditor.NPCConversation
   CurrentIDCounter: 1
-  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[],"EditorInfo":{"isRoot":true,"xPos":337.8,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":null,"parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":null,"OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
+  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[],"EditorInfo":{"isRoot":true,"xPos":211.199982,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":null,"parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":null,"OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
   saveVersion: 110
   DefaultName: 
   DefaultSprite: {fileID: 0}
@@ -14166,8 +14168,10 @@ MonoBehaviour:
   - {fileID: 2100000, guid: f1e29cf7312a7fe4ea094cb6f713da7f, type: 2}
   - {fileID: 2100000, guid: 5f054918d31779d41bf6a7809248b4a0, type: 2}
   menu: {fileID: 510479479}
-  menuPT: {fileID: -8808162046880026678, guid: 7ce92f611110bb145ab29573cc2ce0d2, type: 3}
-  menuEN: {fileID: 2100000, guid: 19ec7b59bf92b3a41a51e3b3a480dde1, type: 2}
+  menuPTNormal: {fileID: 2100000, guid: df5ea341fc4446a4fa41359fa7df53bd, type: 2}
+  menuPTNoturna: {fileID: 2100000, guid: a57d89aac7808f54093057405135e208, type: 2}
+  menuENNormal: {fileID: 2100000, guid: e4137e8d96fd8f3489d850c7e832b175, type: 2}
+  menuENNoturna: {fileID: 2100000, guid: ffa27db5df647e64390963f4ed391ace, type: 2}
   indiceMaterialMenu: 1
 --- !u!4 &1891200113
 Transform:

@@ -968,6 +968,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 155548bc73a81f84ca9c4a90e9486407, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CutsceneVideoFinal
+  videoPT: FINAL CUTSCENE GRV.mp4
+  videoEN: finalcutscene.mp4
+  volumeEN: 0.1
 --- !u!1 &2028980112
 GameObject:
   m_ObjectHideFlags: 0

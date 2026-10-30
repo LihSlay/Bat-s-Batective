@@ -556,6 +556,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfe4066bd79c1f142a415bbe3d482ed4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CutsceneVideoGuaxinim
+  videoPT: GUAXINIM CUTSCENE GRV.mp4
+  videoEN: raccooncutscene.mp4
+  volumeEN: 0.1
 --- !u!1 &990431018
 GameObject:
   m_ObjectHideFlags: 0

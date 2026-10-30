@@ -3514,7 +3514,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -66.3242, y: 116.07915}
+  m_AnchoredPosition: {x: -66.3242, y: 107.5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1662043499
@@ -3910,18 +3910,23 @@ MonoBehaviour:
     subTabs:
     - button: {fileID: 1223420116}
       image: {fileID: 1640224015}
+      spriteEN: {fileID: 21300000, guid: 85b5d075181c1974ea1fb38bd23c20e4, type: 3}
   - button: {fileID: 1137293708}
     subTabs:
     - button: {fileID: 285097378}
       image: {fileID: 407340304}
+      spriteEN: {fileID: 21300000, guid: 85e9e4d6988534b41bb56e1c7dd6cda5, type: 3}
     - button: {fileID: 845290542}
       image: {fileID: 219767824}
+      spriteEN: {fileID: 21300000, guid: 0047a35136b8d0944afd29ead4b2f220, type: 3}
     - button: {fileID: 748925672}
       image: {fileID: 1016970915}
+      spriteEN: {fileID: 21300000, guid: 98e1504738198754a809e00b5bc5f324, type: 3}
   - button: {fileID: 1131829866}
     subTabs:
     - button: {fileID: 945018598}
       image: {fileID: 225827110}
+      spriteEN: {fileID: 21300000, guid: 4652901c487106c4dafdcb2613288c44, type: 3}
   activeColor: {r: 1, g: 1, b: 1, a: 1}
   inactiveColor: {r: 0.6, g: 0.6, b: 0.6, a: 1}
 --- !u!1 &1868567776

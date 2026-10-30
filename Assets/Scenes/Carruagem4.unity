@@ -2322,7 +2322,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_fontColor: {r: 0.22745098, g: 0.15294118, b: 0.13333334, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2903,7 +2903,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '"F" Sair'
+  m_text: '
+
+    "F" Sair'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e8f34eadd14b51a4e9f0d820db1de586, type: 2}
   m_sharedMaterial: {fileID: -6093576989724706181, guid: e8f34eadd14b51a4e9f0d820db1de586, type: 2}
@@ -2999,7 +3001,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 772.25995, y: -488}
+  m_AnchoredPosition: {x: 772.2598, y: -433}
   m_SizeDelta: {x: 154.3965, y: 74.2573}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &327190045
@@ -3567,7 +3569,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_fontColor: {r: 0.22745098, g: 0.15294118, b: 0.13333334, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4510,7 +4512,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_fontColor: {r: 0.22745098, g: 0.15294118, b: 0.13333334, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4854,7 +4856,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_fontColor: {r: 0.22745098, g: 0.15294118, b: 0.13333334, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -7492,7 +7494,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueEditor.NPCConversation
   CurrentIDCounter: 4
-  json: '{"Options":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":2}],"EditorInfo":{"isRoot":false,"xPos":34.2001648,"yPos":145},"ID":1,"ParamActions":[],"TMPFontGUID":null,"Text":"@04bat_01","parentUIDs":[0],"SpeechUID":-1},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":34.60019,"yPos":333.399719},"ID":3,"ParamActions":[],"TMPFontGUID":null,"Text":"@04bat_01","parentUIDs":[2],"SpeechUID":-1}],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":1}],"EditorInfo":{"isRoot":true,"xPos":35.2001648,"yPos":33.2000122},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"@04guax_01","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"@04name","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0.156},{"Connections":[{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":3}],"EditorInfo":{"isRoot":false,"xPos":34.60019,"yPos":223.200012},"ID":2,"ParamActions":[],"TMPFontGUID":null,"Text":"@04guax_02","parentUIDs":[1],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"@04name","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0.156}]}'
+  json: '{"Options":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":2}],"EditorInfo":{"isRoot":false,"xPos":31.8999939,"yPos":133.799988},"ID":1,"ParamActions":[],"TMPFontGUID":null,"Text":"@04bat_01","parentUIDs":[0],"SpeechUID":-1},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":30.7000122,"yPos":326.9997},"ID":3,"ParamActions":[],"TMPFontGUID":null,"Text":"@04bat_02","parentUIDs":[2],"SpeechUID":-1}],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":1}],"EditorInfo":{"isRoot":true,"xPos":32.8999939,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"@04guax_01","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"@04name","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0.156},{"Connections":[{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":3}],"EditorInfo":{"isRoot":false,"xPos":32.30002,"yPos":212},"ID":2,"ParamActions":[],"TMPFontGUID":null,"Text":"@04guax_02","parentUIDs":[1],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"@04name","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0.156}]}'
   saveVersion: 110
   DefaultName: 
   DefaultSprite: {fileID: 0}

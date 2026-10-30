@@ -1,5 +1,9 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Settings;
 
 public class TabMenu : MonoBehaviour
 {
@@ -8,6 +12,7 @@ public class TabMenu : MonoBehaviour
     {
         public Button button;
         public GameObject image;
+        public Sprite spriteEN;   // opcional: imagem a mostrar quando o jogo está em inglês
     }
 
     [System.Serializable]
@@ -21,15 +26,38 @@ public class TabMenu : MonoBehaviour
     [SerializeField] private Color activeColor = Color.white;
     [SerializeField] private Color inactiveColor = new Color(0.6f, 0.6f, 0.6f, 1f);
 
+    // Sprites originais (português), guardados no arranque
+    private readonly Dictionary<Image, Sprite> spritesPT = new Dictionary<Image, Sprite>();
+    private bool isEnglish;
+
     private void Awake()
     {
         foreach (var main in mainTabs)
+        {
             foreach (var sub in main.subTabs)
-                if (sub.image != null)
-                    sub.image.SetActive(false);
+            {
+                if (sub.image == null) continue;
+
+                Image img = sub.image.GetComponent<Image>();
+                if (img != null)
+                    spritesPT[img] = img.sprite;
+
+                sub.image.SetActive(false);
+            }
+        }
     }
 
-    private void Start()
+    private void OnEnable()
+    {
+        LocalizationSettings.SelectedLocaleChanged += OnLocaleChanged;
+    }
+
+    private void OnDisable()
+    {
+        LocalizationSettings.SelectedLocaleChanged -= OnLocaleChanged;
+    }
+
+    private IEnumerator Start()
     {
         for (int i = 0; i < mainTabs.Length; i++)
         {
@@ -43,7 +71,40 @@ public class TabMenu : MonoBehaviour
             }
         }
 
+        // Espera que o sistema de localização esteja pronto
+        yield return LocalizationSettings.InitializationOperation;
+
+        isEnglish = !LocalizationSettings.SelectedLocale.Identifier.Code.StartsWith("pt");
+        ApplyLanguage();
+
         SelectMainTab(0);
+    }
+
+    private void OnLocaleChanged(Locale locale)
+    {
+        if (locale == null) return;
+
+        isEnglish = !locale.Identifier.Code.StartsWith("pt");
+        ApplyLanguage();
+    }
+
+    // Põe em cada imagem o sprite do idioma atual
+    private void ApplyLanguage()
+    {
+        foreach (var main in mainTabs)
+        {
+            foreach (var sub in main.subTabs)
+            {
+                if (sub.image == null) continue;
+
+                Image img = sub.image.GetComponent<Image>();
+                if (img == null || !spritesPT.ContainsKey(img)) continue;
+
+                img.sprite = (isEnglish && sub.spriteEN != null)
+                    ? sub.spriteEN
+                    : spritesPT[img];
+            }
+        }
     }
 
     public void SelectMainTab(int mainIndex)

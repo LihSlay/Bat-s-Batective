@@ -968,6 +968,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d60de1b15dfaf8b45b3e2c9c08454294, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CutsceneRato
+  videoPT: RATO CUTSCENE GRV.mp4
+  videoEN: mousecutscene.mp4
+  volumeEN: 0.1
 --- !u!1 &2028980112
 GameObject:
   m_ObjectHideFlags: 0

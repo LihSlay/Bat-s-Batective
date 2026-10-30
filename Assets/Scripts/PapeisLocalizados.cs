@@ -16,11 +16,21 @@ public class PapeisLocalizados : MonoBehaviour
 
     [Header("Objeto MENU")]
     public Renderer menu;
-    public Material menuPT;   // material.081
-    public Material menuEN;   // Material.081v2
+
+    [Header("Português")]
+    public Material menuPTNormal;    // Menuptsn
+    public Material menuPTNoturna;   // material.081
+
+    [Header("Inglês")]
+    public Material menuENNormal;    // menuennormal
+    public Material menuENNoturna;   // menuenvisao
 
     [Tooltip("Posição do material a trocar no MENU (0 = primeiro)")]
     public int indiceMaterialMenu = 0;
+
+    private bool isPT = true;
+    private bool ultimaVisaoNoturna = false;
+    private bool pronto = false;
 
     void OnEnable()
     {
@@ -36,14 +46,26 @@ public class PapeisLocalizados : MonoBehaviour
     {
         // Espera que o sistema de localização esteja pronto
         yield return LocalizationSettings.InitializationOperation;
+        pronto = true;
         Aplicar(LocalizationSettings.SelectedLocale);
+    }
+
+    void Update()
+    {
+        if (!pronto) return;
+
+        // Só reaplica o MENU quando a visão noturna muda
+        if (NightVision.IsNightVisionOn != ultimaVisaoNoturna)
+        {
+            AplicarMenu();
+        }
     }
 
     void Aplicar(Locale locale)
     {
         if (locale == null) return;
 
-        bool isPT = locale.Identifier.Code.StartsWith("pt");
+        isPT = locale.Identifier.Code.StartsWith("pt");
 
         // Papéis
         Material[] materiais = isPT ? materiaisPT : materiaisEN;
@@ -53,16 +75,29 @@ public class PapeisLocalizados : MonoBehaviour
             papeis[i].sharedMaterial = materiais[i];
         }
 
-        // MENU
-        if (menu != null)
-        {
-            Material[] mats = menu.sharedMaterials;
+        AplicarMenu();
+    }
 
-            if (indiceMaterialMenu >= 0 && indiceMaterialMenu < mats.Length)
-            {
-                mats[indiceMaterialMenu] = isPT ? menuPT : menuEN;
-                menu.sharedMaterials = mats;
-            }
+    void AplicarMenu()
+    {
+        ultimaVisaoNoturna = NightVision.IsNightVisionOn;
+
+        if (menu == null) return;
+
+        Material novo;
+        if (isPT)
+            novo = ultimaVisaoNoturna ? menuPTNoturna : menuPTNormal;
+        else
+            novo = ultimaVisaoNoturna ? menuENNoturna : menuENNormal;
+
+        if (novo == null) return;
+
+        Material[] mats = menu.sharedMaterials;
+
+        if (indiceMaterialMenu >= 0 && indiceMaterialMenu < mats.Length)
+        {
+            mats[indiceMaterialMenu] = novo;
+            menu.sharedMaterials = mats;
         }
     }
 }
